@@ -1429,34 +1429,60 @@ body.offcanvas {
 .js .animate-box {
   opacity: 0; }
 
-  /* Section Headers */
+/* Skill Category Header */
 .skill-header {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
-  margin-bottom: 20px;
+  color: #ffffff;
+  background-color: #1d3557;
+  padding: 15px;
   text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Skill Icons Grid */
-.skill-icons {
+/* Skill Boxes Container */
+.skill-boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 13px;
 }
 
-/* Individual Skill Icon */
-.skill-icon {
-  width: 80px; /* Adjust size as needed */
-  height: 80px;
-  object-fit: contain;
-  border-radius: 8px; /* Optional for rounded edges */
+/* Individual Skill Box */
+.skill-box {
+  background-color: #f8f9fa;
+  border: 2px solid #1d3557;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect for Skill Icons */
-.skill-icon:hover {
+/* Skill Box Hover Effect */
+.skill-box:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Skill Icon */
+.skill-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Skill Name Text */
+.skill-box p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1d3557;
+  margin: 0;
+}
+
 
