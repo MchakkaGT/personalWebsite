@@ -1428,3 +1428,35 @@ body.offcanvas {
 
 .js .animate-box {
   opacity: 0; }
+
+  /* Section Headers */
+.skill-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Skill Icons Grid */
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual Skill Icon */
+.skill-icon {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px; /* Optional for rounded edges */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Skill Icons */
+.skill-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
