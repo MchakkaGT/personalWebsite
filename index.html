@@ -23,7 +23,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
@@ -39,7 +39,7 @@
         <a href="#projects" data-nav="projects">Projects</a>
         <a href="#skills" data-nav="skills">Skills</a>
         <a href="#about" data-nav="about">About</a>
-        <a href="ManishResume.pdf" target="_blank">Resume</a>
+        <a href="ManishResume.pdf" target="_blank" class="nav__resume-btn">Resume ↗</a>
       </nav>
       <div class="nav__social">
         <a href="https://github.com/manishchakka" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -61,7 +61,7 @@
     <a href="#projects" data-nav-mobile>Projects</a>
     <a href="#skills" data-nav-mobile>Skills</a>
     <a href="#about" data-nav-mobile>About</a>
-    <a href="ManishResume.pdf" target="_blank">Resume</a>
+    <a href="ManishResume.pdf" target="_blank" class="nav__mobile-resume">Resume (PDF) ↗</a>
     <div class="nav__mobile-social">
       <a href="https://github.com/manishchakka" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://linkedin.com/in/manish-chakka/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -73,13 +73,16 @@
     <section class="hero" id="hero">
       <div class="hero__inner">
         <div class="hero__content">
-          <span class="hero__label">Software Engineer</span>
+          <div class="hero__badge">
+            <span class="hero__badge-dot"></span>
+            <span>Available for SWE Roles · Dec 2026 Grad</span>
+          </div>
           <h1 class="hero__name">Manish Chakka</h1>
           <p class="hero__title">Software Engineer · Georgia Tech CS</p>
-          <p class="hero__intro">I build systems that work at scale — from messaging infrastructure processing millions of messages a day, to mobile applications, full-stack platforms, and developer tools. I care about writing software that people actually rely on.</p>
+          <p class="hero__intro">I build systems that operate reliably at scale — from high-throughput messaging infrastructure processing millions of events daily, to full-stack platforms, mobile apps, and AI-powered developer tooling. I care deeply about clean architecture, performance, and building software that people actually rely on.</p>
           <div class="hero__actions">
             <a href="#experience" class="btn btn--primary">Explore My Work</a>
-            <a href="ManishResume.pdf" target="_blank" class="btn btn--outline">Resume</a>
+            <a href="ManishResume.pdf" target="_blank" class="btn btn--outline">View Resume</a>
             <a href="https://github.com/manishchakka" target="_blank" rel="noopener noreferrer" class="btn btn--icon" aria-label="GitHub">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             </a>
@@ -88,8 +91,10 @@
             </a>
           </div>
         </div>
-        <div class="hero__image">
-          <img src="images/facepic.png" alt="Manish Chakka" width="280" height="280">
+        <div class="hero__image-wrapper">
+          <div class="hero__image-frame">
+            <img src="images/facepic.png" alt="Manish Chakka" width="280" height="280">
+          </div>
         </div>
       </div>
     </section>
@@ -97,24 +102,32 @@
     <!-- ====== EXPERIENCE ====== -->
     <section class="section section--alt" id="experience">
       <div class="section__inner">
-        <span class="section__label reveal">Experience</span>
-        <h2 class="section__title reveal">Where I've Worked</h2>
+        <div class="section__header reveal">
+          <span class="section__label">Experience</span>
+          <h2 class="section__title">Where I've Worked</h2>
+          <p class="section__subtitle">A timeline of my software engineering internships and technical roles.</p>
+        </div>
 
         <div class="exp-featured">
 
           <!-- ── Atlassian ── -->
           <div class="exp-card reveal">
             <div class="exp-card__header">
-              <div class="exp-card__logo--text" style="background: var(--atlassian);">A</div>
+              <div class="exp-card__logo-box">
+                <img class="exp-card__logo" src="images/atlassian-logo.svg" alt="Atlassian logo">
+              </div>
               <div class="exp-card__info">
-                <h3 class="exp-card__company">Atlassian</h3>
+                <div class="exp-card__title-row">
+                  <h3 class="exp-card__company">Atlassian</h3>
+                  <span class="exp-card__badge">Upcoming</span>
+                </div>
                 <p class="exp-card__role">Software Engineer Intern</p>
                 <p class="exp-card__meta">Seattle, WA · May 2026 – August 2026</p>
               </div>
               <button class="exp-card__toggle" aria-expanded="false" data-expand="atlassian-details">View Details</button>
             </div>
             <div class="exp-card__summary">
-              <p>Built end-to-end message tracing and observability tooling for Atlassian's Post Office messaging platform, an internal infrastructure serving <strong>80 million+ messages per day</strong> across products like Jira, Confluence, and Trello.</p>
+              <p>Engineered message tracing and observability tooling for Atlassian's Post Office messaging platform, an internal infrastructure serving <strong>80M+ messages/day</strong> across Jira, Confluence, and Trello.</p>
               <div class="exp-card__tags">
                 <span class="tag">TypeScript</span>
                 <span class="tag">Databricks SQL</span>
@@ -127,35 +140,32 @@
               <div class="exp-card__content">
                 <div class="exp-card__metric">
                   <strong>80M+</strong>
-                  <span>messages processed per day through the Post Office platform</span>
+                  <span>messages processed daily across the Post Office messaging ecosystem</span>
                 </div>
 
                 <h4>Message Tracing Infrastructure</h4>
-                <p>Post Office is Atlassian's centralized messaging platform — it routes notifications, emails, and in-app messages across every Atlassian product. Before my work, debugging message delivery failures was extremely time-consuming because there was no way to follow a single message through the system.</p>
+                <p>Post Office is Atlassian's centralized messaging platform — routing notifications, emails, and in-app alerts across every Atlassian product.</p>
                 <ul>
-                  <li>Designed and implemented message tracing in TypeScript, propagating unique trace IDs through a <strong>6-stage delivery pipeline</strong> (ingestion → validation → routing → template rendering → channel selection → delivery)</li>
-                  <li>Each trace ID travels with the message payload at every stage, enabling engineers to reconstruct the full journey of any message from a single identifier</li>
-                  <li>The tracing system handles both real-time delivery via <strong>AWS SQS-based queues</strong> and on-demand delivery paths, each with different latency characteristics and failure modes</li>
+                  <li>Engineered end-to-end message tracing in TypeScript, propagating unique trace IDs across a <strong>6-stage delivery pipeline</strong> (ingestion → validation → routing → template rendering → channel selection → delivery).</li>
+                  <li>Each trace ID travels with the payload across all stages, allowing engineers to reconstruct the complete delivery lifecycle from a single identifier.</li>
+                  <li>Built scalable analytics for both real-time (<strong>AWS SQS-based</strong> queues) and on-demand delivery pipelines, accounting for distinct latency and reliability profiles.</li>
                 </ul>
 
                 <h4>Observability Dashboard</h4>
                 <ul>
-                  <li>Built a <strong>Databricks SQL dashboard</strong> aggregating delivery outcome data across all pipeline stages, enabling failure diagnosis across channels (email, push, in-app, SMS)</li>
-                  <li>The dashboard surfaces delivery success rates, failure categories, latency distributions, and allows filtering by product, channel, and time range</li>
-                  <li>Cut average debug time for message delivery failures by <strong>50%</strong> by providing engineers immediate visibility into where and why messages were being dropped</li>
+                  <li>Built a comprehensive <strong>Databricks SQL dashboard</strong> aggregating delivery outcome data across all pipeline stages.</li>
+                  <li>Enabled instant failure diagnosis across email, push, in-app, and SMS delivery channels, cutting average debugging time by <strong>50%</strong>.</li>
                 </ul>
 
                 <h4>ML Pipeline Instrumentation</h4>
                 <ul>
-                  <li>Instrumented the <strong>ML-driven message ranking pipeline</strong>, which determines priority and ordering for notifications delivered to users</li>
-                  <li>Implemented set-difference analysis to infer dropped messages — by comparing candidate sets at each ranking stage, the system can identify exactly which messages were filtered and why</li>
-                  <li>This was particularly valuable because the ranking pipeline operates as a series of filters, and before instrumentation there was no visibility into messages lost between stages</li>
+                  <li>Instrumented the <strong>ML-driven message ranking pipeline</strong> that prioritizes and orders notifications.</li>
+                  <li>Implemented set-difference analysis to infer dropped messages across candidate sets, providing visibility into previously opaque filtering stages.</li>
                 </ul>
 
                 <h4>LLM-Powered Debug Chatbot</h4>
                 <ul>
-                  <li>Integrated trace analytics with an <strong>LLM-powered chatbot</strong> that accepts a message ID and returns a natural-language summary of the message's full delivery journey</li>
-                  <li>The chatbot surfaces which pipeline stages succeeded, where failures occurred, and suggests potential root causes — reducing the need for engineers to manually query multiple data sources</li>
+                  <li>Integrated trace analytics with an <strong>LLM-powered chatbot</strong> that accepts a message ID and immediately surfaces its full journey, stage statuses, and root-cause suggestions.</li>
                 </ul>
               </div>
             </div>
@@ -164,7 +174,9 @@
           <!-- ── Cox Automotive ── -->
           <div class="exp-card reveal">
             <div class="exp-card__header">
-              <div class="exp-card__logo--text" style="background: var(--cox);">C</div>
+              <div class="exp-card__logo-box">
+                <img class="exp-card__logo" src="images/coxautomotive.svg" alt="Cox Automotive logo">
+              </div>
               <div class="exp-card__info">
                 <h3 class="exp-card__company">Cox Automotive</h3>
                 <p class="exp-card__role">Software Engineer Intern</p>
@@ -173,7 +185,7 @@
               <button class="exp-card__toggle" aria-expanded="false" data-expand="cox-details">View Details</button>
             </div>
             <div class="exp-card__summary">
-              <p>Worked across mobile, backend, and internal tooling for Cox Automotive's vehicle management platform, building transaction logging for an Android app processing <strong>5,000+ vehicle scans daily</strong> and developer productivity tools.</p>
+              <p>Developed mobile transaction logging, automated project management tools, and developer infrastructure for Cox Automotive's vehicle auction and logistics platform handling <strong>5,000+ daily scans</strong>.</p>
               <div class="exp-card__tags">
                 <span class="tag">Kotlin</span>
                 <span class="tag">Java</span>
@@ -189,33 +201,24 @@
               <div class="exp-card__content">
                 <div class="exp-card__metric">
                   <strong>5,000+</strong>
-                  <span>vehicle scans tracked daily through the Android workflow app</span>
+                  <span>vehicle scans tracked daily through the mobile inspection workflow</span>
                 </div>
 
                 <h4>Android Transaction Logging</h4>
                 <ul>
-                  <li>Added comprehensive transaction logging to a production Android application (Kotlin/Java) used by vehicle inspectors across Cox Automotive's auction network</li>
-                  <li>Designed a unique scan ID generation system that creates traceable identifiers for each vehicle scan operation, with results stored in SQL for audit and analytics</li>
-                  <li>Integrated the app with internal backend systems to synchronize scan IDs in real-time, ensuring reliable tracking of <strong>5,000+ vehicles</strong> processed daily</li>
+                  <li>Added robust transaction logging to a production Android application (Kotlin/Java) used by vehicle inspectors across auction sites.</li>
+                  <li>Designed unique scan ID generation and SQL storage, integrating the app with backend systems to reliably synchronize <strong>5,000+ vehicle scans daily</strong>.</li>
                 </ul>
 
-                <h4>Rally Planning Tool</h4>
+                <h4>Rally Planning Tool & Slack Bot</h4>
                 <ul>
-                  <li>Built a full-stack internal tool using <strong>Python/FastAPI</strong> on the backend and <strong>React</strong> on the frontend to detect date mismatches in Rally (Agile project management) stories</li>
-                  <li>The tool automatically compares planned iteration dates against actual story schedules, surfacing conflicts that previously required manual review</li>
-                  <li>Reduced planning errors by <strong>80%</strong> across engineering teams by catching misaligned sprint dates before they caused scheduling problems</li>
-                </ul>
-
-                <h4>Slack Bot & Alerting</h4>
-                <ul>
-                  <li>Developed a Slack bot that integrates with Rally and <strong>AWS Lambda</strong> to deliver real-time alerts when date mismatches are detected</li>
-                  <li>Teams receive automated notifications with direct links to affected stories, eliminating the need for manual date-checking workflows</li>
+                  <li>Built a full-stack internal tool using <strong>Python/FastAPI</strong> and <strong>React</strong> to automatically identify date mismatches in Rally stories, cutting planning errors by <strong>80%</strong>.</li>
+                  <li>Developed an automated Slack bot with Rally & <strong>AWS Lambda</strong> for real-time conflict alerting, removing manual scheduling checks.</li>
                 </ul>
 
                 <h4>Splunk Log Service</h4>
                 <ul>
-                  <li>Created a <strong>Spring Boot microservice</strong> that exposes Splunk log data via REST APIs, making production logs accessible to developers without requiring direct Splunk access</li>
-                  <li>Reduced log retrieval time from several minutes of manual Splunk querying to <strong>under 5 seconds</strong> via API calls</li>
+                  <li>Created a <strong>Spring Boot microservice</strong> exposing Splunk logs via REST APIs, cutting retrieval time from minutes of manual queries to <strong>under 5 seconds</strong>.</li>
                 </ul>
               </div>
             </div>
@@ -224,7 +227,9 @@
           <!-- ── Waystar ── -->
           <div class="exp-card reveal">
             <div class="exp-card__header">
-              <img class="exp-card__logo" src="images/waystar.webp" alt="Waystar logo">
+              <div class="exp-card__logo-box">
+                <img class="exp-card__logo" src="images/waystar.webp" alt="Waystar logo">
+              </div>
               <div class="exp-card__info">
                 <h3 class="exp-card__company">Waystar</h3>
                 <p class="exp-card__role">Application Engineer Intern</p>
@@ -233,7 +238,7 @@
               <button class="exp-card__toggle" aria-expanded="false" data-expand="waystar-details">View Details</button>
             </div>
             <div class="exp-card__summary">
-              <p>Contributed to Waystar's healthcare revenue cycle platform, modernizing billing interfaces and building backend infrastructure including an SMS blacklist system covering <strong>50,000+ users</strong>.</p>
+              <p>Modernized healthcare billing interfaces and engineered backend services including an SMS blacklist tracking system managing preferences for <strong>50,000+ users</strong>.</p>
               <div class="exp-card__tags">
                 <span class="tag">Vue.js</span>
                 <span class="tag">Angular</span>
@@ -248,30 +253,20 @@
               <div class="exp-card__content">
                 <div class="exp-card__metric">
                   <strong>50K+</strong>
-                  <span>users covered by the SMS blacklist notification system</span>
+                  <span>users protected by the Go-based SMS blacklist database</span>
                 </div>
 
-                <h4>Frontend Modernization</h4>
+                <h4>Frontend Modernization & Inquiry Modal</h4>
                 <ul>
-                  <li>Migrated billing pages from legacy PHP to modern <strong>Vue.js and Angular</strong> components, cutting page load times by <strong>40%</strong> and significantly improving usability for healthcare providers</li>
-                  <li>Built a dynamic inquiry modal in PHP and JavaScript that allows doctors to resolve billing questions <strong>30% faster</strong> by surfacing relevant claim data inline rather than requiring navigation to separate pages</li>
+                  <li>Migrated mission-critical billing pages from legacy PHP to modern <strong>Vue.js and Angular</strong>, cutting load times by <strong>40%</strong> and improving usability for healthcare providers.</li>
+                  <li>Built a dynamic claim inquiry modal in PHP and JavaScript that enabled doctors to resolve billing inquiries <strong>30% faster</strong> with inline data retrieval.</li>
                 </ul>
 
-                <h4>Performance Analysis & Optimization</h4>
+                <h4>Performance Optimization & SMS Blacklist</h4>
                 <ul>
-                  <li>Analyzed application performance using <strong>Kibana logs</strong> to identify high-latency JavaScript on critical billing pages</li>
-                  <li>Optimized identified bottlenecks, resulting in measurable load time improvements on the pages doctors use most frequently</li>
-                </ul>
-
-                <h4>SMS Blacklist Infrastructure</h4>
-                <ul>
-                  <li>Created a <strong>Go-based service</strong> backed by a SQL database to track SMS blacklists, ensuring that text notifications were properly blocked for users who opted out</li>
-                  <li>The system manages blacklist records for over <strong>50,000 users</strong>, enforcing compliance with communication preferences across the platform</li>
-                </ul>
-
-                <h4>Agile Process</h4>
-                <ul>
-                  <li>Participated in Agile Scrum workflows including daily standups, sprint planning, and code reviews for the healthcare platform team</li>
+                  <li>Analyzed Kibana log streams to identify high-latency JavaScript on critical pages and implemented targeted optimizations.</li>
+                  <li>Engineered a <strong>Go-based SQL service</strong> to track SMS blacklists, ensuring strict compliance with communication opt-outs for over <strong>50,000 users</strong>.</li>
+                  <li>Participated in Agile Scrum workflows including daily standups, sprint planning, and code reviews.</li>
                 </ul>
               </div>
             </div>
@@ -279,13 +274,15 @@
         </div>
 
         <!-- Secondary experiences -->
-        <h3 class="exp-secondary-title reveal">Earlier Experience</h3>
+        <h3 class="exp-secondary-title reveal">Earlier Technical Experience</h3>
         <div class="exp-grid">
 
           <!-- GT TA -->
           <div class="exp-card--compact reveal">
             <div class="exp-card__header">
-              <img class="exp-card__logo" src="images/gtcomputing.jpg" alt="Georgia Tech College of Computing logo">
+              <div class="exp-card__logo-box exp-card__logo-box--sm">
+                <img class="exp-card__logo" src="images/gtcomputing.jpg" alt="Georgia Tech logo">
+              </div>
               <div class="exp-card__info">
                 <h3 class="exp-card__company">Georgia Tech — College of Computing</h3>
                 <p class="exp-card__role">Undergraduate Teaching Assistant</p>
@@ -293,14 +290,16 @@
               </div>
             </div>
             <div class="exp-card__summary">
-              <p>Mentored six student teams building full-stack Django applications. Provided technical support for 250+ students, guided LLM integration with Hugging Face, taught deployment on AWS Amplify and Heroku, and improved code quality standards using pylint (90% coverage).</p>
+              <p>Mentored 6 student teams building full-stack Django apps. Supported 250+ students with Hugging Face LLMs, AWS Amplify/Heroku deployments, and strict code quality standards (90% pylint test coverage).</p>
             </div>
           </div>
 
           <!-- Headstarter -->
           <div class="exp-card--compact reveal">
             <div class="exp-card__header">
-              <img class="exp-card__logo" src="images/headstarter.jpeg" alt="Headstarter logo">
+              <div class="exp-card__logo-box exp-card__logo-box--sm">
+                <img class="exp-card__logo" src="images/headstarter.jpeg" alt="Headstarter logo">
+              </div>
               <div class="exp-card__info">
                 <h3 class="exp-card__company">Headstarter</h3>
                 <p class="exp-card__role">Software Engineering Fellow</p>
@@ -308,14 +307,16 @@
               </div>
             </div>
             <div class="exp-card__summary">
-              <p>Built 5+ AI applications using Next.js, OpenAI, Pinecone, and Stripe API. Led a team of 4+ engineers through full development lifecycles, practicing Agile methodologies and CI/CD.</p>
+              <p>Built 5+ AI applications using Next.js, OpenAI, Pinecone vector search, and Stripe API. Led a team of 4 engineers through full Agile development lifecycles and CI/CD pipelines.</p>
             </div>
           </div>
 
           <!-- Albireo Energy -->
           <div class="exp-card--compact reveal">
             <div class="exp-card__header">
-              <img class="exp-card__logo" src="images/albireo.png" alt="Albireo Energy logo">
+              <div class="exp-card__logo-box exp-card__logo-box--sm">
+                <img class="exp-card__logo" src="images/albireo.png" alt="Albireo Energy logo">
+              </div>
               <div class="exp-card__info">
                 <h3 class="exp-card__company">Albireo Energy</h3>
                 <p class="exp-card__role">Software Engineer Intern</p>
@@ -323,14 +324,16 @@
               </div>
             </div>
             <div class="exp-card__summary">
-              <p>Built a dynamic help desk form integrated with Google Sheets and SharePoint, deployed on Azure with CI/CD. Conducted 50+ employee interviews to build a Python/Pandas skills matrix and designed a task-matching algorithm for equitable work distribution.</p>
+              <p>Built a dynamic help desk portal integrated with Google Sheets & SharePoint on Azure with CI/CD. Conducted 50+ employee interviews to build a Python/Pandas skills matrix and task-matching algorithm.</p>
             </div>
           </div>
 
           <!-- Code Ninjas -->
           <div class="exp-card--compact reveal">
             <div class="exp-card__header">
-              <img class="exp-card__logo" src="images/codeninjas.jpg" alt="Code Ninjas logo">
+              <div class="exp-card__logo-box exp-card__logo-box--sm">
+                <img class="exp-card__logo" src="images/codeninjas.jpg" alt="Code Ninjas logo">
+              </div>
               <div class="exp-card__info">
                 <h3 class="exp-card__company">Code Ninjas</h3>
                 <p class="exp-card__role">Coding Instructor</p>
@@ -338,7 +341,7 @@
               </div>
             </div>
             <div class="exp-card__summary">
-              <p>Instructed and mentored 40 students in JavaScript, Lua, and C# through one-on-one and group sessions. Translated complex programming concepts into accessible explanations for young learners.</p>
+              <p>Instructed and mentored 40 students in JavaScript, Lua, and C# through interactive curriculum, breaking down fundamental algorithmic and object-oriented programming concepts.</p>
             </div>
           </div>
 
@@ -349,19 +352,23 @@
     <!-- ====== PROJECTS ====== -->
     <section class="section" id="projects">
       <div class="section__inner">
-        <span class="section__label reveal">Projects</span>
-        <h2 class="section__title reveal">What I've Built</h2>
+        <div class="section__header reveal">
+          <span class="section__label">Projects</span>
+          <h2 class="section__title">Featured Engineering Work</h2>
+          <p class="section__subtitle">A selection of software systems, distributed architectures, and web applications I've built.</p>
+        </div>
 
         <div class="projects-grid">
 
           <!-- Opscribe -->
           <div class="project-card project-card--featured reveal">
-            <div class="project-card__image project-card__image--placeholder">
-              <div class="placeholder-icon">🔍</div>
+            <div class="project-card__image">
+              <img src="images/opscribe.png" alt="Opscribe — AI for Infrastructure Intelligence">
             </div>
             <div class="project-card__body">
-              <h3 class="project-card__title">Opscribe</h3>
-              <p class="project-card__desc">A full-stack infrastructure intelligence platform that models cloud systems as typed dependency graphs, enabling multi-hop impact analysis and AI-powered infrastructure reasoning.</p>
+              <div class="project-card__meta-tag">Featured Project · Jan 2026 – May 2026</div>
+              <h3 class="project-card__title">Opscribe — Infrastructure Intelligence Platform</h3>
+              <p class="project-card__desc">A full-stack intelligence platform that models complex cloud systems as typed dependency graphs, enabling multi-hop blast radius resolution, semantic Terraform search, and automated IaC generation via an AI agent.</p>
               <div class="project-card__tags">
                 <span class="tag">React</span>
                 <span class="tag">TypeScript</span>
@@ -377,25 +384,12 @@
             </div>
             <div class="project-card__details" id="opscribe-details">
               <div class="project-card__details-inner">
-                <h4>What It Does</h4>
-                <p>Opscribe lets you model cloud infrastructure as a typed dependency graph — services, databases, queues, load balancers, and their relationships are all represented as nodes and edges. From this graph, you can ask questions like "what happens if this database goes down?" and get real answers.</p>
-
-                <h4>Graph Analysis Engine</h4>
+                <h4>System Architecture & Graph Engine</h4>
+                <p>Opscribe transforms cloud architecture diagrams and Terraform files into interactive, queryable typed dependency graphs:</p>
                 <ul>
-                  <li>Engineered BFS and DFS graph traversal algorithms for multi-hop dependency resolution, reverse impact tracing, and blast-radius analysis</li>
-                  <li>The system can trace upstream and downstream dependencies across any number of hops, showing exactly which services would be affected by an outage</li>
-                </ul>
-
-                <h4>RAG Pipeline with pgvector</h4>
-                <ul>
-                  <li>Built a Retrieval-Augmented Generation (RAG) pipeline using pgvector to embed and retrieve source code, Terraform configurations, and infrastructure documentation via semantic search</li>
-                  <li>This allows the AI agent to ground its responses in actual infrastructure code rather than hallucinating configurations</li>
-                </ul>
-
-                <h4>AI Agent</h4>
-                <ul>
-                  <li>Developed a Llama-3.3-70B LangChain agent that combines graph traversal tools with RAG retrieval for infrastructure analysis and IaC (Infrastructure as Code) generation</li>
-                  <li>The agent can answer natural-language questions about system architecture, generate Terraform code, and explain blast radius for proposed changes</li>
+                  <li><strong>Graph Algorithms</strong>: Engineered BFS and DFS traversal for multi-hop dependency resolution, reverse impact tracing, and blast-radius failure prediction.</li>
+                  <li><strong>pgvector RAG Pipeline</strong>: Built a semantic retrieval pipeline using pgvector to embed and retrieve source code, Terraform configurations, and infrastructure documentation.</li>
+                  <li><strong>AI Agent Integration</strong>: Developed a Llama-3.3-70B LangChain agent combining graph traversal tools with semantic search for natural-language architecture queries and automated IaC generation.</li>
                 </ul>
               </div>
             </div>
@@ -407,8 +401,9 @@
               <img src="images/tasteofatl.png" alt="Taste of Atlanta application screenshot showing restaurant discovery interface">
             </div>
             <div class="project-card__body">
+              <div class="project-card__meta-tag">Aug 2024 – Jan 2025</div>
               <h3 class="project-card__title">Taste of Atlanta</h3>
-              <p class="project-card__desc">A full-stack restaurant discovery platform that helps users explore Atlanta restaurants using interactive maps, personalized favorites, and real-time Google Places data.</p>
+              <p class="project-card__desc">A full-stack restaurant discovery platform connecting users with local Atlanta dining using interactive Google Maps, real-time Places API data, and personalized saved favorites.</p>
               <div class="project-card__tags">
                 <span class="tag">Python</span>
                 <span class="tag">Django</span>
@@ -418,28 +413,17 @@
                 <span class="tag">AWS</span>
               </div>
               <div class="project-card__actions">
-                <a href="https://tasteofatlanta.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">Live Demo</a>
+                <a href="https://tasteofatlanta.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">Live Demo ↗</a>
                 <button class="btn btn--outline btn--sm" data-expand="toa-details">View Details</button>
               </div>
             </div>
             <div class="project-card__details" id="toa-details">
               <div class="project-card__details-inner">
-                <h4>How It Works</h4>
-                <p>The app pulls the user's location and displays nearby walkable restaurants on an interactive Google Map. Each restaurant gets an info card with details pulled from Google Places API — ratings, hours, cuisine type, and photos.</p>
-
-                <h4>Key Features</h4>
+                <h4>Key Features & Hosting</h4>
                 <ul>
-                  <li>Interactive Google Map with clickable markers that link to corresponding restaurant info cards</li>
-                  <li>Location-based restaurant search that surfaces nearby options within walking distance</li>
-                  <li>User authentication with Django, supporting login, registration, and email-based password reset</li>
-                  <li>Favorites system — logged-in users can save restaurants and access them later</li>
-                  <li>Visually designed landing page and restaurant cards using custom HTML/CSS</li>
-                </ul>
-
-                <h4>Deployment</h4>
-                <ul>
-                  <li>Deployed on AWS Amplify with gunicorn, configured via amplify.yml for automated builds</li>
-                  <li>Django backend manages user data, authentication, and favorites with a PostgreSQL database</li>
+                  <li>Integrated interactive Google Map markers linked to dynamic restaurant info cards with real-time ratings, hours, and cuisine.</li>
+                  <li>Engineered Django authentication supporting user accounts, password reset, and personal saved favorites.</li>
+                  <li>Deployed on AWS Amplify with gunicorn and automated CI/CD builds via amplify.yml.</li>
                 </ul>
               </div>
             </div>
@@ -451,8 +435,9 @@
               <img src="images/commuride.png" alt="CommuRide mobile app interface showing ride sharing features">
             </div>
             <div class="project-card__body">
-              <h3 class="project-card__title">CommuRide</h3>
-              <p class="project-card__desc">A React Native ride-sharing mobile app designed to promote sustainable commuting by connecting users on similar routes, reducing traffic congestion and emissions.</p>
+              <div class="project-card__meta-tag">Jan 2024 – May 2024</div>
+              <h3 class="project-card__title">CommuRide Mobile App</h3>
+              <p class="project-card__desc">A cross-platform React Native ride-sharing mobile app designed to reduce urban traffic congestion and emissions by connecting commuters traveling along identical routes.</p>
               <div class="project-card__tags">
                 <span class="tag">React Native</span>
                 <span class="tag">Firebase</span>
@@ -460,21 +445,17 @@
                 <span class="tag">Expo</span>
               </div>
               <div class="project-card__actions">
-                <a href="https://github.com/hxxtsxxh/CommuRide" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">GitHub</a>
+                <a href="https://github.com/hxxtsxxh/CommuRide" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">GitHub ↗</a>
                 <button class="btn btn--outline btn--sm" data-expand="commuride-details">View Details</button>
               </div>
             </div>
             <div class="project-card__details" id="commuride-details">
               <div class="project-card__details-inner">
-                <h4>Concept</h4>
-                <p>CommuRide connects commuters traveling on similar routes so they can share rides. Users enter their start and end locations, and the app matches them with others heading in the same direction — reducing fuel costs, traffic, and carbon emissions.</p>
-
                 <h4>Technical Implementation</h4>
                 <ul>
-                  <li>Built with React Native for cross-platform mobile support, tested and deployed using Expo and Xcode</li>
-                  <li>Real-time authentication and data synchronization powered by Firebase Firestore, enabling seamless communication across devices</li>
-                  <li>Google Maps API integration for geocoding, route planning, and turn-by-turn directions</li>
-                  <li>Users can view matched commuters on a live map and coordinate shared trips in real-time</li>
+                  <li>Cross-platform mobile client built with React Native and Expo for iOS and Android.</li>
+                  <li>Real-time authentication and database synchronization powered by Firebase Firestore.</li>
+                  <li>Google Maps API integration for geocoding, turn-by-turn route planning, and commuter matching.</li>
                 </ul>
               </div>
             </div>
@@ -482,12 +463,13 @@
 
           <!-- COVID Dashboard -->
           <div class="project-card reveal">
-            <div class="project-card__image project-card__image--placeholder">
-              <div class="placeholder-icon">📊</div>
+            <div class="project-card__image">
+              <img src="images/covid-dashboard.jpg" alt="Real-Time COVID-19 Trends Dashboard visualization">
             </div>
             <div class="project-card__body">
+              <div class="project-card__meta-tag">Dec 2022 – Mar 2023</div>
               <h3 class="project-card__title">Real-Time COVID-19 Trends Dashboard</h3>
-              <p class="project-card__desc">A data visualization dashboard providing real-time, state-level COVID-19 trend analysis with interactive charts, hosted on AWS with Elasticsearch-powered search.</p>
+              <p class="project-card__desc">A comprehensive public health data analytics platform providing state-level COVID-19 trend analysis with interactive charts, Elasticsearch indexing, and AWS cloud hosting.</p>
               <div class="project-card__tags">
                 <span class="tag">Tableau</span>
                 <span class="tag">AWS EC2</span>
@@ -502,16 +484,11 @@
             </div>
             <div class="project-card__details" id="covid-details">
               <div class="project-card__details-inner">
-                <h4>Architecture</h4>
-                <p>The dashboard integrates multiple data sources to provide a comprehensive view of COVID-19 trends at the state level, with interactive filtering and drill-down capabilities.</p>
-
-                <h4>Infrastructure & Features</h4>
+                <h4>Data Pipeline & Visualizations</h4>
                 <ul>
-                  <li>Built the primary visualization layer using Tableau for real-time, interactive charts showing case counts, positivity rates, and trend lines by state</li>
-                  <li>Integrated live COVID-19 data streams to ensure the dashboard always reflected current conditions</li>
-                  <li>Hosted the application on AWS EC2 with data stored on S3, providing reliable and scalable infrastructure</li>
-                  <li>Implemented search and interactive data exploration using Elasticsearch and Kibana, allowing users to query specific states, date ranges, and metrics</li>
-                  <li>Containerized components with Docker for consistent deployment and environment management</li>
+                  <li>Interactive Tableau dashboard displaying state-level infection rates, positivity indices, and time-series trends.</li>
+                  <li>Integrated live data streams, hosted scalable backend on AWS EC2 with S3 dataset persistence.</li>
+                  <li>Implemented search and interactive exploration using Elasticsearch and Kibana, with Docker containerization.</li>
                 </ul>
               </div>
             </div>
@@ -523,8 +500,9 @@
               <img src="images/raspberrypi.jpeg" alt="Raspberry Pi retro gaming hub hardware setup">
             </div>
             <div class="project-card__body">
+              <div class="project-card__meta-tag">Hardware & Systems Project</div>
               <h3 class="project-card__title">Raspberry Pi Retro Gaming Hub</h3>
-              <p class="project-card__desc">A Raspberry Pi-powered retro gaming platform using a Kubernetes cluster, Docker containers, and a Flask-based web interface for game management.</p>
+              <p class="project-card__desc">A containerized retro gaming cluster orchestrated across Raspberry Pi hardware using Kubernetes, Docker containers, and a custom Flask web management interface.</p>
               <div class="project-card__tags">
                 <span class="tag">Kubernetes</span>
                 <span class="tag">Docker</span>
@@ -539,17 +517,11 @@
             </div>
             <div class="project-card__details" id="pi-details">
               <div class="project-card__details-inner">
-                <h4>How It Works</h4>
-                <p>The project brings together a cluster of Raspberry Pis orchestrated with Kubernetes to create a scalable retro gaming platform. Each node runs containerized gaming emulators managed through a custom web interface.</p>
-
-                <h4>Technical Components</h4>
+                <h4>Cluster Architecture</h4>
                 <ul>
-                  <li>Built a Kubernetes cluster across multiple Raspberry Pi nodes to distribute gaming workloads and provide redundancy</li>
-                  <li>Used RetroPie to emulate a variety of retro consoles (NES, SNES, Game Boy, Sega Genesis, and more)</li>
-                  <li>Containerized the gaming environment with Docker for consistent deployment across all cluster nodes</li>
-                  <li>Developed a Flask-based web interface for easy game selection, configuration, and system management</li>
-                  <li>Custom Python scripts for performance tuning and automated game library management</li>
-                  <li>Used AWS EC2 for centralized game hosting and remote access to the gaming hub</li>
+                  <li>Configured a multi-node Kubernetes cluster on Raspberry Pis for workload distribution and redundancy.</li>
+                  <li>Containerized gaming emulators with Docker and managed libraries via a Flask web dashboard.</li>
+                  <li>Deployed AWS EC2 instance for remote access and centralized ROM storage.</li>
                 </ul>
               </div>
             </div>
@@ -562,8 +534,11 @@
     <!-- ====== SKILLS ====== -->
     <section class="section section--alt" id="skills">
       <div class="section__inner">
-        <span class="section__label reveal">Technologies</span>
-        <h2 class="section__title reveal">Skills &amp; Tools</h2>
+        <div class="section__header reveal">
+          <span class="section__label">Technologies</span>
+          <h2 class="section__title">Skills &amp; Tools</h2>
+          <p class="section__subtitle">A comprehensive list of programming languages, frameworks, cloud services, and tools I use.</p>
+        </div>
 
         <!-- Languages -->
         <div class="skills-category reveal">
@@ -580,6 +555,14 @@
             <div class="skill-item">
               <img class="skill-item__icon" src="skillsImages/JavaScript.png" alt="JavaScript">
               <span class="skill-item__name">JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/typescript.svg" alt="TypeScript">
+              <span class="skill-item__name">TypeScript</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/kotlin.svg" alt="Kotlin">
+              <span class="skill-item__name">Kotlin</span>
             </div>
             <div class="skill-item">
               <img class="skill-item__icon" src="skillsImages/go.png" alt="Go">
@@ -621,8 +604,24 @@
               <span class="skill-item__name">React Native</span>
             </div>
             <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/fastapi.svg" alt="FastAPI">
+              <span class="skill-item__name">FastAPI</span>
+            </div>
+            <div class="skill-item">
               <img class="skill-item__icon" src="skillsImages/django.png" alt="Django">
               <span class="skill-item__name">Django</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/spring.svg" alt="Spring Boot">
+              <span class="skill-item__name">Spring Boot</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/vue.svg" alt="Vue.js">
+              <span class="skill-item__name">Vue.js</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/angular.svg" alt="Angular">
+              <span class="skill-item__name">Angular</span>
             </div>
             <div class="skill-item">
               <img class="skill-item__icon" src="skillsImages/flask.webp" alt="Flask">
@@ -636,12 +635,28 @@
               <img class="skill-item__icon" src="skillsImages/reactnavigation.webp" alt="React Navigation">
               <span class="skill-item__name">React Navigation</span>
             </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/tableau.png" alt="Tableau">
+              <span class="skill-item__name">Tableau</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/jest.svg" alt="Jest">
+              <span class="skill-item__name">Jest</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/selenium.svg" alt="Selenium">
+              <span class="skill-item__name">Selenium</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/dot-net.svg" alt=".NET">
+              <span class="skill-item__name">.NET</span>
+            </div>
           </div>
         </div>
 
-        <!-- Cloud & Infrastructure -->
+        <!-- Cloud, Systems & Tools -->
         <div class="skills-category reveal">
-          <h3 class="skills-category__title">Cloud &amp; Infrastructure</h3>
+          <h3 class="skills-category__title">Cloud, Systems &amp; Tools</h3>
           <div class="skills-grid">
             <div class="skill-item">
               <img class="skill-item__icon" src="skillsImages/AWS.png" alt="AWS">
@@ -664,27 +679,28 @@
               <span class="skill-item__name">Kubernetes</span>
             </div>
             <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/postgresql.svg" alt="PostgreSQL">
+              <span class="skill-item__name">PostgreSQL / pgvector</span>
+            </div>
+            <div class="skill-item">
               <img class="skill-item__icon" src="skillsImages/firebase.png" alt="Firebase">
               <span class="skill-item__name">Firebase</span>
             </div>
             <div class="skill-item">
-              <img class="skill-item__icon" src="skillsImages/Vercel.webp" alt="Vercel">
-              <span class="skill-item__name">Vercel</span>
+              <img class="skill-item__icon" src="skillsImages/git.svg" alt="Git">
+              <span class="skill-item__name">Git / GitHub</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/linux.svg" alt="Linux">
+              <span class="skill-item__name">Linux</span>
             </div>
             <div class="skill-item">
               <img class="skill-item__icon" src="skillsImages/render.png" alt="Render">
               <span class="skill-item__name">Render</span>
             </div>
-          </div>
-        </div>
-
-        <!-- Data & Tools -->
-        <div class="skills-category reveal">
-          <h3 class="skills-category__title">Data &amp; Tools</h3>
-          <div class="skills-grid">
             <div class="skill-item">
-              <img class="skill-item__icon" src="skillsImages/tableau.png" alt="Tableau">
-              <span class="skill-item__name">Tableau</span>
+              <img class="skill-item__icon" src="skillsImages/Vercel.webp" alt="Vercel">
+              <span class="skill-item__name">Vercel</span>
             </div>
             <div class="skill-item">
               <img class="skill-item__icon" src="skillsImages/sharepoint.png" alt="SharePoint">
@@ -699,50 +715,60 @@
     <!-- ====== ABOUT ====== -->
     <section class="section" id="about">
       <div class="section__inner">
-        <span class="section__label reveal">About</span>
-        <h2 class="section__title reveal">A Bit More About Me</h2>
+        <div class="section__header reveal">
+          <span class="section__label">About</span>
+          <h2 class="section__title">Background &amp; Education</h2>
+          <p class="section__subtitle">A glimpse into my educational background, credentials, and engineering interests.</p>
+        </div>
 
         <div class="about-grid">
           <div class="about-text reveal">
-            <p>I'm a Computer Science student at Georgia Tech, graduating in December 2026. My threads are AI and Information Internetworks, which means I spend a lot of time thinking about how large-scale systems communicate, how data flows through infrastructure, and how machine learning fits into production software.</p>
-            <p>Over the past few years, I've interned at Atlassian, Cox Automotive, and Waystar — working across messaging infrastructure, mobile applications, healthcare platforms, and developer tooling. The common thread is that I've always gravitated toward understanding how the full system works, not just the feature I was assigned.</p>
-            <p>At Atlassian, I built observability tooling for a messaging pipeline serving 80 million messages a day. At Cox, I worked across Android, backend services, and internal tools. At Waystar, I modernized frontend code and wrote Go services for a healthcare billing platform. Before that, I interned at Albireo Energy, taught coding at Code Ninjas, and TA'd for Georgia Tech's College of Computing.</p>
-            <p>Outside of internships, I build projects that let me dig into areas I find interesting — infrastructure intelligence, mobile apps, data visualization, and distributed systems. I like working on things where the technical decisions actually matter.</p>
+            <p>I'm a Computer Science student at <strong>Georgia Institute of Technology</strong>, graduating in <strong>December 2026</strong>. My academic threads are <strong>Artificial Intelligence</strong> and <strong>Information Internetworks</strong> — focusing on distributed communications, network topologies, data pipelines, and machine learning architectures.</p>
+            <p>Through internships at <strong>Atlassian</strong>, <strong>Cox Automotive</strong>, and <strong>Waystar</strong>, I've engineered solutions across high-volume message tracing, mobile transaction synchronization, healthcare UI modernizations, and developer productivity tools. I take pride in understanding how complex architectures interconnect from end to end.</p>
+            <p>When I'm not writing code for work or class, I enjoy building tools that solve real technical challenges — whether that's AI infrastructure reasoning in Opscribe, community-focused mobile apps in CommuRide, or distributed cluster experiments with Kubernetes on Raspberry Pis.</p>
           </div>
 
           <div class="about-sidebar reveal">
             <!-- Education -->
             <div class="edu-cards">
               <div class="edu-card edu-card--primary">
-                <h4 class="edu-card__school">Georgia Institute of Technology</h4>
-                <p class="edu-card__degree">B.S. Computer Science</p>
-                <p class="edu-card__details">Threads: AI &amp; Information Internetworks</p>
-                <p class="edu-card__details">Expected December 2026</p>
+                <div class="edu-card__header-row">
+                  <h4 class="edu-card__school">Georgia Institute of Technology</h4>
+                  <span class="edu-card__badge">College of Computing</span>
+                </div>
+                <p class="edu-card__degree">Bachelor of Science in Computer Science</p>
+                <p class="edu-card__threads">Threads: AI &amp; Information Internetworks</p>
+                <p class="edu-card__date">Expected December 2026 · Atlanta, GA</p>
               </div>
+
               <div class="edu-card">
                 <h4 class="edu-card__school">West Forsyth High School</h4>
                 <p class="edu-card__degree">High School Diploma — Top 10% of Class</p>
-                <p class="edu-card__details">GPA: 4.41 · Graduated May 2023</p>
+                <p class="edu-card__details">GPA: 4.41 · Cumming, GA · Graduated May 2023</p>
               </div>
             </div>
 
             <!-- Certifications -->
-            <div class="certs-row">
-              <a href="https://www.credly.com/badges/116b1808-df86-42a6-8fec-adfc53c0ba8d/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-badge">
-                <img class="cert-badge__icon" src="images/aws.png" alt="AWS certification badge">
-                <div class="cert-badge__info">
-                  <span class="cert-badge__name">AWS Certified Cloud Practitioner</span>
-                  <span class="cert-badge__issuer">Amazon Web Services</span>
-                </div>
-              </a>
-              <a href="https://www.credly.com/badges/837f98df-ebb5-4512-8e1d-3b9c8ecd6a0a/public_url" target="_blank" rel="noopener noreferrer" class="cert-badge">
-                <img class="cert-badge__icon" src="images/windows.png" alt="Microsoft certification badge">
-                <div class="cert-badge__info">
-                  <span class="cert-badge__name">MTA: Software Development Fundamentals</span>
-                  <span class="cert-badge__issuer">Microsoft</span>
-                </div>
-              </a>
+            <div class="certs-container">
+              <h4 class="certs-title">Certifications</h4>
+              <div class="certs-row">
+                <a href="https://www.credly.com/badges/116b1808-df86-42a6-8fec-adfc53c0ba8d/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-badge">
+                  <img class="cert-badge__icon" src="images/aws.png" alt="AWS certification badge">
+                  <div class="cert-badge__info">
+                    <span class="cert-badge__name">AWS Certified Cloud Practitioner</span>
+                    <span class="cert-badge__issuer">Amazon Web Services ↗</span>
+                  </div>
+                </a>
+                <a href="https://www.credly.com/badges/837f98df-ebb5-4512-8e1d-3b9c8ecd6a0a/public_url" target="_blank" rel="noopener noreferrer" class="cert-badge">
+                  <img class="cert-badge__icon" src="images/windows.png" alt="Microsoft certification badge">
+                  <div class="cert-badge__info">
+                    <span class="cert-badge__name">MTA: Software Development Fundamentals</span>
+                    <span class="cert-badge__issuer">Microsoft ↗</span>
+                  </div>
+                </a>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -751,39 +777,45 @@
     <!-- ====== CONTACT ====== -->
     <section class="section section--alt" id="contact">
       <div class="section__inner">
-        <span class="section__label reveal">Contact</span>
-        <h2 class="section__title reveal">Get In Touch</h2>
+        <div class="section__header reveal">
+          <span class="section__label">Contact</span>
+          <h2 class="section__title">Get In Touch</h2>
+          <p class="section__subtitle">I'm always open to discussing new engineering opportunities, collaborations, or technical projects.</p>
+        </div>
 
         <div class="contact-content reveal">
-          <p>I'm always open to hearing about interesting opportunities, collaborations, or just connecting with people in the industry. Feel free to reach out through any of the channels below.</p>
-
-          <div class="contact-links">
-            <a href="mailto:manishchakka5@gmail.com" class="contact-link">
-              <div class="contact-link__icon">
+          <div class="contact-cards">
+            <a href="mailto:manishchakka5@gmail.com" class="contact-card">
+              <div class="contact-card__icon contact-card__icon--email">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </div>
-              <div class="contact-link__text">
-                <span class="contact-link__label">Email</span>
-                <span class="contact-link__value">manishchakka5@gmail.com</span>
+              <div class="contact-card__text">
+                <span class="contact-card__label">Email</span>
+                <span class="contact-card__value">manishchakka5@gmail.com</span>
               </div>
+              <span class="contact-card__arrow">→</span>
             </a>
-            <a href="https://linkedin.com/in/manish-chakka/" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <div class="contact-link__icon">
+
+            <a href="https://linkedin.com/in/manish-chakka/" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-card__icon contact-card__icon--linkedin">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               </div>
-              <div class="contact-link__text">
-                <span class="contact-link__label">LinkedIn</span>
-                <span class="contact-link__value">linkedin.com/in/manish-chakka</span>
+              <div class="contact-card__text">
+                <span class="contact-card__label">LinkedIn</span>
+                <span class="contact-card__value">linkedin.com/in/manish-chakka</span>
               </div>
+              <span class="contact-card__arrow">→</span>
             </a>
-            <a href="https://github.com/manishchakka" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <div class="contact-link__icon">
+
+            <a href="https://github.com/manishchakka" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-card__icon contact-card__icon--github">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               </div>
-              <div class="contact-link__text">
-                <span class="contact-link__label">GitHub</span>
-                <span class="contact-link__value">github.com/manishchakka</span>
+              <div class="contact-card__text">
+                <span class="contact-card__label">GitHub</span>
+                <span class="contact-card__value">github.com/manishchakka</span>
               </div>
+              <span class="contact-card__arrow">→</span>
             </a>
           </div>
         </div>
@@ -794,7 +826,7 @@
   <!-- ====== FOOTER ====== -->
   <footer class="footer">
     <div class="footer__inner">
-      <p>&copy; 2026 Manish Chakka. Built with care.</p>
+      <p>&copy; 2026 Manish Chakka · Built with clean HTML, CSS &amp; JavaScript</p>
     </div>
   </footer>
 
