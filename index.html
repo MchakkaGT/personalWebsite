@@ -1,794 +1,805 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Jackson Template</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manish Chakka | Software Engineer</title>
+  <meta name="description" content="Manish Chakka — Software Engineer studying Computer Science at Georgia Tech. Experience at Atlassian, Cox Automotive, and Waystar. Full-stack, distributed systems, and infrastructure engineering.">
+  <meta name="keywords" content="Manish Chakka, Software Engineer, Georgia Tech, Atlassian, Cox Automotive, Waystar, Full Stack, Computer Science">
+  <meta name="author" content="Manish Chakka">
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Manish Chakka | Software Engineer">
+  <meta property="og:description" content="Software Engineer at Georgia Tech with experience at Atlassian, Cox Automotive, and Waystar. Explore my engineering work, projects, and technical background.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://manish-personal-website.vercel.app/">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Manish Chakka | Software Engineer">
+  <meta name="twitter:description" content="Software Engineer at Georgia Tech. Experience at Atlassian, Cox Automotive, Waystar.">
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/facepic.png);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Manish Chakka</a></h1>
-				<span class="position"><a href="#">Full Stack Developer</a></span>
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="certifications">Certifications</a></li>
-						<li><a href="#" data-nav-section="skills">Skills</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="projects">Projects</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-					</ul>
-				</div>
-			</nav>
+  <!-- ====== NAVIGATION ====== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#">Manish Chakka</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#experience" data-nav="experience">Experience</a>
+        <a href="#projects" data-nav="projects">Projects</a>
+        <a href="#skills" data-nav="skills">Skills</a>
+        <a href="#about" data-nav="about">About</a>
+        <a href="ManishResume.pdf" target="_blank">Resume</a>
+      </nav>
+      <div class="nav__social">
+        <a href="https://github.com/manishchakka" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/manish-chakka/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-			<div class="colorlib-footer">
-				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p>
-				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-				</ul>
-			</div>
+  <!-- Mobile menu -->
+  <div class="nav__mobile" id="navMobile">
+    <a href="#experience" data-nav-mobile>Experience</a>
+    <a href="#projects" data-nav-mobile>Projects</a>
+    <a href="#skills" data-nav-mobile>Skills</a>
+    <a href="#about" data-nav-mobile>About</a>
+    <a href="ManishResume.pdf" target="_blank">Resume</a>
+    <div class="nav__mobile-social">
+      <a href="https://github.com/manishchakka" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://linkedin.com/in/manish-chakka/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
 
-		</aside>
+  <main>
+    <!-- ====== HERO ====== -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <span class="hero__label">Software Engineer</span>
+          <h1 class="hero__name">Manish Chakka</h1>
+          <p class="hero__title">Software Engineer · Georgia Tech CS</p>
+          <p class="hero__intro">I build systems that work at scale — from messaging infrastructure processing millions of messages a day, to mobile applications, full-stack platforms, and developer tools. I care about writing software that people actually rely on.</p>
+          <div class="hero__actions">
+            <a href="#experience" class="btn btn--primary">Explore My Work</a>
+            <a href="ManishResume.pdf" target="_blank" class="btn btn--outline">Resume</a>
+            <a href="https://github.com/manishchakka" target="_blank" rel="noopener noreferrer" class="btn btn--icon" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/manish-chakka/" target="_blank" rel="noopener noreferrer" class="btn btn--icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="images/facepic.png" alt="Manish Chakka" width="280" height="280">
+        </div>
+      </div>
+    </section>
 
-		<div id="colorlib-main">
-			<section id="colorlib-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-				   	<li style="background-image: url(images/img_bg_1.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Hi! <br>I'm Manish</h1>
-											   <p>
-												<a class="btn btn-primary btn-learn" href="https://lavender-eloisa-4.tiiny.site/" download="Resume.pdf">
-												  Download Resume <i class="icon-download4"></i>
-												</a>
-											  </p>											  
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url(images/img_bg_02.png); background-size: 200%; background-position: 25% center;">
-						<div class="overlay"></div>
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-									<div class="slider-text-inner">
-										<div class="desc">
-											<h1>I am <br>a Full Stack Developer</h1>
-											<p>
-												<a class="btn btn-primary btn-learn" href="https://lavender-eloisa-4.tiiny.site/" download="Resume.pdf">
-												  Download Resume <i class="icon-download4"></i>
-												</a>
-											  </p>	
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>					
-				  	</ul>
-			  	</div>
-			</section>
+    <!-- ====== EXPERIENCE ====== -->
+    <section class="section section--alt" id="experience">
+      <div class="section__inner">
+        <span class="section__label reveal">Experience</span>
+        <h2 class="section__title reveal">Where I've Worked</h2>
 
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Me</span>
-										<h2 class="colorlib-heading">Who Am I?</h2>
-										<p><strong>Hi I'm Manish Chakka</strong> I am currently a Sophomore at the Georgia Institute of Technology. I am currently studying Computer Science with a focus in Cyber Security and Artifical Intelligence.</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-									<div class="certifications color-1">
-										<span class="icon2"><i class="icon-bulb"></i></span>
-										<h3>Artificial Intelligence</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-									<div class="certifications color-2">
-										<span class="icon2"><i class="icon-globe-outline"></i></span>
-										<h3>Web Design</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-									<div class="certifications color-3">
-										<span class="icon2"><i class="icon-data"></i></span>
-										<h3>Software</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="certifications color-4">
-										<span class="icon2"><i class="icon-phone3"></i></span>
-										<h3>Application</h3>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="row">
-								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-									<div class="hire">
-										<h2>I am happy to know you <br>that 300+ projects done sucessfully!</h2>
-										<a href="#" class="btn-hire">Hire me</a>
-									</div>
-								</div>
-							</div> -->
-						</div>
-					</div>
-				</div>
-			</section>
+        <div class="exp-featured">
 
+          <!-- ── Atlassian ── -->
+          <div class="exp-card reveal">
+            <div class="exp-card__header">
+              <div class="exp-card__logo--text" style="background: var(--atlassian);">A</div>
+              <div class="exp-card__info">
+                <h3 class="exp-card__company">Atlassian</h3>
+                <p class="exp-card__role">Software Engineer Intern</p>
+                <p class="exp-card__meta">Seattle, WA · May 2026 – August 2026</p>
+              </div>
+              <button class="exp-card__toggle" aria-expanded="false" data-expand="atlassian-details">View Details</button>
+            </div>
+            <div class="exp-card__summary">
+              <p>Built end-to-end message tracing and observability tooling for Atlassian's Post Office messaging platform, an internal infrastructure serving <strong>80 million+ messages per day</strong> across products like Jira, Confluence, and Trello.</p>
+              <div class="exp-card__tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Databricks SQL</span>
+                <span class="tag">AWS SQS</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">LLM Integration</span>
+              </div>
+            </div>
+            <div class="exp-card__details" id="atlassian-details">
+              <div class="exp-card__content">
+                <div class="exp-card__metric">
+                  <strong>80M+</strong>
+                  <span>messages processed per day through the Post Office platform</span>
+                </div>
 
-			
-			<section class="colorlib-certifications" data-section="certifications">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">What I do?</span>
-							<h2 class="colorlib-heading">Here are some of my certifications</h2>
-						</div>
-					</div>
-					<div class="row row-pt-md">
-						<!-- Certification 1 -->
-						<div class="col-md-4 text-center animate-box">
-						  <a href="https://www.credly.com/badges/116b1808-df86-42a6-8fec-adfc53c0ba8d/linked_in_profile" target="_blank" class="certification-link">
-							<div class="certifications color-1">
-							  <span class="icon">
-								<img src="images/aws.png" alt="Company 1 Logo" class="certification-logo">
-							  </span>
-							  <div class="desc">
-								<h3>AWS Certified Cloud Practitioner</h3>
-								<div class="certification-link-box">
-								  <a href="https://www.credly.com/badges/116b1808-df86-42a6-8fec-adfc53c0ba8d/linked_in_profile" class="btn btn-small" target="_blank">Certification</a>
-								</div>
-							  </div>
-							</div>
-						  </a>
-						</div>
-					  		
-						<!-- Certification 2 -->
-						<div class="col-md-4 text-center animate-box">
-							<a href="https://www.credly.com/badges/837f98df-ebb5-4512-8e1d-3b9c8ecd6a0a/public_url" target="_blank" class="certification-link">
-							<div class="certifications color-4">
-								<span class="icon">
-								<img src="images/windows.png" alt="Company 2 Logo" class="certification-logo">
-								</span>
-								<div class="desc">
-								<h3>MTA: Software Development Fundamentals</h3>
-								<div class="certification-link-box">
-									<a href="https://www.credly.com/badges/837f98df-ebb5-4512-8e1d-3b9c8ecd6a0a/public_url" class="btn btn-small" target="_blank">Certification</a>
-								</div>
-								</div>
-							</div>
-							</a>
-						</div>
-			
-						<!-- Certification 3 -->
-						<div class="col-md-4 text-center animate-box">
-							<div class="certifications color-3">
-								<span class="icon">
-									<img src="images/Cisco-Logo-2006-present.png" alt="Company 3 Logo" class="certification-logo">
-								</span>
-								<div class="desc">
-									<h3>Junior Cybersecurity Analyst</h3>
-									<div class="certification-link-box">
-										<a href="" class="btn btn-small">Certification</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			
-			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-					</div>
-					<div class="row">
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="767" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Hours of Coding</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="6" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Projects</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="4" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Hackathons</span>
-						</div>
-						<!-- <div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="7" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Years of Experience</span>
-						</div> -->
-					</div>
-				</div>
-			</div>
+                <h4>Message Tracing Infrastructure</h4>
+                <p>Post Office is Atlassian's centralized messaging platform — it routes notifications, emails, and in-app messages across every Atlassian product. Before my work, debugging message delivery failures was extremely time-consuming because there was no way to follow a single message through the system.</p>
+                <ul>
+                  <li>Designed and implemented message tracing in TypeScript, propagating unique trace IDs through a <strong>6-stage delivery pipeline</strong> (ingestion → validation → routing → template rendering → channel selection → delivery)</li>
+                  <li>Each trace ID travels with the message payload at every stage, enabling engineers to reconstruct the full journey of any message from a single identifier</li>
+                  <li>The tracing system handles both real-time delivery via <strong>AWS SQS-based queues</strong> and on-demand delivery paths, each with different latency characteristics and failure modes</li>
+                </ul>
 
-			<section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Specialty</span>
-							<h2 class="colorlib-heading animate-box">My Skills</h2>
-						</div>
-					</div>
-					<div class="row">
-						<!-- Programming Languages -->
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="skill-category">
-								<h3 class="skill-header">Programming Languages</h3>
-								<div class="skill-boxes">
-									<div class="skill-box">
-										<img src="skillsImages/java.png" alt="Java" class="skill-icon">
-										<p>Java</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/python.png" alt="Python" class="skill-icon">
-										<p>Python</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/JavaScript.png" alt="JavaScript" class="skill-icon">
-										<p>JavaScript</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/Csharp.webp" alt="C#" class="skill-icon">
-										<p>C#</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/C.png" alt="C#" class="skill-icon">
-										<p>C</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/lua.png" alt="Lua" class="skill-icon">
-										<p>Lua</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/html.png" alt="HTML" class="skill-icon">
-										<p>HTML</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/CSS.png" alt="CSS" class="skill-icon">
-										<p>CSS</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/react.webp" alt="React" class="skill-icon">
-										<p>React</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/reactnative.png" alt="React Native" class="skill-icon">
-										<p>React Native</p>
-									</div>
-								</div>
-							</div>
-						</div>
-			
-						<!-- Frameworks / Libraries -->
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInRight">
-							<div class="skill-category">
-								<h3 class="skill-header">Frameworks / Libraries</h3>
-								<div class="skill-boxes">
-									<div class="skill-box">
-										<img src="skillsImages/flask.webp" alt="Flask" class="skill-icon">
-										<p>Flask</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/pandas.png" alt="Pandas" class="skill-icon">
-										<p>Pandas</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/django.png" alt="Django" class="skill-icon">
-										<p>Django</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/reactnavigation.webp" alt="React Navigation" class="skill-icon">
-										<p>React Navigation</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/docker.jpg" alt="Docker" class="skill-icon">
-										<p>Docker</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/kubernetes.png" alt="Kubernetes" class="skill-icon">
-										<p>Kubernetes</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/tableau.png" alt="Tableau" class="skill-icon">
-										<p>Tableau</p>
-									</div>
-								</div>
-							</div>
-						</div>
-			
-						<!-- Services / Databases -->
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="skill-category">
-								<h3 class="skill-header">Services / Databases</h3>
-								<div class="skill-boxes">
-									<div class="skill-box">
-										<img src="skillsImages/AWS.png" alt="AWS" class="skill-icon">
-										<p>AWS</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/azure.jpg" alt="Azure" class="skill-icon">
-										<p>Azure</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/firebase.png" alt="Firebase" class="skill-icon">
-										<p>Firebase</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/GCP.png" alt="GCP" class="skill-icon">
-										<p>GCP</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/sharepoint.png" alt="SharePoint" class="skill-icon">
-										<p>SharePoint</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/render.png" alt="Render" class="skill-icon">
-										<p>Render</p>
-									</div>
-									<div class="skill-box">
-										<img src="skillsImages/Vercel.webp" alt="Vercel" class="skill-icon">
-										<p>Vercel</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			
-			
+                <h4>Observability Dashboard</h4>
+                <ul>
+                  <li>Built a <strong>Databricks SQL dashboard</strong> aggregating delivery outcome data across all pipeline stages, enabling failure diagnosis across channels (email, push, in-app, SMS)</li>
+                  <li>The dashboard surfaces delivery success rates, failure categories, latency distributions, and allows filtering by product, channel, and time range</li>
+                  <li>Cut average debug time for message delivery failures by <strong>50%</strong> by providing engineers immediate visibility into where and why messages were being dropped</li>
+                </ul>
 
-			<section class="colorlib-education" data-section="education">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Education</span>
-							<h2 class="colorlib-heading animate-box">Education</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingTwo">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Georgia Institute of Technology
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									        <div class="panel-body">
-									            <p>Studying Computer Science with a focus in CyberSecurity and Artificial Intelligence</p>
-													<ul>
-														<li>Expected graduation date: Spring 2026</li>
-														
-													</ul>
-									        </div>
-									    </div>
-									</div>
+                <h4>ML Pipeline Instrumentation</h4>
+                <ul>
+                  <li>Instrumented the <strong>ML-driven message ranking pipeline</strong>, which determines priority and ordering for notifications delivered to users</li>
+                  <li>Implemented set-difference analysis to infer dropped messages — by comparing candidate sets at each ranking stage, the system can identify exactly which messages were filtered and why</li>
+                  <li>This was particularly valuable because the ranking pipeline operates as a series of filters, and before instrumentation there was no visibility into messages lost between stages</li>
+                </ul>
 
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingFive">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">West Forsyth High School
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-									        <div class="panel-body">
-												<p>Earned my High School Diploma while being in the top 10% of my class</p>
-													<ul>
-														<li>Graduated in May 2023</li>
-														<li>GPA: 4.41</li>
-													</ul>
-											</div>
-									    </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+                <h4>LLM-Powered Debug Chatbot</h4>
+                <ul>
+                  <li>Integrated trace analytics with an <strong>LLM-powered chatbot</strong> that accepts a message ID and returns a natural-language summary of the message's full delivery journey</li>
+                  <li>The chatbot surfaces which pipeline stages succeeded, where failures occurred, and suggests potential root causes — reducing the need for engineers to manually query multiple data sources</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-				  <div class="row">
-					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-					  <span class="heading-meta">Experience</span>
-					  <h2 class="colorlib-heading animate-box">Work Experience</h2>
-					</div>
-				  </div>
-				
-				  <div class="row">
-					<div class="col-md-12">
-					  <div class="experience-container">
-						<!-- Timeline Bar -->
-						<div class="timeline-bar">
-						  <div class="timeline-marker" style="top: 5%;">January 2025</div>
-						  <div class="timeline-marker" style="top: 25%;">August 2024</div>
-						  <div class="timeline-marker" style="top: 45%;">July 2024</div>
-						  <div class="timeline-marker" style="top: 65%;">May 2023</div>
-						  <div class="timeline-marker" style="top: 85%;">July 2022</div>
-						</div>
-				
-						<!-- Experience List -->
-						<div class="experience-list">
-						  <!-- Job 1 -->
-						  <div class="experience-item">
-							<div class="experience-image">
-							  <img src="images/waystar.webp" alt="Waystar Logo">
-							</div>
-							<div class="experience-details">
-							  <h3 class="company-name">Waystar</h3>
-							  <h4 class="job-title">Application Engineer Co-Op <span class="job-dates">January 2025 - Present</span></h4>
-							  <div class="job-description">
-								<p>Currently working on their Healthcare platform, contributing to the backend architecture and ensuring scalability.</p>
-							  </div>
-							</div>
-						  </div>
-						  
-						  <!-- Job 2 -->
-						<div class="experience-item">
-							<div class="experience-image">
-							<img src="images/gtcomputing.jpg" alt="GT Logo">
-							</div>
-							<div class="experience-details">
-							<h3 class="company-name">College of Computing - Georgia Institute of Technology</h3>
-							<h4 class="job-title">Undergraduate Teaching Assistant <span class="job-dates">August 2024 - December 2024</span></h4>
-							<div class="job-description">
-								<ul class="styled-list">
-								<li><strong>Mentorship:</strong> Guided and mentored six student teams in building two full-stack applications using Django, HTML, CSS, and JavaScript.</li>
-								<li><strong>Support:</strong> Provided comprehensive technical support for over 250 students as an emergency TA.</li>
-								<li><strong>Project Management:</strong> Coordinated project milestones and deadlines, helping teams manage their workload effectively.</li>
-								<li><strong>AI Integration:</strong> Assisted students in integrating Hugging Face LLM into their projects, offering guidance on fine-tuning and implementing machine learning models.</li>
-								<li><strong>Code Quality:</strong> Taught students to use pylint effectively, achieving a 90% code coverage and improving coding standards.</li>
-								<li><strong>Deployment:</strong> Provided instruction on hosting applications using .yml files on platforms such as AWS Amplify and Heroku.</li>
-								</ul>
-							</div>
-							</div>
-						</div>
-  
-										
-							<!-- Job 3 -->
-						<div class="experience-item">
-							<div class="experience-image">
-							<img src="images/headstarter.jpeg" alt="Fellowship Logo">
-							</div>
-							<div class="experience-details">
-							<h3 class="company-name">Headstarter</h3>
-							<h4 class="job-title">Software Engineering Fellow <span class="job-dates">July 2024 - Present</span></h4>
-							<div class="job-description">
-								<ul class="styled-list">
-								<li><strong>AI Development:</strong> Built 5+ AI applications using NextJS, OpenAI, Pinecone, and StripeAPI, achieving a 98% accuracy rate.</li>
-								<li><strong>Team Leadership:</strong> Led a team of 4+ engineers, effectively managing the development lifecycle from ideation to deployment.</li>
-								<li><strong>Skill Growth:</strong> Mastered Agile methodologies, CI/CD processes, and microservice architecture under expert mentorship.</li>
-								</ul>
-							</div>
-							</div>
-						</div>
-						
-							<!-- Job 4 -->
-						<div class="experience-item">
-							<div class="experience-image2">
-							  <img src="images/albireo.png" alt="Albireo Energy Logo">
-							</div>
-							<div class="experience-details">
-							  <h3 class="company-name">Albireo Energy</h3>
-							  <h4 class="job-title">Software Engineer Intern <span class="job-dates">May 2023 - August 2023</span></h4>
-							  <div class="job-description">
-								<ul class="styled-list">
-								  <li><strong>UI/UX Design:</strong> Engineered a dynamic, user-centric UI/UX for an online help desk form, reducing issue resolution time by 50%.</li>
-								  <li><strong>Integration:</strong> Linked the form with Google Sheets and SharePoint, enabling universal accessibility and real-time collaboration.</li>
-								  <li><strong>Azure Deployment:</strong> Deployed the form on Azure App Service with a robust CI/CD pipeline, ensuring 24/7 availability.</li>
-								  <li><strong>User Experience:</strong> Improved workflows by implementing automated email notifications for form submissions.</li>
-								  <li><strong>Document Management:</strong> Reorganized SharePoint folders to improve document retrieval and enhance team efficiency.</li>
-								  <li><strong>Employee Interviews:</strong> Conducted over 50 one-on-one interviews to map employee skills, technical expertise, and workflow preferences. Created a dynamic, Python-based skills matrix using Pandas, allowing employees to update their skillsets as they progressed.</li>
-								  <li><strong>Fairness in Task Assignment:</strong> Designed a backend algorithm that ensures equal opportunities by evaluating factors like PTO leave, availability, skillsets, and task history.</li>
-								  <li><strong>Optimized Matching:</strong> Integrated the algorithm into the form to match submitters with the best-suited employee, improving task assignment accuracy and fairness.</li>
-								</ul>
-							  </div>
-							</div>
-						  </div>
-						  
-						
-						  <div class="experience-item">
-							<div class="experience-image">
-							  <img src="images/codeninjas.jpg" alt="Code Ninjas Logo">
-							</div>
-							<div class="experience-details">
-							  <h3 class="company-name">Code Ninjas</h3>
-							  <h4 class="job-title">Coding Instructor <span class="job-dates">July 2022 - December 2022</span></h4>
-							  <div class="job-description">
-								<ul class="styled-list">
-								  <li><strong>Mentorship:</strong> Instructed and mentored a diverse cohort of 40 students, offering tailored guidance in both one-on-one and group settings.</li>
-								  <li><strong>Simplified Learning:</strong> Translated complex coding concepts into clear, accessible explanations, improving students' understanding of JavaScript, Lua, and C#.</li>
-								  <li><strong>Classroom Engagement:</strong> Fostered an interactive and supportive classroom environment, boosting student confidence and participation.</li>
-								</ul>
-							  </div>
-							</div>
-						  </div>
-						</div>
-					  </div>
-					</div>
-				  </div>
-				</div>  
-  
-			  </section>
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			
+          <!-- ── Cox Automotive ── -->
+          <div class="exp-card reveal">
+            <div class="exp-card__header">
+              <div class="exp-card__logo--text" style="background: var(--cox);">C</div>
+              <div class="exp-card__info">
+                <h3 class="exp-card__company">Cox Automotive</h3>
+                <p class="exp-card__role">Software Engineer Intern</p>
+                <p class="exp-card__meta">Atlanta, GA · May 2025 – August 2025</p>
+              </div>
+              <button class="exp-card__toggle" aria-expanded="false" data-expand="cox-details">View Details</button>
+            </div>
+            <div class="exp-card__summary">
+              <p>Worked across mobile, backend, and internal tooling for Cox Automotive's vehicle management platform, building transaction logging for an Android app processing <strong>5,000+ vehicle scans daily</strong> and developer productivity tools.</p>
+              <div class="exp-card__tags">
+                <span class="tag">Kotlin</span>
+                <span class="tag">Java</span>
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">React</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">AWS Lambda</span>
+                <span class="tag">Splunk</span>
+              </div>
+            </div>
+            <div class="exp-card__details" id="cox-details">
+              <div class="exp-card__content">
+                <div class="exp-card__metric">
+                  <strong>5,000+</strong>
+                  <span>vehicle scans tracked daily through the Android workflow app</span>
+                </div>
 
-			<section class="colorlib-projects" data-section="projects">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Projects</span>
-							<h2 class="colorlib-heading animate-box">Recent Projects</h2>
-						</div>
-					</div>
-					<div class="row">
-						<!-- Project 1 -->
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project">
-								<img src="images/tasteofatl.png" alt="Taste of Atlanta" class="project-image">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Taste of Atlanta</a></h3>
-										<p>Developed a website using Python, Django, and JavaScript that allows users to discover restaurants in Atlanta.</p>
-										<ul class="project-details">
-											<li>Created an intuitive and visually appealing landing page using HTML and CSS</li>
-											<li>Implemented a restaurant search feature that pulls the user's location and displays nearby walking-distance restaurants</li>
-											<li>Designed info cards that provide essential restaurant details, leveraging Google Places API for data retrieval</li>
-											<li>Enabled users to favorite restaurants, with secure data stored in Django, and implemented an email-based password reset feature</li>
-											<li>Integrated a Google Map with interactive markers, linking them to corresponding info cards for enhanced user interaction</li>
-											<li>Hosted the website on Render, configuring gunicorn for deployment and setting up a render.yml file for build settings</li>
-										</ul>
-										<a href="https://tasteofatlanta.onrender.com/" class="project-button" target="_blank">View Project</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Project 2 -->
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project">
-								<img src="images/commuride.png" alt="Project 02" class="project-image">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">CommuRide Mobile App</a></h3>
-										<p>Developed a ride-sharing app with React Native that fosters social connections and promotes sustainable travel by encouraging shared journeys, reducing traffic congestion, and cutting greenhouse gas emissions.</p>
-										<ul class="project-details">
-											<li>Engineered a platform where users enter start and end locations to connect with others on similar routes, reducing fuel consumption and travel costs while promoting shared journeys.</li>
-											<li>Implemented real-time authentication and data synchronization with Firebase Firestore, ensuring secure and seamless user communication across devices.</li>
-											<li>Integrated Google Maps API for location services, route planning, and geocoding, providing accurate directions and travel information.</li>
-											<li>Tested and deployed the app using npx Expo and Xcode, ensuring compatibility and performance across various devices and platforms.</li>
-										</ul>
-										<a href="https://github.com/hxxtsxxh/CommuRide" class="project-button" target="_blank">View Project</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<!-- Project 3 -->
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project">
-								<img src="images/img-3.jpg" alt="Project 03" class="project-image">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Real-time COVID-19 State-level Trends Dashboard</a></h3>
-										<p>Crafted a user-friendly web app using Tableau for real-time, in-depth visualization of state-level COVID-19 trends</p>
-										<ul class="project-details">
-											<li>Integrated live COVID-19 data streams for up-to-date information, ensuring the application's relevance and accuracy</li>
-											<li>Hosted the application using AWS EC2 and securely stored data on AWS S3, ensuring reliability & scalability/li>
-											<li>Implemented a simple search and visualization feature using Elasticsearch and Kibana for user-friendly data exploration</li>
-										</ul>
-										<a href="https://project03.com" class="project-button" target="_blank">View Project</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Project 4 -->
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project">
-								<img src="images/raspberrypi.jpeg" alt="Project 04" class="project-image">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Raspberry Pi-Powered Retro Gaming Hub</a></h3>
-										<p>Engineered a powerful Raspberry Pi-based supercomputer using Kubernetes & Docker for seamless retro gaming experiences</p>
-										<ul class="project-details">
-											<li>Leveraged RetroPie to emulate a variety of retro gaming consoles and platforms, enriching the gaming experience with diverse options.</li>
-											<li>Applied custom Python scripts to improve gaming performance and add personalized gameplay features.</li>
-											<li>Utilized AWS EC2 for centralized game hosting, boosting accessibility and optimizing gaming efficiency.</li>
-											<li>Developed a user-friendly interface with Flask for easy game selection and enhanced configuration control.</li>
-											<li>Used Docker for streamlined setup and management of the application, simplifying the deployment process.</li>
-										</ul>
-										<a href="https://project04.com" class="project-button" target="_blank">View Project</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			
+                <h4>Android Transaction Logging</h4>
+                <ul>
+                  <li>Added comprehensive transaction logging to a production Android application (Kotlin/Java) used by vehicle inspectors across Cox Automotive's auction network</li>
+                  <li>Designed a unique scan ID generation system that creates traceable identifiers for each vehicle scan operation, with results stored in SQL for audit and analytics</li>
+                  <li>Integrated the app with internal backend systems to synchronize scan IDs in real-time, ensuring reliable tracking of <strong>5,000+ vehicles</strong> processed daily</li>
+                </ul>
 
-			
+                <h4>Rally Planning Tool</h4>
+                <ul>
+                  <li>Built a full-stack internal tool using <strong>Python/FastAPI</strong> on the backend and <strong>React</strong> on the frontend to detect date mismatches in Rally (Agile project management) stories</li>
+                  <li>The tool automatically compares planned iteration dates against actual story schedules, surfacing conflicts that previously required manual review</li>
+                  <li>Reduced planning errors by <strong>80%</strong> across engineering teams by catching misaligned sprint dates before they caused scheduling problems</li>
+                </ul>
 
-			<section class="colorlib-contact" data-section="contact">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Get in Touch</span>
-							<h2 class="colorlib-heading">Contact</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="mailto:manishchakka5@gmail.com">manishchakka5@gmail.com</a></p>
-								</div>
-							</div>
+                <h4>Slack Bot & Alerting</h4>
+                <ul>
+                  <li>Developed a Slack bot that integrates with Rally and <strong>AWS Lambda</strong> to deliver real-time alerts when date mismatches are detected</li>
+                  <li>Teams receive automated notifications with direct links to affected stories, eliminating the need for manual date-checking workflows</li>
+                </ul>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>Atlanta, Georgia </p>
-								</div>
-							</div>
+                <h4>Splunk Log Service</h4>
+                <ul>
+                  <li>Created a <strong>Spring Boot microservice</strong> that exposes Splunk log data via REST APIs, making production logs accessible to developers without requiring direct Splunk access</li>
+                  <li>Reduced log retrieval time from several minutes of manual Splunk querying to <strong>under 5 seconds</strong> via API calls</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-phone"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="tel://">+1 678 770 7815</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-7 col-md-push-1">
-							<div class="row">
-								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									<form action="">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Name">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Email">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Subject">
-										</div>
-										<div class="form-group">
-											<textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
-										</div>
-									</form>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+          <!-- ── Waystar ── -->
+          <div class="exp-card reveal">
+            <div class="exp-card__header">
+              <img class="exp-card__logo" src="images/waystar.webp" alt="Waystar logo">
+              <div class="exp-card__info">
+                <h3 class="exp-card__company">Waystar</h3>
+                <p class="exp-card__role">Application Engineer Intern</p>
+                <p class="exp-card__meta">Atlanta, GA · January 2025 – May 2025</p>
+              </div>
+              <button class="exp-card__toggle" aria-expanded="false" data-expand="waystar-details">View Details</button>
+            </div>
+            <div class="exp-card__summary">
+              <p>Contributed to Waystar's healthcare revenue cycle platform, modernizing billing interfaces and building backend infrastructure including an SMS blacklist system covering <strong>50,000+ users</strong>.</p>
+              <div class="exp-card__tags">
+                <span class="tag">Vue.js</span>
+                <span class="tag">Angular</span>
+                <span class="tag">PHP</span>
+                <span class="tag">Go</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Kibana</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+            <div class="exp-card__details" id="waystar-details">
+              <div class="exp-card__content">
+                <div class="exp-card__metric">
+                  <strong>50K+</strong>
+                  <span>users covered by the SMS blacklist notification system</span>
+                </div>
 
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
+                <h4>Frontend Modernization</h4>
+                <ul>
+                  <li>Migrated billing pages from legacy PHP to modern <strong>Vue.js and Angular</strong> components, cutting page load times by <strong>40%</strong> and significantly improving usability for healthcare providers</li>
+                  <li>Built a dynamic inquiry modal in PHP and JavaScript that allows doctors to resolve billing questions <strong>30% faster</strong> by surfacing relevant claim data inline rather than requiring navigation to separate pages</li>
+                </ul>
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
+                <h4>Performance Analysis & Optimization</h4>
+                <ul>
+                  <li>Analyzed application performance using <strong>Kibana logs</strong> to identify high-latency JavaScript on critical billing pages</li>
+                  <li>Optimized identified bottlenecks, resulting in measurable load time improvements on the pages doctors use most frequently</li>
+                </ul>
 
-	</body>
+                <h4>SMS Blacklist Infrastructure</h4>
+                <ul>
+                  <li>Created a <strong>Go-based service</strong> backed by a SQL database to track SMS blacklists, ensuring that text notifications were properly blocked for users who opted out</li>
+                  <li>The system manages blacklist records for over <strong>50,000 users</strong>, enforcing compliance with communication preferences across the platform</li>
+                </ul>
+
+                <h4>Agile Process</h4>
+                <ul>
+                  <li>Participated in Agile Scrum workflows including daily standups, sprint planning, and code reviews for the healthcare platform team</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondary experiences -->
+        <h3 class="exp-secondary-title reveal">Earlier Experience</h3>
+        <div class="exp-grid">
+
+          <!-- GT TA -->
+          <div class="exp-card--compact reveal">
+            <div class="exp-card__header">
+              <img class="exp-card__logo" src="images/gtcomputing.jpg" alt="Georgia Tech College of Computing logo">
+              <div class="exp-card__info">
+                <h3 class="exp-card__company">Georgia Tech — College of Computing</h3>
+                <p class="exp-card__role">Undergraduate Teaching Assistant</p>
+                <p class="exp-card__meta">Atlanta, GA · Aug 2024 – Dec 2024</p>
+              </div>
+            </div>
+            <div class="exp-card__summary">
+              <p>Mentored six student teams building full-stack Django applications. Provided technical support for 250+ students, guided LLM integration with Hugging Face, taught deployment on AWS Amplify and Heroku, and improved code quality standards using pylint (90% coverage).</p>
+            </div>
+          </div>
+
+          <!-- Headstarter -->
+          <div class="exp-card--compact reveal">
+            <div class="exp-card__header">
+              <img class="exp-card__logo" src="images/headstarter.jpeg" alt="Headstarter logo">
+              <div class="exp-card__info">
+                <h3 class="exp-card__company">Headstarter</h3>
+                <p class="exp-card__role">Software Engineering Fellow</p>
+                <p class="exp-card__meta">Jul 2024 – Sep 2024</p>
+              </div>
+            </div>
+            <div class="exp-card__summary">
+              <p>Built 5+ AI applications using Next.js, OpenAI, Pinecone, and Stripe API. Led a team of 4+ engineers through full development lifecycles, practicing Agile methodologies and CI/CD.</p>
+            </div>
+          </div>
+
+          <!-- Albireo Energy -->
+          <div class="exp-card--compact reveal">
+            <div class="exp-card__header">
+              <img class="exp-card__logo" src="images/albireo.png" alt="Albireo Energy logo">
+              <div class="exp-card__info">
+                <h3 class="exp-card__company">Albireo Energy</h3>
+                <p class="exp-card__role">Software Engineer Intern</p>
+                <p class="exp-card__meta">May 2023 – Aug 2023</p>
+              </div>
+            </div>
+            <div class="exp-card__summary">
+              <p>Built a dynamic help desk form integrated with Google Sheets and SharePoint, deployed on Azure with CI/CD. Conducted 50+ employee interviews to build a Python/Pandas skills matrix and designed a task-matching algorithm for equitable work distribution.</p>
+            </div>
+          </div>
+
+          <!-- Code Ninjas -->
+          <div class="exp-card--compact reveal">
+            <div class="exp-card__header">
+              <img class="exp-card__logo" src="images/codeninjas.jpg" alt="Code Ninjas logo">
+              <div class="exp-card__info">
+                <h3 class="exp-card__company">Code Ninjas</h3>
+                <p class="exp-card__role">Coding Instructor</p>
+                <p class="exp-card__meta">Jul 2022 – Dec 2022</p>
+              </div>
+            </div>
+            <div class="exp-card__summary">
+              <p>Instructed and mentored 40 students in JavaScript, Lua, and C# through one-on-one and group sessions. Translated complex programming concepts into accessible explanations for young learners.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROJECTS ====== -->
+    <section class="section" id="projects">
+      <div class="section__inner">
+        <span class="section__label reveal">Projects</span>
+        <h2 class="section__title reveal">What I've Built</h2>
+
+        <div class="projects-grid">
+
+          <!-- Opscribe -->
+          <div class="project-card project-card--featured reveal">
+            <div class="project-card__image project-card__image--placeholder">
+              <div class="placeholder-icon">🔍</div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Opscribe</h3>
+              <p class="project-card__desc">A full-stack infrastructure intelligence platform that models cloud systems as typed dependency graphs, enabling multi-hop impact analysis and AI-powered infrastructure reasoning.</p>
+              <div class="project-card__tags">
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">pgvector</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">Llama 3.3</span>
+              </div>
+              <div class="project-card__actions">
+                <button class="btn btn--outline btn--sm" data-expand="opscribe-details">View Details</button>
+              </div>
+            </div>
+            <div class="project-card__details" id="opscribe-details">
+              <div class="project-card__details-inner">
+                <h4>What It Does</h4>
+                <p>Opscribe lets you model cloud infrastructure as a typed dependency graph — services, databases, queues, load balancers, and their relationships are all represented as nodes and edges. From this graph, you can ask questions like "what happens if this database goes down?" and get real answers.</p>
+
+                <h4>Graph Analysis Engine</h4>
+                <ul>
+                  <li>Engineered BFS and DFS graph traversal algorithms for multi-hop dependency resolution, reverse impact tracing, and blast-radius analysis</li>
+                  <li>The system can trace upstream and downstream dependencies across any number of hops, showing exactly which services would be affected by an outage</li>
+                </ul>
+
+                <h4>RAG Pipeline with pgvector</h4>
+                <ul>
+                  <li>Built a Retrieval-Augmented Generation (RAG) pipeline using pgvector to embed and retrieve source code, Terraform configurations, and infrastructure documentation via semantic search</li>
+                  <li>This allows the AI agent to ground its responses in actual infrastructure code rather than hallucinating configurations</li>
+                </ul>
+
+                <h4>AI Agent</h4>
+                <ul>
+                  <li>Developed a Llama-3.3-70B LangChain agent that combines graph traversal tools with RAG retrieval for infrastructure analysis and IaC (Infrastructure as Code) generation</li>
+                  <li>The agent can answer natural-language questions about system architecture, generate Terraform code, and explain blast radius for proposed changes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Taste of Atlanta -->
+          <div class="project-card reveal">
+            <div class="project-card__image">
+              <img src="images/tasteofatl.png" alt="Taste of Atlanta application screenshot showing restaurant discovery interface">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Taste of Atlanta</h3>
+              <p class="project-card__desc">A full-stack restaurant discovery platform that helps users explore Atlanta restaurants using interactive maps, personalized favorites, and real-time Google Places data.</p>
+              <div class="project-card__tags">
+                <span class="tag">Python</span>
+                <span class="tag">Django</span>
+                <span class="tag">Google Maps API</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">AWS</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://tasteofatlanta.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">Live Demo</a>
+                <button class="btn btn--outline btn--sm" data-expand="toa-details">View Details</button>
+              </div>
+            </div>
+            <div class="project-card__details" id="toa-details">
+              <div class="project-card__details-inner">
+                <h4>How It Works</h4>
+                <p>The app pulls the user's location and displays nearby walkable restaurants on an interactive Google Map. Each restaurant gets an info card with details pulled from Google Places API — ratings, hours, cuisine type, and photos.</p>
+
+                <h4>Key Features</h4>
+                <ul>
+                  <li>Interactive Google Map with clickable markers that link to corresponding restaurant info cards</li>
+                  <li>Location-based restaurant search that surfaces nearby options within walking distance</li>
+                  <li>User authentication with Django, supporting login, registration, and email-based password reset</li>
+                  <li>Favorites system — logged-in users can save restaurants and access them later</li>
+                  <li>Visually designed landing page and restaurant cards using custom HTML/CSS</li>
+                </ul>
+
+                <h4>Deployment</h4>
+                <ul>
+                  <li>Deployed on AWS Amplify with gunicorn, configured via amplify.yml for automated builds</li>
+                  <li>Django backend manages user data, authentication, and favorites with a PostgreSQL database</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- CommuRide -->
+          <div class="project-card reveal">
+            <div class="project-card__image">
+              <img src="images/commuride.png" alt="CommuRide mobile app interface showing ride sharing features">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">CommuRide</h3>
+              <p class="project-card__desc">A React Native ride-sharing mobile app designed to promote sustainable commuting by connecting users on similar routes, reducing traffic congestion and emissions.</p>
+              <div class="project-card__tags">
+                <span class="tag">React Native</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Google Maps API</span>
+                <span class="tag">Expo</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://github.com/hxxtsxxh/CommuRide" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">GitHub</a>
+                <button class="btn btn--outline btn--sm" data-expand="commuride-details">View Details</button>
+              </div>
+            </div>
+            <div class="project-card__details" id="commuride-details">
+              <div class="project-card__details-inner">
+                <h4>Concept</h4>
+                <p>CommuRide connects commuters traveling on similar routes so they can share rides. Users enter their start and end locations, and the app matches them with others heading in the same direction — reducing fuel costs, traffic, and carbon emissions.</p>
+
+                <h4>Technical Implementation</h4>
+                <ul>
+                  <li>Built with React Native for cross-platform mobile support, tested and deployed using Expo and Xcode</li>
+                  <li>Real-time authentication and data synchronization powered by Firebase Firestore, enabling seamless communication across devices</li>
+                  <li>Google Maps API integration for geocoding, route planning, and turn-by-turn directions</li>
+                  <li>Users can view matched commuters on a live map and coordinate shared trips in real-time</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- COVID Dashboard -->
+          <div class="project-card reveal">
+            <div class="project-card__image project-card__image--placeholder">
+              <div class="placeholder-icon">📊</div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Real-Time COVID-19 Trends Dashboard</h3>
+              <p class="project-card__desc">A data visualization dashboard providing real-time, state-level COVID-19 trend analysis with interactive charts, hosted on AWS with Elasticsearch-powered search.</p>
+              <div class="project-card__tags">
+                <span class="tag">Tableau</span>
+                <span class="tag">AWS EC2</span>
+                <span class="tag">AWS S3</span>
+                <span class="tag">Elasticsearch</span>
+                <span class="tag">Kibana</span>
+                <span class="tag">Docker</span>
+              </div>
+              <div class="project-card__actions">
+                <button class="btn btn--outline btn--sm" data-expand="covid-details">View Details</button>
+              </div>
+            </div>
+            <div class="project-card__details" id="covid-details">
+              <div class="project-card__details-inner">
+                <h4>Architecture</h4>
+                <p>The dashboard integrates multiple data sources to provide a comprehensive view of COVID-19 trends at the state level, with interactive filtering and drill-down capabilities.</p>
+
+                <h4>Infrastructure & Features</h4>
+                <ul>
+                  <li>Built the primary visualization layer using Tableau for real-time, interactive charts showing case counts, positivity rates, and trend lines by state</li>
+                  <li>Integrated live COVID-19 data streams to ensure the dashboard always reflected current conditions</li>
+                  <li>Hosted the application on AWS EC2 with data stored on S3, providing reliable and scalable infrastructure</li>
+                  <li>Implemented search and interactive data exploration using Elasticsearch and Kibana, allowing users to query specific states, date ranges, and metrics</li>
+                  <li>Containerized components with Docker for consistent deployment and environment management</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Raspberry Pi -->
+          <div class="project-card reveal">
+            <div class="project-card__image">
+              <img src="images/raspberrypi.jpeg" alt="Raspberry Pi retro gaming hub hardware setup">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Raspberry Pi Retro Gaming Hub</h3>
+              <p class="project-card__desc">A Raspberry Pi-powered retro gaming platform using a Kubernetes cluster, Docker containers, and a Flask-based web interface for game management.</p>
+              <div class="project-card__tags">
+                <span class="tag">Kubernetes</span>
+                <span class="tag">Docker</span>
+                <span class="tag">RetroPie</span>
+                <span class="tag">AWS EC2</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Python</span>
+              </div>
+              <div class="project-card__actions">
+                <button class="btn btn--outline btn--sm" data-expand="pi-details">View Details</button>
+              </div>
+            </div>
+            <div class="project-card__details" id="pi-details">
+              <div class="project-card__details-inner">
+                <h4>How It Works</h4>
+                <p>The project brings together a cluster of Raspberry Pis orchestrated with Kubernetes to create a scalable retro gaming platform. Each node runs containerized gaming emulators managed through a custom web interface.</p>
+
+                <h4>Technical Components</h4>
+                <ul>
+                  <li>Built a Kubernetes cluster across multiple Raspberry Pi nodes to distribute gaming workloads and provide redundancy</li>
+                  <li>Used RetroPie to emulate a variety of retro consoles (NES, SNES, Game Boy, Sega Genesis, and more)</li>
+                  <li>Containerized the gaming environment with Docker for consistent deployment across all cluster nodes</li>
+                  <li>Developed a Flask-based web interface for easy game selection, configuration, and system management</li>
+                  <li>Custom Python scripts for performance tuning and automated game library management</li>
+                  <li>Used AWS EC2 for centralized game hosting and remote access to the gaming hub</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SKILLS ====== -->
+    <section class="section section--alt" id="skills">
+      <div class="section__inner">
+        <span class="section__label reveal">Technologies</span>
+        <h2 class="section__title reveal">Skills &amp; Tools</h2>
+
+        <!-- Languages -->
+        <div class="skills-category reveal">
+          <h3 class="skills-category__title">Languages</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/java.png" alt="Java">
+              <span class="skill-item__name">Java</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/python.png" alt="Python">
+              <span class="skill-item__name">Python</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/JavaScript.png" alt="JavaScript">
+              <span class="skill-item__name">JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/go.png" alt="Go">
+              <span class="skill-item__name">Go</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/C.png" alt="C">
+              <span class="skill-item__name">C</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/Csharp.webp" alt="C#">
+              <span class="skill-item__name">C#</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/html.png" alt="HTML">
+              <span class="skill-item__name">HTML</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/CSS.png" alt="CSS">
+              <span class="skill-item__name">CSS</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/lua.png" alt="Lua">
+              <span class="skill-item__name">Lua</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frameworks & Libraries -->
+        <div class="skills-category reveal">
+          <h3 class="skills-category__title">Frameworks &amp; Libraries</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/react.webp" alt="React">
+              <span class="skill-item__name">React</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/reactnative.png" alt="React Native">
+              <span class="skill-item__name">React Native</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/django.png" alt="Django">
+              <span class="skill-item__name">Django</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/flask.webp" alt="Flask">
+              <span class="skill-item__name">Flask</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/pandas.png" alt="Pandas">
+              <span class="skill-item__name">Pandas</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/reactnavigation.webp" alt="React Navigation">
+              <span class="skill-item__name">React Navigation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud & Infrastructure -->
+        <div class="skills-category reveal">
+          <h3 class="skills-category__title">Cloud &amp; Infrastructure</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/AWS.png" alt="AWS">
+              <span class="skill-item__name">AWS</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/azure.jpg" alt="Azure">
+              <span class="skill-item__name">Azure</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/GCP.png" alt="Google Cloud Platform">
+              <span class="skill-item__name">GCP</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/docker.jpg" alt="Docker">
+              <span class="skill-item__name">Docker</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/kubernetes.png" alt="Kubernetes">
+              <span class="skill-item__name">Kubernetes</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/firebase.png" alt="Firebase">
+              <span class="skill-item__name">Firebase</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/Vercel.webp" alt="Vercel">
+              <span class="skill-item__name">Vercel</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/render.png" alt="Render">
+              <span class="skill-item__name">Render</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data & Tools -->
+        <div class="skills-category reveal">
+          <h3 class="skills-category__title">Data &amp; Tools</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/tableau.png" alt="Tableau">
+              <span class="skill-item__name">Tableau</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-item__icon" src="skillsImages/sharepoint.png" alt="SharePoint">
+              <span class="skill-item__name">SharePoint</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====== ABOUT ====== -->
+    <section class="section" id="about">
+      <div class="section__inner">
+        <span class="section__label reveal">About</span>
+        <h2 class="section__title reveal">A Bit More About Me</h2>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>I'm a Computer Science student at Georgia Tech, graduating in December 2026. My threads are AI and Information Internetworks, which means I spend a lot of time thinking about how large-scale systems communicate, how data flows through infrastructure, and how machine learning fits into production software.</p>
+            <p>Over the past few years, I've interned at Atlassian, Cox Automotive, and Waystar — working across messaging infrastructure, mobile applications, healthcare platforms, and developer tooling. The common thread is that I've always gravitated toward understanding how the full system works, not just the feature I was assigned.</p>
+            <p>At Atlassian, I built observability tooling for a messaging pipeline serving 80 million messages a day. At Cox, I worked across Android, backend services, and internal tools. At Waystar, I modernized frontend code and wrote Go services for a healthcare billing platform. Before that, I interned at Albireo Energy, taught coding at Code Ninjas, and TA'd for Georgia Tech's College of Computing.</p>
+            <p>Outside of internships, I build projects that let me dig into areas I find interesting — infrastructure intelligence, mobile apps, data visualization, and distributed systems. I like working on things where the technical decisions actually matter.</p>
+          </div>
+
+          <div class="about-sidebar reveal">
+            <!-- Education -->
+            <div class="edu-cards">
+              <div class="edu-card edu-card--primary">
+                <h4 class="edu-card__school">Georgia Institute of Technology</h4>
+                <p class="edu-card__degree">B.S. Computer Science</p>
+                <p class="edu-card__details">Threads: AI &amp; Information Internetworks</p>
+                <p class="edu-card__details">Expected December 2026</p>
+              </div>
+              <div class="edu-card">
+                <h4 class="edu-card__school">West Forsyth High School</h4>
+                <p class="edu-card__degree">High School Diploma — Top 10% of Class</p>
+                <p class="edu-card__details">GPA: 4.41 · Graduated May 2023</p>
+              </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certs-row">
+              <a href="https://www.credly.com/badges/116b1808-df86-42a6-8fec-adfc53c0ba8d/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-badge">
+                <img class="cert-badge__icon" src="images/aws.png" alt="AWS certification badge">
+                <div class="cert-badge__info">
+                  <span class="cert-badge__name">AWS Certified Cloud Practitioner</span>
+                  <span class="cert-badge__issuer">Amazon Web Services</span>
+                </div>
+              </a>
+              <a href="https://www.credly.com/badges/837f98df-ebb5-4512-8e1d-3b9c8ecd6a0a/public_url" target="_blank" rel="noopener noreferrer" class="cert-badge">
+                <img class="cert-badge__icon" src="images/windows.png" alt="Microsoft certification badge">
+                <div class="cert-badge__info">
+                  <span class="cert-badge__name">MTA: Software Development Fundamentals</span>
+                  <span class="cert-badge__issuer">Microsoft</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CONTACT ====== -->
+    <section class="section section--alt" id="contact">
+      <div class="section__inner">
+        <span class="section__label reveal">Contact</span>
+        <h2 class="section__title reveal">Get In Touch</h2>
+
+        <div class="contact-content reveal">
+          <p>I'm always open to hearing about interesting opportunities, collaborations, or just connecting with people in the industry. Feel free to reach out through any of the channels below.</p>
+
+          <div class="contact-links">
+            <a href="mailto:manishchakka5@gmail.com" class="contact-link">
+              <div class="contact-link__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div class="contact-link__text">
+                <span class="contact-link__label">Email</span>
+                <span class="contact-link__value">manishchakka5@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/manish-chakka/" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div class="contact-link__text">
+                <span class="contact-link__label">LinkedIn</span>
+                <span class="contact-link__value">linkedin.com/in/manish-chakka</span>
+              </div>
+            </a>
+            <a href="https://github.com/manishchakka" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </div>
+              <div class="contact-link__text">
+                <span class="contact-link__label">GitHub</span>
+                <span class="contact-link__value">github.com/manishchakka</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>&copy; 2026 Manish Chakka. Built with care.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+
+</body>
 </html>
-
