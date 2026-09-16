@@ -1,0 +1,337 @@
+/* Five full-site structural directions. Content and controls are shared. */
+html[data-concept="cad"] { --bg-primary:#f5f3ed;--bg-secondary:#eeece4;--bg-card:#faf9f5;--bg-elevated:#e8e6de;--bg-subtle:#f4f2eb;--text-primary:#26343c;--text-secondary:#45535a;--text-muted:#626e73;--accent-blue:#85522d;--accent-blue-hover:#643b20;--accent-blue-light:#eee4d7;--accent-blue-border:#bfa48b;--border:#c4c6bf;--border-hover:#87938e;--drawing-line:#8b9995;--radius-sm:0px;--radius-md:0px;--radius-lg:0px;--shadow-card:none; }
+html[data-concept="telemetry"] { --bg-primary:#111d20;--bg-secondary:#152429;--bg-card:#1a2e33;--bg-elevated:#20383f;--bg-subtle:#172a30;--text-primary:#e4f2ed;--text-secondary:#b4cbc4;--text-muted:#8ea9a0;--accent-blue:#b9d975;--accent-blue-hover:#d5f390;--accent-blue-light:#2d3d2c;--accent-blue-border:#63734f;--border:#365047;--border-hover:#648774;--drawing-line:#45665a;--radius-sm:3px;--radius-md:5px;--radius-lg:8px;--shadow-card:none; }
+.concept-switcher__inner { max-width:1360px; gap:10px; padding-inline:20px; }
+.concept-switcher__label span { display:none; }
+.concept-switcher a { padding:8px 9px; }
+.motion-toggle { font-size:10px; white-space:nowrap; border-left:1px solid var(--border); padding:8px 0 8px 12px; color:var(--text-muted); }
+.motion-toggle[aria-pressed="true"] { color:var(--accent-blue); }
+.section-mechanism { display:none; }
+html:not([data-concept="original"]) .section-mechanism { display:flex; align-items:center; gap:24px; max-width:1120px; margin:-25px auto 44px; padding-inline:32px; color:var(--text-muted); font:11px monospace; }
+.section-mechanism svg { flex:1; min-width:0; height:32px; stroke:var(--drawing-line); fill:var(--bg-primary); stroke-width:1; }
+.section-mechanism .section-line { fill:none; }
+.role-connector,.role-system-label { display:none; }
+html:not([data-concept="original"]) .role-system-label { display:block; flex-basis:100%; font:9px/1.5 monospace; color:var(--accent-blue); letter-spacing:1.6px; }
+html:not([data-concept="original"]) .exp-card__header { flex-wrap:wrap; }
+html:not([data-concept="original"]) .exp-card__toggle { margin-left:auto; }
+html:not([data-concept="original"]) .timeline .exp-card__company { font-size:1.35rem; }
+html:not([data-concept="original"]) .timeline__eyebrow { display:none; }
+html:not([data-concept="original"]) .career-intro { margin-bottom:40px; }
+html:not([data-concept="original"]) .timeline .exp-card { transition:transform .45s ease,box-shadow .45s ease,border-color .3s; }
+.exp-card__details.open,.project-card__details.open { max-height:none; }
+html:not([data-concept="original"]) .timeline__item:has(.exp-card__details.open) .exp-card__content { animation:layer-open .45s ease; }
+@keyframes layer-open { from { opacity:.25; transform:translateY(-12px); } to { opacity:1;transform:none; } }
+
+/* Persistent instrument: each direction has its own representation. */
+.system-progress { display:none; }
+@media(min-width:1250px) {
+  html:not([data-concept="original"]) .system-progress { display:grid; position:fixed; z-index:30; right:12px; bottom:28px; width:72px; justify-items:center; gap:8px; pointer-events:none; color:var(--accent-blue); }
+}
+.system-progress svg { width:68px; height:76px; overflow:visible; fill:var(--bg-card); stroke:var(--accent-blue); stroke-width:1.2; }
+.system-progress > span:first-of-type { font:9px monospace; }
+.mini-part { transition:transform .8s ease; }
+.mini-part--1 { transform:translateY(calc(var(--page-progress,0) * 20px)); }
+.mini-part--3 { transform:translateY(calc(var(--page-progress,0) * -20px)); }
+.mini-ring,.mini-signal { display:none; }
+.progress-track { width:48px;height:2px;background:var(--border); }
+.progress-track span { display:block;height:100%;background:var(--accent-blue);transform:scaleX(var(--page-progress,0));transform-origin:left; }
+[data-concept="turbocharger"] .mini-assembly,[data-concept="telemetry"] .mini-assembly { display:none; }
+[data-concept="turbocharger"] .mini-ring { display:block;fill:none;stroke-width:3;stroke-dasharray:195;stroke-dashoffset:calc(195 - var(--page-progress,0) * 195);transform:rotate(-90deg);transform-origin:40px 40px; }
+[data-concept="abstract-assembly"] .mini-assembly { transform:rotate(calc(var(--page-progress,0) * 35deg));transform-origin:40px 42px; }
+[data-concept="cad"] .system-progress svg { fill:none;stroke-dasharray:3 2; }
+[data-concept="telemetry"] .mini-signal { display:block;fill:none;transform:scaleY(.5);transform-origin:center;transition:transform .8s; }
+[data-concept="telemetry"][data-chapter="experience"] .mini-signal { transform:scaleY(1.25); }
+[data-concept="telemetry"][data-chapter="projects"] .mini-signal { transform:scaleY(.9); }
+[data-concept="telemetry"][data-chapter="skills"] .mini-signal { transform:scaleY(.45); }
+[data-concept="telemetry"][data-chapter="about"] .mini-signal { transform:scaleY(.15); }
+
+/* Shared interactive diagrams: real project features, explicitly illustrative. */
+.project-system { min-width:0; background:var(--bg-subtle);color:var(--text-primary);padding:22px;border-bottom:1px solid var(--border); }
+.project-system__label { display:flex;justify-content:space-between;gap:12px;align-items:center;font:600 12px/1.5 var(--font-body);padding-bottom:15px;border-bottom:1px solid var(--border); }
+.diagram-view-label { font:9px monospace;color:var(--text-muted);text-align:right; }
+.project-diagram { position:relative;min-height:260px; margin:12px 0; }
+.project-diagram svg { position:absolute;inset:0;width:100%;height:100%;overflow:visible; }
+.diagram-node { position:absolute;left:var(--node-x);top:var(--node-y);transform:translate(-50%,-50%);padding:10px 12px; min-height:38px; border:1px solid var(--border-hover);background:var(--bg-card);color:var(--text-secondary);font:600 11px/1.25 var(--font-body);border-radius:6px;box-shadow:0 3px 0 #00000012;z-index:1;transition:background .2s,box-shadow .2s,transform .3s;max-width:110px; }
+.diagram-node:hover { border-color:var(--accent-blue); }
+.diagram-node[aria-pressed="true"] { background:var(--accent-blue);color:var(--bg-primary);border-color:var(--accent-blue);box-shadow:0 0 0 5px var(--accent-blue-light); }
+.diagram-edge { stroke:var(--border-hover);stroke-width:2;fill:none;transition:stroke .3s; }
+.diagram-edge.is-related { stroke:var(--accent-blue);stroke-width:3; }
+.diagram-construction { stroke:var(--border);stroke-width:1;stroke-dasharray:2 7;fill:none; }
+.diagram-caption { font:9px/1.6 monospace;color:var(--text-muted);margin-bottom:12px; }
+.diagram-description { min-height:90px;border-top:1px solid var(--border);padding-top:14px;font-size:12px;line-height:1.7; }
+.diagram-description strong,.diagram-description span { display:block; }
+.diagram-description strong { color:var(--accent-blue);margin-bottom:3px; }
+.map-blocks { fill:var(--bg-elevated);stroke:var(--border); }
+.map-road { stroke:var(--border-hover);stroke-width:12;fill:none; }
+.project-system--map .diagram-node { border-radius:14px 14px 14px 0; }
+.route-road { stroke:var(--border);stroke-width:1;stroke-dasharray:5 8;fill:none; }
+.route-line { stroke:var(--accent-blue);stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:700; }
+.project-system--route .diagram-node { border-radius:30px; }
+.chart-axis { fill:none;stroke:var(--border);stroke-width:1; }
+.chart-line { fill:none;stroke:var(--accent-blue);stroke-width:3;stroke-linejoin:round;stroke-dasharray:850; }
+.chart-line--secondary { stroke:var(--text-muted);stroke-width:1.5;stroke-dasharray:4 5; }
+.hardware-plates { fill:var(--bg-elevated);stroke:var(--border-hover);stroke-width:2; }
+.hardware-plates path+path { fill:none;stroke:var(--accent-blue);stroke-width:3; }
+.project-card--featured { grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); }
+.project-card--featured .project-system { border-bottom:0;border-right:1px solid var(--border); }
+.project-card:not(.project-card--featured) .project-system { flex:none; }
+.project-card__body { min-width:0; }
+.project-card__actions { flex-wrap:wrap; }
+.project-card__details { min-width:0; }
+.delivery-pipeline { align-items:stretch;gap:8px; }
+.delivery-pipeline li { padding:0;display:flex;align-items:center;flex:1;min-width:85px;position:relative; }
+.delivery-pipeline li::before { content:none; }
+.delivery-pipeline li::after { content:'→';position:absolute;right:-9px;z-index:1;color:var(--accent-blue); }
+.delivery-pipeline li:last-child::after { content:none; }
+.delivery-pipeline button { width:100%;height:100%;min-height:44px;padding:10px 8px;font:500 10px/1.5 var(--font-body);color:var(--text-primary); }
+.delivery-pipeline .is-current { background:var(--accent-blue-light);border-color:var(--accent-blue);box-shadow:0 0 0 2px var(--accent-blue-light); }
+.trace-trigger { border:1px solid var(--accent-blue-border);color:var(--accent-blue);border-radius:3px;padding:8px 12px;font:600 11px var(--font-body); }
+.pipeline-context { margin-top:12px;min-height:60px; }
+
+/* About is part of the composition in every direction. */
+.about-grid { grid-template-columns:240px minmax(0,1fr);gap:36px; }
+.about-sidebar { grid-column:2; }
+.profile-mechanism { margin:0;align-self:start;position:relative;overflow:hidden;border:1px solid var(--border);padding:12px;background:var(--bg-card); }
+.profile-mechanism img { width:100%;aspect-ratio:1;object-fit:cover;filter:saturate(.8); }
+.profile-mechanism figcaption { font:600 14px/1.8 var(--font-body);color:var(--text-primary);padding:12px 0 0; }
+.profile-mechanism figcaption span { display:block;font:10px/1.6 monospace;color:var(--text-muted); }
+.profile-shutter { display:none; }
+
+/* 01 Exploded: central shaft, paired subsystems, layered workstreams and trays. */
+html[data-concept="exploded-engine"] .section { background-image:linear-gradient(90deg,transparent 49.94%,#80c8eb06 50%,transparent 50.06%); }
+html[data-concept="exploded-engine"] .timeline { display:grid;grid-template-columns:1fr 1fr;gap:24px 64px;--rail-x:50%; }
+html[data-concept="exploded-engine"] .timeline__item { display:flex;flex-direction:column;gap:10px;padding:0 0 35px; }
+html[data-concept="exploded-engine"] .timeline__item:nth-child(even) { padding-top:95px; }
+html[data-concept="exploded-engine"] .timeline__date { flex-direction:row;gap:12px;align-items:baseline;text-align:left; }
+html[data-concept="exploded-engine"] .timeline__year { font-size:1.2rem; }
+html[data-concept="exploded-engine"] .timeline__node { top:96px;left:auto;right:-40px; }
+html[data-concept="exploded-engine"] .timeline__item:nth-child(even) .timeline__node { left:-40px;right:auto;top:190px; }
+html[data-concept="exploded-engine"] .role-connector { display:block;position:absolute;right:-35px;top:65px;width:36px;height:65px;fill:none;stroke:var(--accent-blue-border);stroke-width:3; }
+html[data-concept="exploded-engine"] .timeline__item:nth-child(even) .role-connector { left:-35px;top:160px; }
+html[data-concept="exploded-engine"] .timeline .exp-card { border:1px solid var(--border);overflow:visible;box-shadow:5px 5px 0 var(--bg-primary),6px 6px 0 var(--border); }
+html[data-concept="exploded-engine"] .timeline__item:has(.exp-card__details.open) .exp-card { box-shadow:9px 9px 0 var(--bg-primary),10px 10px 0 var(--accent-blue-border); }
+html[data-concept="exploded-engine"] .exp-card__content h4 { border-top:1px dashed var(--border);padding-top:16px; }
+html[data-concept="exploded-engine"] .exp-card__details.open { margin-top:12px;border:1px solid var(--accent-blue-border); }
+html[data-concept="exploded-engine"] .delivery-pipeline { flex-direction:column;max-width:280px;gap:14px; }
+html[data-concept="exploded-engine"] .delivery-pipeline li { box-shadow:4px 4px 0 var(--border); }
+html[data-concept="exploded-engine"] .delivery-pipeline li::after { content:'↓';right:50%;bottom:-17px; }
+html[data-concept="exploded-engine"] .delivery-pipeline li:last-child::after { content:none; }
+html[data-concept="exploded-engine"] .projects-grid { gap:42px; }
+html[data-concept="exploded-engine"] .project-card { overflow:visible;border:none;background:transparent;box-shadow:none; }
+html[data-concept="exploded-engine"] .project-system { border:1px solid var(--border);box-shadow:6px 6px 0 var(--bg-primary),7px 7px 0 var(--border); }
+html[data-concept="exploded-engine"] .project-card__body { border:1px solid var(--border);background:var(--bg-card);margin-top:12px; }
+html[data-concept="exploded-engine"] .project-card--featured .project-card__body { margin:0 0 0 16px; }
+html[data-concept="exploded-engine"] .diagram-node { border-radius:0;box-shadow:4px 5px 0 var(--border); }
+html[data-concept="exploded-engine"] .diagram-node:hover { transform:translate(-50%,calc(-50% - 6px)); }
+html[data-concept="exploded-engine"] .skills-category { padding:20px;border:1px solid var(--border);background:repeating-linear-gradient(90deg,transparent 0 60px,#80c8eb05 60px 61px);counter-increment:tray; }
+html[data-concept="exploded-engine"] .technology-catalog { counter-reset:tray; }
+html[data-concept="exploded-engine"] .skills-category__title::before { content:'TRAY 0' counter(tray) ' / ';font:10px monospace; }
+html[data-concept="exploded-engine"] .skill-item:hover { transform:translateY(-5px);box-shadow:0 5px 0 var(--border); }
+html[data-concept="exploded-engine"] .profile-mechanism { box-shadow:8px 8px 0 var(--bg-primary),9px 9px 0 var(--border); }
+html[data-concept="exploded-engine"] .profile-shutter { display:block;position:absolute;top:12px;height:calc(100% - 78px);width:calc(50% - 12px);background:var(--bg-elevated);z-index:1;transition:transform 1s ease; }
+.profile-shutter--left { left:12px; }
+.profile-shutter--right { right:12px; }
+.profile-mechanism.in-view .profile-shutter--left { transform:translateX(-105%); }
+.profile-mechanism.in-view .profile-shutter--right { transform:translateX(105%); }
+
+/* 02 Flow: curved stations, directional paths, circular instrumentation. */
+html[data-concept="turbocharger"] .section-mechanism svg { stroke-width:2; }
+html[data-concept="turbocharger"] .section-line { stroke-dasharray:12 7; }
+html[data-concept="turbocharger"] .timeline::before,html[data-concept="turbocharger"] .timeline::after { display:none; }
+html[data-concept="turbocharger"] .timeline__item { display:block;width:83%;padding-bottom:55px; }
+html[data-concept="turbocharger"] .timeline__item:nth-child(even) { margin-left:17%; }
+html[data-concept="turbocharger"] .timeline__date { display:flex;flex-direction:row;align-items:baseline;gap:12px;text-align:left;margin-bottom:12px; }
+html[data-concept="turbocharger"] .timeline__node { display:none; }
+html[data-concept="turbocharger"] .role-connector { display:block;position:absolute;left:93%;top:130px;width:80px;height:200px;fill:none;stroke:var(--accent-blue-border);stroke-width:2;transform:rotate(90deg); }
+html[data-concept="turbocharger"] .timeline__item:nth-child(even) .role-connector { left:-10%;transform:rotate(90deg) scaleY(-1); }
+html[data-concept="turbocharger"] .timeline .exp-card { border-radius:48px 8px 48px 8px;border:1px solid var(--border);padding:10px; }
+html[data-concept="turbocharger"] .module-active .exp-card { border-left:3px solid var(--accent-blue); }
+html[data-concept="turbocharger"] .module-active .role-connector { stroke:var(--accent-blue); }
+html[data-concept="turbocharger"] .timeline__item:has(.exp-card__details.open) .exp-card__content { animation:flow-open .5s ease; }
+@keyframes flow-open { from {opacity:.2;transform:translateX(-20px);}to {opacity:1;transform:none;} }
+html[data-concept="turbocharger"] .project-card { border-radius:32px 8px 32px 8px; }
+html[data-concept="turbocharger"] .project-system { background:radial-gradient(ellipse at 40% 40%,#4b65512b,transparent 70%); }
+html[data-concept="turbocharger"] .diagram-edge { stroke-dasharray:10 6; }
+html[data-concept="turbocharger"] .in-view .diagram-edge.is-related { animation:project-flow 6s linear infinite; }
+@keyframes project-flow { to {stroke-dashoffset:-96;} }
+html[data-concept="turbocharger"] .skills-category { border-left:2px solid var(--accent-blue-border);border-top:1px solid var(--border);border-radius:28px 0 0 0;padding:24px; }
+html[data-concept="turbocharger"] .skill-item { border-radius:30px; }
+html[data-concept="turbocharger"] .skill-item:hover { transform:translateX(5px); }
+html[data-concept="turbocharger"] .profile-mechanism { border-radius:100px 100px 12px 12px; }
+html[data-concept="turbocharger"] #about { background:radial-gradient(ellipse at left bottom,#fc946208,transparent 65%); }
+html[data-concept="turbocharger"] .about-sidebar { border-left:2px solid var(--accent-blue-border);padding-left:24px; }
+
+/* 03 Assembly: jointed rails, bolted plates, hinged modules. */
+html[data-concept="abstract-assembly"] .timeline { --rail-x:98px; }
+html[data-concept="abstract-assembly"] .timeline::before { width:8px;border:1px solid var(--border-hover);background:var(--bg-elevated); }
+html[data-concept="abstract-assembly"] .timeline::after { width:2px;left:101px; }
+html[data-concept="abstract-assembly"] .timeline__item { grid-template-columns:74px minmax(0,1fr);gap:70px; }
+html[data-concept="abstract-assembly"] .timeline__date { font-family:monospace; }
+html[data-concept="abstract-assembly"] .timeline__year { font-size:1.3rem; }
+html[data-concept="abstract-assembly"] .timeline__node { left:91px;top:48px;width:20px;height:20px;background:#d5bd66; }
+html[data-concept="abstract-assembly"] .role-connector { display:block;position:absolute;left:105px;top:29px;width:45px;height:60px;fill:var(--bg-card);stroke:var(--accent-blue);stroke-width:3; }
+html[data-concept="abstract-assembly"] .timeline .exp-card { border-radius:3px;border:1px solid var(--border-hover);position:relative;padding:12px;transform-origin:left top; }
+html[data-concept="abstract-assembly"] .timeline__item:nth-child(even) .exp-card { transform:rotate(.4deg); }
+html[data-concept="abstract-assembly"] .timeline .timeline__item:has(.exp-card__details.open) .exp-card { transform:rotate(0);box-shadow:8px 8px 0 #cfd7c4; }
+html[data-concept="abstract-assembly"] .exp-card::before,html[data-concept="abstract-assembly"] .exp-card::after { content:'+';position:absolute;top:6px;right:8px;font:14px monospace;color:var(--text-muted); }
+html[data-concept="abstract-assembly"] .exp-card::after { top:auto;bottom:5px; }
+html[data-concept="abstract-assembly"] .timeline__item:has(.exp-card__details.open) .exp-card__content { transform-origin:top;animation:hinge-open .5s ease; }
+@keyframes hinge-open { from {opacity:.2;transform:perspective(700px) rotateX(-8deg);}to {opacity:1;transform:none;} }
+html[data-concept="abstract-assembly"] .project-system { border:8px solid var(--bg-elevated); }
+html[data-concept="abstract-assembly"] .diagram-node { border-radius:50%;border:3px double var(--border-hover);min-width:60px;min-height:55px; }
+html[data-concept="abstract-assembly"] .diagram-edge { stroke-width:7; }
+html[data-concept="abstract-assembly"] .project-card[data-project="pi"] { border-radius:3px; }
+html[data-concept="abstract-assembly"] .skills-grid { border-block:5px solid var(--border);padding:12px 0;background:linear-gradient(transparent 45%,var(--border) 45% 50%,transparent 50%); }
+html[data-concept="abstract-assembly"] .skill-item { border-radius:3px;box-shadow:3px 3px 0 var(--border); }
+html[data-concept="abstract-assembly"] .skill-item:hover { transform:translate(4px,-3px); }
+html[data-concept="abstract-assembly"] .profile-mechanism { border:8px solid var(--bg-elevated);border-radius:3px 45px 3px 3px;transform:rotate(-2deg);transition:transform .8s ease; }
+html[data-concept="abstract-assembly"] .profile-mechanism.in-view { transform:rotate(0); }
+html[data-concept="abstract-assembly"] .about-sidebar { border-top:6px double var(--border);padding-top:22px; }
+
+/* 04 CAD: drawing sheets, leader callouts, materials legends, line reveals. */
+html[data-concept="cad"] body { background-image:linear-gradient(#61776b08 1px,transparent 1px),linear-gradient(90deg,#61776b08 1px,transparent 1px);background-size:24px 24px; }
+html[data-concept="cad"] .section--alt { background-color:#eeece4e6; }
+html[data-concept="cad"] .section__header { border-block:1px solid var(--text-muted);padding:18px 0;position:relative; }
+html[data-concept="cad"] .section__header::after { content:'SHEET ' attr(data-sheet);position:absolute;right:0;top:20px;font:11px monospace; }
+html[data-concept="cad"] .section-mechanism span::before { content:'SHEET '; }
+html[data-concept="cad"] .section-mechanism svg { stroke-dasharray:3 4; }
+html[data-concept="cad"] .timeline::before,html[data-concept="cad"] .timeline::after,html[data-concept="cad"] .timeline__node { display:none; }
+html[data-concept="cad"] .timeline__item { grid-template-columns:135px minmax(0,1fr);gap:44px;border-bottom:1px dashed var(--border-hover);margin-bottom:36px;padding-bottom:32px; }
+html[data-concept="cad"] .timeline__date { text-align:left;border-top:1px solid var(--accent-blue);padding-top:14px; }
+html[data-concept="cad"] .timeline__year { font:500 26px monospace; }
+html[data-concept="cad"] .role-connector { display:block;position:absolute;top:76px;left:28px;width:142px;height:52px;fill:none;stroke:var(--text-muted);stroke-width:1; }
+html[data-concept="cad"] .timeline .exp-card { border:0;background:transparent;box-shadow:none;border-radius:0; }
+html[data-concept="cad"] .timeline .exp-card__header { padding-top:0; }
+html[data-concept="cad"] .exp-card__content { border:1px solid var(--border);background:transparent;padding-left:30px; }
+html[data-concept="cad"] .exp-card__details.open { border-left:3px solid var(--accent-blue); }
+html[data-concept="cad"] .delivery-pipeline { border-block:1px dashed var(--border-hover);padding-block:12px; }
+html[data-concept="cad"] .projects-grid { grid-template-columns:minmax(0,1fr); }
+html[data-concept="cad"] .project-card { display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--text-muted);border-radius:0;background:transparent;box-shadow:none;position:relative; }
+html[data-concept="cad"] .project-card__details { grid-column:1/-1; }
+html[data-concept="cad"] .project-system { border-right:1px solid var(--border);border-bottom:0;background:transparent; }
+html[data-concept="cad"] .project-card__body { border-bottom:1px solid var(--border); }
+html[data-concept="cad"] .project-card::after { content:'FIG. ' attr(data-figure);position:absolute;right:12px;bottom:6px;font:9px monospace;color:var(--text-muted); }
+html[data-concept="cad"] .diagram-node { border-radius:0;box-shadow:none;font-family:monospace;font-weight:400; }
+html[data-concept="cad"] .diagram-edge { stroke-width:1; }
+html[data-concept="cad"] .in-view .diagram-edge { animation:draw-in 1.2s ease both; }
+@keyframes draw-in { from {stroke-dasharray:700;stroke-dashoffset:700;}to {stroke-dasharray:700;stroke-dashoffset:0;} }
+html[data-concept="cad"] .technology-catalog { border:1px solid var(--text-muted);gap:0; }
+html[data-concept="cad"] .skills-category { border:1px solid var(--border);padding:20px; }
+html[data-concept="cad"] .skill-item { border:none;background:transparent;padding:5px 9px; }
+html[data-concept="cad"] .skill-item:hover { outline:1px dashed var(--accent-blue);transform:none; }
+html[data-concept="cad"] .profile-mechanism { padding:16px;border:1px solid var(--text-muted);background:repeating-linear-gradient(90deg,transparent 0 23px,var(--border) 23px 24px); }
+html[data-concept="cad"] .profile-mechanism img { filter:grayscale(1);transition:filter 1s; }
+html[data-concept="cad"] .profile-mechanism.in-view img { filter:grayscale(0); }
+html[data-concept="cad"] .about-sidebar { border-left:1px dashed var(--text-muted);padding-left:24px; }
+html[data-concept="cad"] .edu-card,html[data-concept="cad"] .cert-badge { border:0;border-bottom:1px solid var(--border);box-shadow:none;background:transparent; }
+html[data-concept="cad"] .reveal { transform:none;clip-path:inset(0 0 100% 0);transition:clip-path .6s,opacity .6s; }
+html[data-concept="cad"] .reveal.visible { clip-path:inset(0); }
+.cad-construction { stroke:var(--drawing-line);stroke-width:1;stroke-dasharray:3 6;fill:none;opacity:.6;transition:opacity .5s; }
+.cad-outline { stroke:var(--text-primary);stroke-width:1.7;fill:var(--bg-primary);stroke-dasharray:1400;animation:draw-in 2s ease both; }
+.cad-dimensions { fill:var(--text-muted);stroke:var(--drawing-line);font:9px monospace; }
+.cad-dimensions text { stroke:none; }
+.cad-dimensions path { fill:none; }
+.engaged .cad-construction { opacity:0; }
+
+/* 05 Test Lab: inspection records, trace windows and a tool bench. */
+html[data-concept="telemetry"] .section-mechanism svg { stroke-width:2; }
+html[data-concept="telemetry"] .section-mechanism span::before { content:'TRACE / '; }
+html[data-concept="telemetry"] .section__header { border:1px solid var(--border);border-left:4px solid var(--accent-blue);padding:24px;background:linear-gradient(90deg,var(--bg-card),transparent); }
+html[data-concept="telemetry"] .section__label { font-family:monospace; }
+html[data-concept="telemetry"] .timeline::before,html[data-concept="telemetry"] .timeline::after,html[data-concept="telemetry"] .timeline__node { display:none; }
+html[data-concept="telemetry"] .timeline__item { display:block;padding-bottom:26px;border-left:2px solid var(--border);padding-left:22px; }
+html[data-concept="telemetry"] .timeline__date { text-align:left;flex-direction:row;align-items:baseline;gap:15px;margin-bottom:10px; }
+html[data-concept="telemetry"] .timeline__year { font:18px monospace; }
+html[data-concept="telemetry"] .timeline .exp-card { display:grid;grid-template-columns:1fr 1.2fr;border:1px solid var(--border);border-radius:3px;box-shadow:none; }
+html[data-concept="telemetry"] .timeline .exp-card__summary { padding:24px;border-left:1px solid var(--border); }
+html[data-concept="telemetry"] .timeline .exp-card__header { align-content:start; }
+html[data-concept="telemetry"] .timeline .exp-card__toggle { width:100%;margin:8px 0 0; }
+html[data-concept="telemetry"] .timeline .exp-card__details { grid-column:1/-1; }
+html[data-concept="telemetry"] .module-active { border-left-color:var(--accent-blue); }
+html[data-concept="telemetry"] .role-system-label::before { content:'';display:inline-block;width:5px;height:5px;background:var(--accent-blue);margin-right:8px;border-radius:50%; }
+html[data-concept="telemetry"] .project-system { background-image:linear-gradient(var(--border) .5px,transparent .5px),linear-gradient(90deg,var(--border) .5px,transparent .5px);background-size:30px 30px;background-color:var(--bg-primary);border:12px solid var(--bg-elevated); }
+html[data-concept="telemetry"] .project-system__label,html[data-concept="telemetry"] .diagram-caption,html[data-concept="telemetry"] .diagram-description { background:var(--bg-primary); }
+html[data-concept="telemetry"] .diagram-node { border-radius:3px;font-family:monospace;box-shadow:none; }
+html[data-concept="telemetry"] .diagram-node[aria-pressed="true"] { box-shadow:0 0 12px #b9d97533; }
+html[data-concept="telemetry"] .in-view .chart-line:not(.chart-line--secondary),html[data-concept="telemetry"] .in-view .route-line { animation:draw-in 1.7s ease both; }
+html[data-concept="telemetry"] .skills-category { border:1px solid var(--border);padding:20px;background:var(--bg-primary); }
+html[data-concept="telemetry"] .skills-category__title { font-family:monospace;border-bottom:2px solid var(--accent-blue-border); }
+html[data-concept="telemetry"] .skill-item { border:0;border-bottom:1px solid var(--border);background:transparent; }
+html[data-concept="telemetry"] .skill-item:hover { border-bottom-color:var(--accent-blue);transform:none; }
+html[data-concept="telemetry"] .profile-mechanism { border:10px solid var(--bg-elevated);padding:8px; }
+html[data-concept="telemetry"] .profile-mechanism::after { content:'';position:absolute;top:20px;left:8px;right:8px;height:1px;background:var(--accent-blue);opacity:0; }
+html[data-concept="telemetry"] .profile-mechanism.in-view::after { animation:profile-scan 1.4s ease both; }
+@keyframes profile-scan { 0%{opacity:.6;transform:translateY(0);}95%{opacity:.2;}100%{opacity:0;transform:translateY(180px);} }
+html[data-concept="telemetry"] .about-text { border-top:2px solid var(--accent-blue-border);padding-top:20px; }
+html[data-concept="telemetry"] .reveal { transform:translateY(5px);transition:opacity .3s,transform .3s; }
+html[data-concept="telemetry"] .reveal.visible { transform:none; }
+.lab-grid { stroke:var(--drawing-line);stroke-width:1;opacity:.3; }
+.lab-equipment { fill:var(--bg-elevated);stroke:var(--text-muted);stroke-width:2; }
+.lab-equipment rect+rect { fill:var(--bg-primary); }
+.lab-equipment path { fill:none; }
+.lab-wave { fill:none;stroke:var(--accent-blue);stroke-width:2;stroke-dasharray:700;animation:signal-draw 7s ease-in-out infinite; }
+@keyframes signal-draw { 0% {stroke-dashoffset:700;}40%,100%{stroke-dashoffset:0;} }
+.lab-cursors { fill:var(--bg-primary);stroke:var(--accent-blue-border);stroke-width:1; }
+.lab-cursors path { stroke-dasharray:3 6; }
+.engaged .lab-wave { animation-play-state:paused; }
+
+/* Fewer moving parts on small screens, without removing the visual identity. */
+@media(max-width:1050px) {
+  .concept-switcher__label { display:none; }
+  .concept-switcher a { font-size:10px;padding:8px 7px; }
+  html[data-concept="exploded-engine"] .timeline { gap:22px 40px; }
+  html[data-concept="exploded-engine"] .timeline__node { right:-28px; }
+  html[data-concept="exploded-engine"] .timeline__item:nth-child(even) .timeline__node { left:-28px; }
+  .about-grid { grid-template-columns:190px minmax(0,1fr); }
+  html[data-concept="cad"] .project-card { grid-template-columns:1fr; }
+}
+@media(max-width:768px) {
+  :root { --concept-bar-height:94px; }
+  .concept-switcher__inner { display:flex;flex-wrap:wrap;padding:8px 12px;gap:5px;min-height:94px; }
+  .concept-switcher__links { flex:1 1 100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px; }
+  .concept-switcher a { text-align:center;font-size:9px;padding:5px 4px; }
+  .motion-toggle { margin-left:auto;border:none;padding:2px 4px;font-size:9px; }
+  html:not([data-concept="original"]) .section-mechanism { padding-inline:24px;margin:0 auto 22px;gap:10px; }
+  html:not([data-concept="original"]) .timeline { display:block; }
+  html:not([data-concept="original"]) .timeline::before,html:not([data-concept="original"]) .timeline::after { display:none; }
+  html:not([data-concept="original"]) .timeline__item,html:not([data-concept="original"]) .timeline__item:nth-child(even) { display:block;width:100%;margin-left:0;padding:0 0 34px; }
+  html:not([data-concept="original"]) .timeline__date { display:flex;flex-direction:row;gap:10px;align-items:baseline;text-align:left;margin-bottom:12px; }
+  html:not([data-concept="original"]) .timeline__node,html:not([data-concept="original"]) .role-connector { display:none; }
+  html:not([data-concept="original"]) .timeline .exp-card { display:block; }
+  html:not([data-concept="original"]) .timeline .exp-card__header { padding:18px; }
+  html:not([data-concept="original"]) .timeline .exp-card__summary { padding:0 18px 20px;border-left:0; }
+  html:not([data-concept="original"]) .timeline .exp-card__company { font-size:1.15rem; }
+  html[data-concept="turbocharger"] .timeline .exp-card { border-radius:28px 4px 28px 4px;padding:6px; }
+  html[data-concept="abstract-assembly"] .timeline .exp-card { border-left:5px solid var(--border-hover); }
+  html[data-concept="cad"] .timeline__item { border-bottom:1px dashed var(--border);padding-top:10px; }
+  html[data-concept="cad"] .timeline .exp-card__header { padding:0 0 18px; }
+  html[data-concept="cad"] .timeline .exp-card__summary { padding:0; }
+  html[data-concept="telemetry"] .timeline__item { border-left:2px solid var(--accent-blue-border);padding-left:12px; }
+  html[data-concept="telemetry"] .timeline .exp-card__summary { border-top:1px solid var(--border);padding-top:18px; }
+  html:not([data-concept="original"]) .project-card, .project-card--featured { display:flex;flex-direction:column; }
+  html[data-concept="exploded-engine"] .project-card--featured .project-card__body { margin:14px 0 0; }
+  .project-system { padding:16px; }
+  .project-card--featured .project-system { border-right:0; }
+  .project-diagram { min-height:245px; }
+  .diagram-node { padding:8px 6px;font-size:9px;max-width:80px; }
+  .diagram-description { min-height:105px; }
+  html[data-concept="abstract-assembly"] .diagram-node { min-width:47px;min-height:47px; }
+  html[data-concept="telemetry"] .project-system { border-width:7px; }
+  .about-grid { grid-template-columns:minmax(0,1fr); }
+  .about-sidebar { grid-column:auto; }
+  .profile-mechanism { max-width:260px; }
+  .delivery-pipeline { flex-direction:column;gap:12px; }
+  .delivery-pipeline li::after { content:'↓';right:50%;bottom:-15px; }
+  .delivery-pipeline li:last-child::after { content:none; }
+  .contact-card { gap:12px;padding:16px; }
+  .contact-card__value { font-size:12px;overflow-wrap:anywhere; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation:none!important;transition:none!important;scroll-behavior:auto!important; }
+  .reveal { opacity:1!important;transform:none!important;clip-path:none!important; }
+  .profile-shutter { display:none!important; }
+}
+html[data-motion="reduced"] *,html[data-motion="reduced"] *::before,html[data-motion="reduced"] *::after { animation:none!important;transition:none!important;scroll-behavior:auto!important; }
+html[data-motion="reduced"] .reveal { opacity:1!important;transform:none!important;clip-path:none!important; }
+html[data-motion="reduced"] .profile-shutter { display:none!important; }
+.mechanical-panel:not(.in-view) .turbine-wheel,.mechanical-panel:not(.in-view) .air-trails,.mechanical-panel:not(.in-view) .lab-wave { animation-play-state:paused; }

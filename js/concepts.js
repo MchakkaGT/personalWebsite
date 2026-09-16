@@ -58,8 +58,22 @@
     <g class="drawing-labels"><path d="M108 132H47V83M389 207h90V167M195 392l-48 45H55"/><text x="32" y="70">INDEPENDENT PARTS</text><text x="385" y="151">CONNECTED SYSTEM</text><text x="43" y="465">DESIGNED TO WORK TOGETHER</text></g>
   `);
 
+  const cad = () => svg(`
+    <g class="cad-construction"><path d="M45 45H490V445H45ZM45 245H490M270 45V445M85 85L455 405M85 405L455 85"/><circle cx="270" cy="245" r="170"/></g>
+    <g class="cad-outline"><path d="M110 285L260 195L422 280L272 372ZM110 285V310L272 398L422 308V280M272 372V398"/><ellipse cx="270" cy="278" rx="61" ry="33"/><ellipse cx="270" cy="278" rx="41" ry="22"/><path d="M208 278V170M331 278V170"/><ellipse cx="270" cy="170" rx="62" ry="34"/><ellipse cx="270" cy="170" rx="42" ry="23"/><path d="M228 169v-52M312 169v-52"/><ellipse cx="270" cy="117" rx="42" ry="23"/></g>
+    <g class="cad-dimensions"><path d="M78 280V408M65 285H91M65 398H91M442 274V409M435 281h14M435 398h14M106 432H424M110 423v18M422 423v18M315 117h112"/><text x="101" y="461">FIG. A / SECTIONAL ASSEMBLY</text><text x="351" y="107">AXIS / Z</text><text x="28" y="263">ELEVATION</text></g>
+  `);
+  const telemetry = () => svg(`
+    <g class="lab-grid">${Array.from({length:10},(_,i)=>`<path d="M40 ${65+i*38}H500M${50+i*48} 55V435"/>`).join('')}</g>
+    <g class="lab-equipment"><rect x="60" y="90" width="420" height="300" rx="12"/><rect x="82" y="114" width="310" height="222" rx="4"/><circle cx="435" cy="158" r="19"/><circle cx="435" cy="221" r="19"/><path d="M435 158l11-9M435 221l-9 11M416 282h37M416 296h37M108 357h258"/></g>
+    <path class="lab-wave" d="M96 227H125L138 215 150 238 163 174 179 272 197 210 211 225H238L252 198 269 248 286 216 301 227H376"/>
+    <g class="lab-cursors"><path d="M163 134V316M286 134V316"/><circle cx="163" cy="174" r="6"/><circle cx="286" cy="216" r="6"/></g>
+    <g class="drawing-labels"><text x="82" y="70">SYSTEM OBSERVATION</text><text x="94" y="418">ILLUSTRATIVE SIGNAL / NOT LIVE DATA</text></g>
+  `);
   const concepts = {
     original: null,
+    cad: { kicker:'Draw the system. Understand the whole.', title:'Kinetic CAD / Blueprint', description:'Construction lines resolve into a sectional drawing. Toggle the construction layer to inspect the form.', art:cad, control:'Hide construction', activeControl:'Show construction' },
+    telemetry: { kicker:'Observe. Trace. Understand.', title:'Telemetry / Engineering Test Lab', description:'An illustrative signal study, not a live measurement. Follow a trace through the work below.', art:telemetry, control:'Hold signal', activeControl:'Resume signal' },
     'exploded-engine': { kicker:'Systems, considered from every angle.', title:'Exploded Engine', description:'Layered parts. A shared purpose. Scroll to separate the assembly, or bring it together.', art:engine, control:'Assemble engine', activeControl:'Explode engine' },
     turbocharger: { kicker:'Built for the work. Tuned for performance.', title:'Turbocharger', description:'A study in flow, precision and performance. A quiet rotation inside a sculpted housing.', art:turbo, control:'Pause turbine', activeControl:'Resume turbine' },
     'abstract-assembly': { kicker:'Good systems start with thoughtful connections.', title:'Abstract Mechanical Assembly', description:'Individual components, connected with intent. Explore how the parts move together.', art:assembly, control:'Articulate assembly', activeControl:'Reset assembly' }
@@ -73,10 +87,11 @@
   let framePending = false;
   function paintMotion() {
     const hero = document.getElementById('hero');
-    const progress = reduceMotion.matches ? 0 : Math.max(0, Math.min(1, -hero.getBoundingClientRect().top / hero.offsetHeight));
+    const progress = (reduceMotion.matches || root.dataset.motion === 'reduced') ? 0 : Math.max(0, Math.min(1, -hero.getBoundingClientRect().top / hero.offsetHeight));
     art.style.setProperty('--separation', `${progress * 25}px`);
     framePending = false;
   }
+  document.addEventListener('motionchange', paintMotion);
   function scheduleMotion() {
     if (!framePending) { framePending = true; requestAnimationFrame(paintMotion); }
   }
@@ -101,6 +116,7 @@
     } else { art.replaceChildren(); }
     document.title = `Manish Chakka | ${concept ? concept.title : 'Software Engineer'}`;
     paintMotion();
+    document.dispatchEvent(new CustomEvent('conceptchange', {detail: active}));
   }
   document.querySelectorAll('.concept-switcher [data-concept]').forEach(link => link.addEventListener('click', event => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -108,7 +124,9 @@
     const next = link.dataset.concept;
     const url = new URL(location.href); url.searchParams.set('concept', next);
     const offset = document.querySelector('.concept-switcher').getBoundingClientRect().bottom + 24;
-    const section = Array.from(document.querySelectorAll('main > section')).find(el => el.getBoundingClientRect().bottom > offset);
+    const candidates = Array.from(document.querySelectorAll('.timeline__item, .project-card, .skills-category, #about .about-grid'));
+    const containsReadingLine = el => { const box = el.getBoundingClientRect(); return box.top <= offset && box.bottom > offset; };
+    const section = candidates.find(containsReadingLine) || candidates.filter(el => el.getBoundingClientRect().bottom > offset).sort((a,b) => Math.abs(a.getBoundingClientRect().top-offset)-Math.abs(b.getBoundingClientRect().top-offset))[0] || Array.from(document.querySelectorAll('main > section')).find(containsReadingLine);
     const before = section ? section.getBoundingClientRect().top : 0;
     history.pushState({},'',url);
     renderConcept(next);

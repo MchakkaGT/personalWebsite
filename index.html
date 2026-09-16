@@ -33,9 +33,10 @@
 		rel="stylesheet">
 
 	<!-- Styles -->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/concepts.css">
-	<script src="js/concept-init.js"></script>
+	<link rel="stylesheet" href="css/style.css?v=5">
+	<link rel="stylesheet" href="css/concepts.css?v=5">
+	<link rel="stylesheet" href="css/full-site.css?v=5">
+	<script src="js/concept-init.js?v=5"></script>
 </head>
 
 <body>
@@ -92,11 +93,18 @@
 				<a href="?concept=original" data-concept="original">Original</a>
 				<a href="?concept=exploded-engine" data-concept="exploded-engine">Exploded Engine</a>
 				<a href="?concept=turbocharger" data-concept="turbocharger">Turbocharger</a>
-				<a href="?concept=abstract-assembly" data-concept="abstract-assembly">Abstract Assembly</a>
+				<a href="?concept=abstract-assembly" data-concept="abstract-assembly">Assembly</a>
+                <a href="?concept=cad" data-concept="cad">Kinetic CAD</a>
+                <a href="?concept=telemetry" data-concept="telemetry">Test Lab</a>
 			</div>
-		</div>
-	</nav>
-	<main>
+            <button class="motion-toggle" id="motionToggle" aria-pressed="false" type="button">Reduce motion</button>
+        </div>
+    </nav>
+    <aside class="system-progress" aria-label="Page progress">
+      <svg viewBox="0 0 80 95" aria-hidden="true"><g class="mini-assembly"><path class="mini-part mini-part--1" d="M12 18l28-12 28 12-28 12Z"/><path class="mini-part mini-part--2" d="M12 40l28-12 28 12-28 12Z"/><path class="mini-part mini-part--3" d="M12 62l28-12 28 12-28 12Z"/></g><circle class="mini-ring" cx="40" cy="40" r="31"/><path class="mini-signal" d="M4 42h12l7-18 9 35 9-46 8 40 8-11h19"/></svg>
+      <span id="progressSection">Overview</span><span class="progress-track"><span></span></span>
+    </aside>
+    <main>
 		<!-- ====== HERO ====== -->
 		<section class="hero" id="hero">
 			<div class="hero__inner">
@@ -941,8 +949,9 @@
 	</footer>
 
 	<!-- Scripts -->
-	<script src="js/main.js"></script>
-	<script src="js/concepts.js"></script>
+	<script src="js/main.js?v=5"></script>
+	<script src="js/concepts.js?v=5"></script>
+	<script src="js/full-site.js?v=5"></script>
 
 </body>
 

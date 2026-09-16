@@ -1,35 +1,46 @@
-# Portfolio design comparison
+# Five full-site portfolio experiments
 
-All three directions share the same HTML content, experience timeline, project details, links, and technology catalog. The original design remains the default until a direction is chosen.
+All five concepts use the same factual content, seven roles, five projects, 37 technology logos, resume and links. Original remains available as a reference. No final direction has been selected.
 
-## Preview links
+## Compare the concepts
 
-- [Exploded Engine](https://manish-chakka.vercel.app/?concept=exploded-engine): midnight blueprint surfaces, an isometric engine assembly, squared component cards, and scroll-driven separation. Use **Assemble engine** to bring the layers together.
-- [Turbocharger](https://manish-chakka.vercel.app/?concept=turbocharger): graphite surfaces, warm copper accents, italic display type, a sculpted compressor housing, and slow turbine rotation with a pause control.
-- [Abstract Mechanical Assembly](https://manish-chakka.vercel.app/?concept=abstract-assembly): warm paper, sage and brass, offset modular cards, and an articulated linkage illustration.
-- [Original](https://manish-chakka.vercel.app/?concept=original): the existing design for reference.
+Use the persistent Design Lab selector, including while a role is expanded. The switcher keeps the nearby role or section in view and preserves disclosures and diagram selections.
 
-Use the Design Lab switcher at the top of any page. Switching preserves open details and keeps the current section in view. Each concept has a shareable URL; browser back and forward restore the selected direction.
+| Concept | Full-site treatment | Preview |
+| --- | --- | --- |
+| Exploded Engine | Paired subsystems on a mechanical spine, separated detail layers, parts trays, layered project diagrams, portrait shutters and assembling progress device | [Open](https://manish-chakka.vercel.app/?concept=exploded-engine) |
+| Turbocharger / Flow | Alternating curved stations, directional expansion, flowing connections, rounded category headers and circular progress | [Open](https://manish-chakka.vercel.app/?concept=turbocharger) |
+| Abstract Mechanical Assembly | Rail and joint experience linkage, hinged details, linked circular nodes, interchangeable skill modules and an opening profile frame | [Open](https://manish-chakka.vercel.app/?concept=abstract-assembly) |
+| Kinetic CAD / Blueprint | Wireframe hero, numbered sheets, leader-line role callouts, full-width project drawings, component legends and construction-grid portrait | [Open](https://manish-chakka.vercel.app/?concept=cad) |
+| Telemetry / Test Lab | Signal hero, inspection records, instrument-framed diagrams, selected-node tracing, tools bench and quiet profile scan | [Open](https://manish-chakka.vercel.app/?concept=telemetry) |
 
-## Completed brief
+## Completed
 
-- [x] Three distinct, implemented visual directions with interactive SVG hero artwork.
-- [x] Persistent concept switcher and direct preview links.
-- [x] Shared portfolio content and links without three copies of the website.
-- [x] Seven jobs retained in the animated timeline; Atlassian, Cox Automotive and Waystar remain first.
-- [x] Atlassian shown as a past internship: Software Engineer Intern, Seattle, WA, May 2026 to August 2026.
-- [x] Correct pipeline: Filtering, Data Retrieval, Re-ranking, Fatigue, Hydration.
-- [x] Opscribe artwork fully visible, with its live demo link in every variant.
-- [x] All 37 technology logos and names retained in five compact groups.
-- [x] Expandable project and experience details retained.
-- [x] No em dashes in site text or metadata.
-- [x] Responsive layouts, keyboard controls, focus indicators, and reduced-motion styles.
-- [x] Original GitHub profile correction retained.
+- [x] Five distinct concepts extending through Experience, Projects, Skills and About.
+- [x] Shared content and persistent selector with shareable links.
+- [x] Atlassian completed internship, Seattle, May 2026 to August 2026.
+- [x] Filtering, Data Retrieval, Re-ranking, Fatigue, Hydration in exact order.
+- [x] Selectable pipeline stages and finite, user-triggered trace playback.
+- [x] Opscribe interactive UI, API, graph, retrieval, storage and AI-agent map.
+- [x] Opscribe demo linked to the supplied Replit URL.
+- [x] Project-specific map, route, illustrative chart and hardware diagrams.
+- [x] Conceptual visuals labeled; no fabricated performance metrics.
+- [x] All technology logos and expanded experience/project content preserved.
+- [x] No em dashes in HTML, JavaScript or CSS.
+- [x] Correct GitHub profile retained.
+- [x] Mobile layouts, keyboard controls, focus states and reduced-motion support.
+- [x] Lightweight CSS/SVG/JavaScript with visible-only animated diagrams.
 
-## Implementation
+## Validation
 
-The existing static HTML/CSS/JavaScript stack is unchanged. `concept-init.js` selects the URL theme before paint. `concepts.js` owns the three SVG illustrations, switcher history, and their interaction controls. `concepts.css` contains the theme tokens, component styling, responsive rules and reduced-motion overrides. No new external rendering dependency or build step is required.
+Checked all five concepts at 1440px desktop and 390px mobile widths: no horizontal page overflow, five project diagrams, 37 technology items and no broken loaded images. Inspected themed sections with the hero offscreen. Verified keyboard diagram selection, role disclosure, concept switching with open details, mobile navigation and the Reduce motion control. Browser console checks reported no errors. Native prefers-reduced-motion uses equivalent CSS overrides and disables the JavaScript scroll/trace motion; system preference itself was not changed during QA.
 
-## Verification
+All JavaScript passes `node --check`; `git diff --check` passes. The production packaging command validates 60 local asset/link targets and copies the static website to a clean output folder:
 
-Checked JavaScript syntax, local asset and link targets, all three rendered themes, mobile overflow, the concept switcher, mobile navigation, expandable details, pipeline order, technology count, and image loading. Reduced-motion CSS stops automatic SVG animation and transitions; the JavaScript motion query disables scroll separation and removes the unnecessary turbine control when reduced motion is enabled.
+```sh
+python3 scripts/build.py --out /tmp/personalwebsite-production
+```
+
+Use a new output directory for each build. Vercel can serve the source directly because this site has no compilation dependencies.
+
+Resume returned HTTP 200 with application/pdf. Opscribe, CommuRide and the GitHub profile returned HTTP 200. Taste of Atlanta timed out during the destination check; its existing URL is retained. HTTP checks establish destination reachability, not end-to-end functionality of those separate apps.
