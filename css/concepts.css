@@ -1,5 +1,5 @@
 /* Shared comparison controls remain available in every direction. */
-:root { --concept-bar-height:58px; --drawing-line:#638096; }
+:root { --concept-bar-height:0px; --drawing-line:#638096; }
 html { scroll-padding-top:calc(var(--nav-height) + var(--concept-bar-height) + 24px); }
 .concept-switcher { position:fixed; z-index:990; top:var(--nav-height); width:100%; background:var(--bg-secondary); border-bottom:1px solid var(--border); }
 .concept-switcher__inner { min-height:var(--concept-bar-height); max-width:1200px; margin:auto; padding:8px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
@@ -196,7 +196,7 @@ html[data-concept="abstract-assembly"] .reveal.visible { transform:none; }
   .mechanical-panel__heading span:last-child { display:none; }
 }
 @media (max-width:768px) {
-  :root { --concept-bar-height:78px; }
+  :root { --concept-bar-height:0px; }
   .concept-switcher__inner { display:block; padding:8px 16px; }
   .concept-switcher__label { display:block; margin-bottom:6px; font-size:9px; }
   .concept-switcher__label span { display:inline; }

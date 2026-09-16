@@ -1,6 +1,8 @@
-// Set the theme before styles paint. Unknown URLs safely fall back to the original.
-(() => {
-  const supported = ['original', 'exploded-engine', 'turbocharger', 'abstract-assembly', 'cad', 'telemetry', 'sketch-drive'];
-  const requested = new URLSearchParams(location.search).get('concept') || 'original';
-  document.documentElement.dataset.concept = supported.includes(requested) ? requested : 'original';
-})();
+// Sketch Drive is the portfolio's only design, set before styles paint.
+document.documentElement.dataset.concept = 'sketch-drive';
+// Keep old shared links working while removing the retired theme parameter.
+const portfolioURL = new URL(location.href);
+if (portfolioURL.searchParams.has('concept')) {
+  portfolioURL.searchParams.delete('concept');
+  history.replaceState(history.state, '', portfolioURL);
+}

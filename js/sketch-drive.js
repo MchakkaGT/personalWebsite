@@ -35,7 +35,7 @@
   let previousMotion=root.dataset.motion;
   function apply(){
     const enabled=root.dataset.concept==='sketch-drive';
-    motion.hidden=enabled;
+    if(motion) motion.hidden=enabled;
     document.querySelector('.mechanical-panel').setAttribute('aria-label', enabled ? 'Automotive line drawing' : 'Interactive mechanical illustration');
     // This experiment has motion enabled and no extra motion-mode control.
     if(enabled && !wasSketch) { previousMotion=root.dataset.motion; root.dataset.motion='full'; }

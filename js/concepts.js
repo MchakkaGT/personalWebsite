@@ -114,7 +114,7 @@
     if (!framePending) { framePending = true; requestAnimationFrame(paintMotion); }
   }
   function renderConcept(name) {
-    active = Object.hasOwn(concepts,name) ? name : 'original';
+    active = 'sketch-drive';
     root.dataset.concept = active;
     interacted = false;
     art.classList.remove('engaged');
@@ -132,36 +132,15 @@
       control.textContent = concept.control;
       control.hidden = active === 'sketch-drive' || (active === 'turbocharger' && reduceMotion.matches);
     } else { art.replaceChildren(); }
-    document.title = `Manish Chakka | ${concept ? concept.title : 'Software Engineer'}`;
+    document.title = 'Manish Chakka | Software Engineer';
     paintMotion();
     document.dispatchEvent(new CustomEvent('conceptchange', {detail: active}));
   }
-  document.querySelectorAll('.concept-switcher [data-concept]').forEach(link => link.addEventListener('click', event => {
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    const next = link.dataset.concept;
-    const url = new URL(location.href); url.searchParams.set('concept', next);
-    const offset = document.querySelector('.concept-switcher').getBoundingClientRect().bottom + 24;
-    const candidates = Array.from(document.querySelectorAll('.timeline__item, .project-card, .skills-category, #about .about-grid'));
-    const containsReadingLine = el => { const box = el.getBoundingClientRect(); return box.top <= offset && box.bottom > offset; };
-    const hero = document.getElementById('hero');
-    const section = (containsReadingLine(hero) ? hero : null) || candidates.find(containsReadingLine) || candidates.filter(el => el.getBoundingClientRect().bottom > offset).sort((a,b) => Math.abs(a.getBoundingClientRect().top-offset)-Math.abs(b.getBoundingClientRect().top-offset))[0] || Array.from(document.querySelectorAll('main > section')).find(containsReadingLine);
-    const before = section ? section.getBoundingClientRect().top : 0;
-    history.pushState({},'',url);
-    renderConcept(next);
-    if (section && section.id !== 'hero') {
-      window.scrollBy({ top: section.getBoundingClientRect().top - before, behavior: 'instant' });
-    }
-  }));
   control.addEventListener('click', () => {
     interacted = !interacted;
     art.classList.toggle('engaged', interacted);
     control.setAttribute('aria-pressed', String(interacted));
     control.textContent = concepts[active][interacted ? 'activeControl' : 'control'];
-  });
-  window.addEventListener('popstate', () => {
-    const name = new URLSearchParams(location.search).get('concept') || 'original';
-    if (name !== active) renderConcept(name);
   });
   window.addEventListener('scroll',scheduleMotion,{passive:true});
   window.addEventListener('resize',scheduleMotion);

@@ -8,12 +8,12 @@
   const motionOff = () => reduced.matches || userReduced;
   function syncMotion() {
     root.dataset.motion = motionOff() ? 'reduced' : 'full';
-    motionButton.setAttribute('aria-pressed', String(motionOff()));
-    motionButton.textContent = reduced.matches ? 'System: reduced motion' : userReduced ? 'Enable motion' : 'Reduce motion';
-    motionButton.disabled = reduced.matches;
+    motionButton?.setAttribute('aria-pressed', String(motionOff()));
+    if (motionButton) motionButton.textContent = reduced.matches ? 'System: reduced motion' : userReduced ? 'Enable motion' : 'Reduce motion';
+    if (motionButton) motionButton.disabled = reduced.matches;
     document.dispatchEvent(new Event('motionchange'));
   }
-  motionButton.addEventListener('click', () => { userReduced = !userReduced; syncMotion(); });
+  motionButton?.addEventListener('click', () => { userReduced = !userReduced; syncMotion(); });
   reduced.addEventListener('change', syncMotion);
   syncMotion();
 
@@ -66,7 +66,7 @@
   selectStage(0);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)stopTrace();});
   reduced.addEventListener('change',stopTrace);
-  motionButton.addEventListener('click',stopTrace);
+  motionButton?.addEventListener('click',stopTrace);
 
   const projects = [
     {id:'opscribe',title:'Opscribe',kind:'graph',caption:'Conceptual architecture map',nodes:[

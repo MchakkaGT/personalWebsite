@@ -288,7 +288,7 @@ html[data-concept="telemetry"] .reveal.visible { transform:none; }
   html[data-concept="cad"] .project-card { grid-template-columns:1fr; }
 }
 @media(max-width:768px) {
-  :root { --concept-bar-height:94px; }
+  :root { --concept-bar-height:0px; }
   .concept-switcher__inner { display:flex;flex-wrap:wrap;padding:8px 12px;gap:5px;min-height:94px; }
   .concept-switcher__links { flex:1 1 100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px; }
   .concept-switcher a { text-align:center;font-size:9px;padding:5px 4px; }

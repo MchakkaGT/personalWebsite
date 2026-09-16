@@ -83,7 +83,7 @@ html[data-concept="sketch-drive"] .reveal.visible { transform:none; }
 html[data-concept="sketch-drive"] #motionToggle { display:none; }
 @media(max-width:1000px) { html[data-concept="sketch-drive"] .section__header { padding-right:0; } html[data-concept="sketch-drive"] .automotive-fragment { position:relative;right:auto;top:auto;width:180px;margin:12px 0 0;grid-column:1/-1; } }
 @media(max-width:768px) {
-  :root { --concept-bar-height:116px; }
+  :root { --concept-bar-height:0px; }
   .concept-switcher__inner { min-height:116px; }
   html[data-concept="sketch-drive"] .hero__inner { gap:16px; }
   html[data-concept="sketch-drive"] .mechanical-panel { padding:0; }
