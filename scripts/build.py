@@ -42,6 +42,6 @@ if '\u2014' in html:
 output.mkdir(parents=True)
 for name in ('index.html', 'ManishResume.pdf'):
     shutil.copy2(ROOT / name, output / name)
-for name in ('css', 'js', 'images', 'skillsImages'):
+for name in ('css', 'js', 'images', 'skillsImages', 'models'):
     shutil.copytree(ROOT / name, output / name, ignore=shutil.ignore_patterns('.DS_Store'))
 print(f'Validated {len(assets.local)} local targets. Static production package: {output}')
