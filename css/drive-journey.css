@@ -39,3 +39,8 @@ html[data-concept="sketch-drive"] .timeline .exp-card__header { flex-wrap:wrap; 
 }
 
 html[data-concept="sketch-drive"] .hero__content { opacity:calc(1 - var(--drive-intro,0) * .8);transform:translateY(calc(var(--drive-intro,0) * -35px)); }
+@media(max-width:899px) {
+ html[data-concept="sketch-drive"] .timeline__date { display:flex;flex-direction:row;gap:10px;text-align:left;align-items:baseline;margin-bottom:12px; }
+ html[data-concept="sketch-drive"] .timeline__item { padding-left:0; }
+ html[data-concept="sketch-drive"] .drive-stage canvas { max-width:none;max-height:none; }
+}

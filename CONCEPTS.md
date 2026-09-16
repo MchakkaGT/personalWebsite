@@ -82,3 +82,12 @@ Validation: static production packaging and JavaScript syntax pass; desktop and 
 - Removed transition clipping and kept the canvas above section backgrounds on both desktop and mobile. Door and hood animation have a dedicated full-size interval and an open-position hold before the scene recedes for content.
 - Preserved Assembly-style job rectangles/sidebar, all project identities and expandable diagrams, all 37 technology logos, all seven concepts and the hidden Sketch Drive motion control.
 - Validated runtime continuity at desktop and mobile sizes with a numerical renderer harness, including finite camera values and no clipping; also checked browser rendering, first-scroll framing, overflow and console. Static production build and JavaScript syntax pass.
+
+
+### Final car details and mobile fit
+
+- Projects now uses an opening rear luggage compartment. Removed the driver-seat/dashboard overlay and its renderer.
+- Used the supplied Gallardo drawings for a lower wedge profile, swept paired headlamps, angular front intakes and side vents; kept the pastel line-art presentation.
+- Added two visible rear lamp clusters, rear vents, plate recess and exhaust outlines. Rear fascia details share a draw layer so the lights remain visible.
+- Fit the full articulated model uniformly inside its canvas with a mobile margin, preserving proportions when the door, hood or trunk opens. Mobile scene height now follows screen width instead of consuming a tall desktop-shaped frame.
+- Retained all concepts, professional content, project identities, expanded diagrams and technology logos. Syntax, static build, continuity harness and desktop/mobile checks pass.
