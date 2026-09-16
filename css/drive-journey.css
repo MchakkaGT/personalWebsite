@@ -2,7 +2,7 @@
 .drive-stage { display:none;position:fixed;z-index:12;pointer-events:none;contain:layout paint; }
 html[data-concept="sketch-drive"] .drive-stage { display:block; }
 .drive-transition { display:none; }
-html[data-concept="sketch-drive"] .drive-transition { display:block;height:75vh;position:relative;background:var(--bg-primary); }
+html[data-concept="sketch-drive"] .drive-transition { display:block;height:110vh;position:relative;background:transparent; }
 html[data-concept="sketch-drive"] .drive-transition::after { content:'';position:absolute;left:12%;right:12%;bottom:12%;height:1px;background:linear-gradient(90deg,transparent,#b4c4bc,transparent); }
 html[data-concept="sketch-drive"] .hero { min-height:110vh; }
 html[data-concept="sketch-drive"] .hero .mechanical-panel { visibility:hidden; }
@@ -27,9 +27,9 @@ html[data-concept="sketch-drive"] .timeline .exp-card__header { flex-wrap:wrap; 
  html[data-concept="sketch-drive"] .project-card--featured { display:flex;flex-direction:column; }
 }
 @media(max-width:899px) {
- html[data-concept="sketch-drive"] .drive-stage { z-index:0; }
+ html[data-concept="sketch-drive"] .drive-stage { z-index:12; }
  html[data-concept="sketch-drive"] main { position:relative;z-index:1; }
- html[data-concept="sketch-drive"] .drive-transition { background:transparent;height:60vh; }
+ html[data-concept="sketch-drive"] .drive-transition { background:transparent;height:100vh; }
  html[data-concept="sketch-drive"] .hero { min-height:1100px;background:transparent; }
  html[data-concept="sketch-drive"] .hero__inner { display:block; }
  html[data-concept="sketch-drive"] .hero .mechanical-panel { min-height:290px; }

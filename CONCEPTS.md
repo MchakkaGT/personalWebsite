@@ -73,3 +73,12 @@ The six scenes move from a frontal hero to an open-door Experience view, an inte
 The rectangular Assembly job-card treatment and left date/rail layout are restored in Sketch Drive, without mechanical role labels. All seven existing selector options remain. Project identities still precede expandable diagrams, and all 37 technology logos remain.
 
 Validation: static production packaging and JavaScript syntax pass; desktop and 390px mobile checked for horizontal overflow; scroll state inspected for door and hood progression; existing concept switching, project disclosure and console checked. This is an illustrative car model, not a mechanical simulation.
+
+
+### Sketch Drive polish pass
+
+- Refined the existing car with a lower coupe roof, curved fenders, swept windshield, paired-spoke wheels, cleaner lighting details and paper-colored occluding panels that remove hidden-edge clutter.
+- Replaced conditional scene/framing switches with one continuous eased keyframe timeline. Hero framing stays fixed at the first scroll while camera movement begins gradually.
+- Removed transition clipping and kept the canvas above section backgrounds on both desktop and mobile. Door and hood animation have a dedicated full-size interval and an open-position hold before the scene recedes for content.
+- Preserved Assembly-style job rectangles/sidebar, all project identities and expandable diagrams, all 37 technology logos, all seven concepts and the hidden Sketch Drive motion control.
+- Validated runtime continuity at desktop and mobile sizes with a numerical renderer harness, including finite camera values and no clipping; also checked browser rendering, first-scroll framing, overflow and console. Static production build and JavaScript syntax pass.
