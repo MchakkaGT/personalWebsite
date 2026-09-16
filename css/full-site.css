@@ -1,4 +1,6 @@
 /* Five full-site structural directions. Content and controls are shared. */
+/* The concept switcher explicitly preserves the reading position. */
+html { overflow-anchor:none; }
 html[data-concept="cad"] { --bg-primary:#f5f3ed;--bg-secondary:#eeece4;--bg-card:#faf9f5;--bg-elevated:#e8e6de;--bg-subtle:#f4f2eb;--text-primary:#26343c;--text-secondary:#45535a;--text-muted:#626e73;--accent-blue:#85522d;--accent-blue-hover:#643b20;--accent-blue-light:#eee4d7;--accent-blue-border:#bfa48b;--border:#c4c6bf;--border-hover:#87938e;--drawing-line:#8b9995;--radius-sm:0px;--radius-md:0px;--radius-lg:0px;--shadow-card:none; }
 html[data-concept="telemetry"] { --bg-primary:#111d20;--bg-secondary:#152429;--bg-card:#1a2e33;--bg-elevated:#20383f;--bg-subtle:#172a30;--text-primary:#e4f2ed;--text-secondary:#b4cbc4;--text-muted:#8ea9a0;--accent-blue:#b9d975;--accent-blue-hover:#d5f390;--accent-blue-light:#2d3d2c;--accent-blue-border:#63734f;--border:#365047;--border-hover:#648774;--drawing-line:#45665a;--radius-sm:3px;--radius-md:5px;--radius-lg:8px;--shadow-card:none; }
 .concept-switcher__inner { max-width:1360px; gap:10px; padding-inline:20px; }

@@ -126,7 +126,8 @@
     const offset = document.querySelector('.concept-switcher').getBoundingClientRect().bottom + 24;
     const candidates = Array.from(document.querySelectorAll('.timeline__item, .project-card, .skills-category, #about .about-grid'));
     const containsReadingLine = el => { const box = el.getBoundingClientRect(); return box.top <= offset && box.bottom > offset; };
-    const section = candidates.find(containsReadingLine) || candidates.filter(el => el.getBoundingClientRect().bottom > offset).sort((a,b) => Math.abs(a.getBoundingClientRect().top-offset)-Math.abs(b.getBoundingClientRect().top-offset))[0] || Array.from(document.querySelectorAll('main > section')).find(containsReadingLine);
+    const hero = document.getElementById('hero');
+    const section = (containsReadingLine(hero) ? hero : null) || candidates.find(containsReadingLine) || candidates.filter(el => el.getBoundingClientRect().bottom > offset).sort((a,b) => Math.abs(a.getBoundingClientRect().top-offset)-Math.abs(b.getBoundingClientRect().top-offset))[0] || Array.from(document.querySelectorAll('main > section')).find(containsReadingLine);
     const before = section ? section.getBoundingClientRect().top : 0;
     history.pushState({},'',url);
     renderConcept(next);
