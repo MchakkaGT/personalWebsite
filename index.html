@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-concept="original">
 
 <head>
 	<meta charset="utf-8">
@@ -34,6 +34,8 @@
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/concepts.css">
+	<script src="js/concept-init.js"></script>
 </head>
 
 <body>
@@ -83,17 +85,30 @@
 		</div>
 	</div>
 
+	<nav class="concept-switcher" aria-label="Portfolio design concepts">
+		<div class="concept-switcher__inner">
+			<span class="concept-switcher__label">Design lab <span>Choose a direction</span></span>
+			<div class="concept-switcher__links">
+				<a href="?concept=original" data-concept="original">Original</a>
+				<a href="?concept=exploded-engine" data-concept="exploded-engine">Exploded Engine</a>
+				<a href="?concept=turbocharger" data-concept="turbocharger">Turbocharger</a>
+				<a href="?concept=abstract-assembly" data-concept="abstract-assembly">Abstract Assembly</a>
+			</div>
+		</div>
+	</nav>
 	<main>
 		<!-- ====== HERO ====== -->
 		<section class="hero" id="hero">
 			<div class="hero__inner">
 				<div class="hero__content">
+					<p class="concept-kicker" id="conceptKicker"></p>
 					<div class="hero__badge">
 						<span class="hero__badge-dot"></span>
 						<span>Available for SWE Roles · Dec 2026 Grad</span>
 					</div>
-					<h1 class="hero__name">Manish Chakka</h1>
+					<h1 class="hero__name">Manish <span>Chakka</span></h1>
 					<p class="hero__title">Software Engineer · Georgia Tech CS</p>
+					<div class="concept-signature"><img src="images/facepic.png" alt="Manish Chakka" width="40" height="40"><span>Software, systems &amp; a curiosity for how things work.</span></div>
 					<p class="hero__intro">I build systems that operate reliably at scale, from high-throughput
 						messaging infrastructure processing millions of events daily, to full-stack platforms, mobile
 						apps, and AI-powered developer tooling. I care deeply about clean architecture, performance, and
@@ -117,6 +132,11 @@
 						</a>
 					</div>
 				</div>
+				<figure class="mechanical-panel" aria-label="Interactive mechanical illustration">
+					<div class="mechanical-panel__heading"><span id="drawingTitle"></span><span aria-hidden="true">MC / DESIGN STUDY</span></div>
+					<div id="mechanicalArt" class="mechanical-art"></div>
+					<figcaption><p id="conceptDescription"></p><button id="mechanicalControl" type="button" aria-pressed="false"></button></figcaption>
+				</figure>
 				<div class="hero__image-wrapper">
 					<div class="hero__image-frame">
 						<img src="images/facepic.png" alt="Manish Chakka" width="280" height="280">
@@ -150,7 +170,7 @@
 									<h3 class="exp-card__company">Atlassian</h3>
 								</div>
 								<p class="exp-card__role">Software Engineer Intern</p>
-								<p class="exp-card__meta">Seattle, WA · May 2026 – August 2026</p>
+								<p class="exp-card__meta">Seattle, WA · May 2026 to August 2026</p>
 							</div>
 							<button class="exp-card__toggle" data-expand="atlassian-details" aria-expanded="false" aria-controls="atlassian-details">View
 								Details</button>
@@ -175,12 +195,12 @@
 								</div>
 
 								<h4>Message Tracing Infrastructure</h4>
+                                <ol class="delivery-pipeline" aria-label="Five-stage delivery pipeline"><li>Filtering</li><li>Data Retrieval</li><li>Re-ranking</li><li>Fatigue</li><li>Hydration</li></ol>
 								<p>Post Office is Atlassian's centralized messaging platform, routing notifications,
 									emails, and in-app alerts across every Atlassian product.</p>
 								<ul>
 									<li>Engineered end-to-end message tracing in TypeScript, propagating unique trace
-										IDs across a <strong>5-stage delivery pipeline</strong> (filtering → data
-										retrieval → re-ranking → fatigue → hydration).</li>
+										IDs across a <strong>5-stage delivery pipeline</strong> (Filtering → Data Retrieval → Re-ranking → Fatigue → Hydration).</li>
 									<li>Each trace ID travels with the payload across all stages, allowing engineers to
 										reconstruct the complete delivery lifecycle from a single identifier.</li>
 									<li>Built scalable analytics for both real-time (<strong>AWS SQS-based</strong>
@@ -461,6 +481,7 @@
 								<span class="tag">Llama 3.3</span>
 							</div>
 							<div class="project-card__actions">
+								<a class="btn btn--primary btn--sm" href="https://opscribe--manishc3815.replit.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
 								<button class="btn btn--outline btn--sm" data-expand="opscribe-details" aria-expanded="false" aria-controls="opscribe-details">View
 									Details</button>
 							</div>
@@ -657,176 +678,119 @@
 						services, and tools I use.</p>
 				</div>
 
-				<!-- Languages -->
-				<div class="skills-category reveal">
-					<h3 class="skills-category__title">Languages</h3>
-					<div class="skills-grid">
-						<div class="skill-item">
+<div class="technology-catalog"><div class="skills-category reveal"><h3 class="skills-category__title">Languages</h3><div class="skills-grid"><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/java.png" alt="Java">
 							<span class="skill-item__name">Java</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/python.png" alt="Python">
 							<span class="skill-item__name">Python</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/JavaScript.png" alt="JavaScript">
 							<span class="skill-item__name">JavaScript</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/typescript.svg" alt="TypeScript">
 							<span class="skill-item__name">TypeScript</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/kotlin.svg" alt="Kotlin">
 							<span class="skill-item__name">Kotlin</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/go.png" alt="Go">
 							<span class="skill-item__name">Go</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/C.png" alt="C">
 							<span class="skill-item__name">C</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/Csharp.webp" alt="C#">
 							<span class="skill-item__name">C#</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/html.png" alt="HTML">
 							<span class="skill-item__name">HTML</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/CSS.png" alt="CSS">
 							<span class="skill-item__name">CSS</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/lua.png" alt="Lua">
 							<span class="skill-item__name">Lua</span>
-						</div>
-					</div>
-				</div>
-
-				<!-- Frameworks & Libraries -->
-				<div class="skills-category reveal">
-					<h3 class="skills-category__title">Frameworks &amp; Libraries</h3>
-					<div class="skills-grid">
-						<div class="skill-item">
+						</div></div></div><div class="skills-category reveal"><h3 class="skills-category__title">Application frameworks</h3><div class="skills-grid"><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/react.webp" alt="React">
 							<span class="skill-item__name">React</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/reactnative.png" alt="React Native">
 							<span class="skill-item__name">React Native</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/fastapi.svg" alt="FastAPI">
 							<span class="skill-item__name">FastAPI</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/django.png" alt="Django">
 							<span class="skill-item__name">Django</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/spring.svg" alt="Spring Boot">
 							<span class="skill-item__name">Spring Boot</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/vue.svg" alt="Vue.js">
 							<span class="skill-item__name">Vue.js</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/angular.svg" alt="Angular">
 							<span class="skill-item__name">Angular</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/flask.webp" alt="Flask">
 							<span class="skill-item__name">Flask</span>
-						</div>
-						<div class="skill-item">
-							<img class="skill-item__icon" src="skillsImages/pandas.png" alt="Pandas">
-							<span class="skill-item__name">Pandas</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
+							<img class="skill-item__icon" src="skillsImages/dot-net.svg" alt=".NET">
+							<span class="skill-item__name">.NET</span>
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/reactnavigation.webp"
 								alt="React Navigation">
 							<span class="skill-item__name">React Navigation</span>
-						</div>
-						<div class="skill-item">
+						</div></div></div><div class="skills-category reveal"><h3 class="skills-category__title">Data & testing</h3><div class="skills-grid"><div class="skill-item">
+							<img class="skill-item__icon" src="skillsImages/pandas.png" alt="Pandas">
+							<span class="skill-item__name">Pandas</span>
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/tableau.png" alt="Tableau">
 							<span class="skill-item__name">Tableau</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/jest.svg" alt="Jest">
 							<span class="skill-item__name">Jest</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/selenium.svg" alt="Selenium">
 							<span class="skill-item__name">Selenium</span>
-						</div>
-						<div class="skill-item">
-							<img class="skill-item__icon" src="skillsImages/dot-net.svg" alt=".NET">
-							<span class="skill-item__name">.NET</span>
-						</div>
-					</div>
-				</div>
-
-				<!-- Cloud, Systems & Tools -->
-				<div class="skills-category reveal">
-					<h3 class="skills-category__title">Cloud, Systems &amp; Tools</h3>
-					<div class="skills-grid">
-						<div class="skill-item">
-							<img class="skill-item__icon" src="skillsImages/AWS.png" alt="AWS">
-							<span class="skill-item__name">AWS</span>
-						</div>
-						<div class="skill-item">
-							<img class="skill-item__icon" src="skillsImages/azure.jpg" alt="Azure">
-							<span class="skill-item__name">Azure</span>
-						</div>
-						<div class="skill-item">
-							<img class="skill-item__icon" src="skillsImages/GCP.png" alt="Google Cloud Platform">
-							<span class="skill-item__name">GCP</span>
-						</div>
-						<div class="skill-item">
-							<img class="skill-item__icon" src="skillsImages/docker.jpg" alt="Docker">
-							<span class="skill-item__name">Docker</span>
-						</div>
-						<div class="skill-item">
-							<img class="skill-item__icon" src="skillsImages/kubernetes.png" alt="Kubernetes">
-							<span class="skill-item__name">Kubernetes</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/postgresql.svg" alt="PostgreSQL">
 							<span class="skill-item__name">PostgreSQL / pgvector</span>
-						</div>
-						<div class="skill-item">
+						</div></div></div><div class="skills-category reveal"><h3 class="skills-category__title">Cloud & platforms</h3><div class="skills-grid"><div class="skill-item">
+							<img class="skill-item__icon" src="skillsImages/AWS.png" alt="AWS">
+							<span class="skill-item__name">AWS</span>
+						</div><div class="skill-item">
+							<img class="skill-item__icon" src="skillsImages/azure.jpg" alt="Azure">
+							<span class="skill-item__name">Azure</span>
+						</div><div class="skill-item">
+							<img class="skill-item__icon" src="skillsImages/GCP.png" alt="Google Cloud Platform">
+							<span class="skill-item__name">GCP</span>
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/firebase.png" alt="Firebase">
 							<span class="skill-item__name">Firebase</span>
-						</div>
-						<div class="skill-item">
-							<img class="skill-item__icon" src="skillsImages/git.svg" alt="Git">
-							<span class="skill-item__name">Git / GitHub</span>
-						</div>
-						<div class="skill-item">
-							<img class="skill-item__icon" src="skillsImages/linux.svg" alt="Linux">
-							<span class="skill-item__name">Linux</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/render.png" alt="Render">
 							<span class="skill-item__name">Render</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/Vercel.webp" alt="Vercel">
 							<span class="skill-item__name">Vercel</span>
-						</div>
-						<div class="skill-item">
+						</div><div class="skill-item">
 							<img class="skill-item__icon" src="skillsImages/sharepoint.png" alt="SharePoint">
 							<span class="skill-item__name">SharePoint</span>
-						</div>
-					</div>
-				</div>
-
+						</div></div></div><div class="skills-category reveal"><h3 class="skills-category__title">Infrastructure & tooling</h3><div class="skills-grid"><div class="skill-item">
+							<img class="skill-item__icon" src="skillsImages/docker.jpg" alt="Docker">
+							<span class="skill-item__name">Docker</span>
+						</div><div class="skill-item">
+							<img class="skill-item__icon" src="skillsImages/kubernetes.png" alt="Kubernetes">
+							<span class="skill-item__name">Kubernetes</span>
+						</div><div class="skill-item">
+							<img class="skill-item__icon" src="skillsImages/git.svg" alt="Git">
+							<span class="skill-item__name">Git / GitHub</span>
+						</div><div class="skill-item">
+							<img class="skill-item__icon" src="skillsImages/linux.svg" alt="Linux">
+							<span class="skill-item__name">Linux</span>
+						</div></div></div></div>
 			</div>
 		</section>
 
@@ -978,6 +942,7 @@
 
 	<!-- Scripts -->
 	<script src="js/main.js"></script>
+	<script src="js/concepts.js"></script>
 
 </body>
 
