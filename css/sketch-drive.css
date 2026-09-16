@@ -1,0 +1,99 @@
+/* Sketch Drive: an automotive sketchbook on the Assembly foundation. */
+html[data-concept="sketch-drive"] {
+  --bg-primary:#f1f0e8; --bg-secondary:#e8e9df; --bg-card:#fafaf4; --bg-elevated:#e3e7d9; --bg-subtle:#f5f5ed;
+  --text-primary:#253b32; --text-secondary:#4b5e51; --text-muted:#5d6f60;
+  --accent-blue:#326545; --accent-blue-hover:#224f33; --accent-blue-light:#e1e9d9; --accent-blue-border:#b3c4a9;
+  --border:#c8cfc0; --border-hover:#97ae8e; --radius-sm:6px; --radius-md:14px; --radius-lg:20px;
+  --drawing-line:#8b9b83; --shadow-card:0 5px 0 #253b3209; --shadow-button:none;
+}
+html[data-concept="sketch-drive"] .hero { background:radial-gradient(ellipse at 80% 40%,#dce2cf,transparent 60%); }
+html[data-concept="sketch-drive"] .hero__name { font-weight:500; }
+html[data-concept="sketch-drive"] .hero__name span { color:var(--accent-blue); }
+html[data-concept="sketch-drive"] .section__header { display:grid; grid-template-columns:1fr 1fr; align-items:end; gap:6px 24px; }
+html[data-concept="sketch-drive"] .section__label { grid-column:1/-1; }
+html[data-concept="sketch-drive"] .section__subtitle { margin:0 0 12px; }
+html[data-concept="sketch-drive"] .timeline .exp-card { border-top-width:1px; box-shadow:5px 5px 0 #d4dbcb; border-radius:3px 20px 20px 20px; }
+html[data-concept="sketch-drive"] .project-card { border-radius:24px 4px 24px 4px; box-shadow:6px 6px 0 #dce1d3; }
+html[data-concept="sketch-drive"] .section__header { display:block; }
+html[data-concept="sketch-drive"] { --bg-primary:#f6f3eb;--bg-secondary:#eceee5;--bg-card:#fcfbf6;--text-primary:#303e38;--drawing-line:#87958d; }
+.automotive-fragment,.sketch-footer,.project-identity { display:none; }
+html[data-concept="sketch-drive"] .hero { background:radial-gradient(ellipse at 80% 55%,#e6e9df70,transparent 65%); }
+html[data-concept="sketch-drive"] .mechanical-panel { background:transparent;border:0;box-shadow:none;padding:0;align-self:center; }
+html[data-concept="sketch-drive"] .mechanical-panel__heading { display:none; }
+html[data-concept="sketch-drive"] .mechanical-panel__caption { border:0;font-size:12px;max-width:330px;margin:auto; }
+html[data-concept="sketch-drive"] .mechanical-art { min-height:0; }
+.car-sketch { width:100%;height:auto;overflow:visible;transform:translateY(calc(var(--separation,0px) * -.3));transition:transform .2s ease-out; }
+.car-sketch path,.car-sketch ellipse,.car-sketch circle { vector-effect:non-scaling-stroke; }
+.car-body,.car-wheels { fill:none;stroke:#4b5552;stroke-width:1.05;stroke-linecap:round;stroke-linejoin:round; }
+.car-outline { stroke-width:1.65; }
+.car-body path { stroke-dasharray:2400;stroke-dashoffset:0;animation:car-draw 2.6s ease both; }
+.car-wheels { animation:sketch-resolve 1s .8s both; }
+.car-guides { fill:none;stroke:#a7b6bb;stroke-width:.6;stroke-dasharray:7 6;opacity:.45;animation:sketch-resolve .8s both; }
+.sketch-washes { opacity:.55;animation:sketch-resolve 1.5s 1.3s both; }
+.sketch-accents { fill:none;stroke-width:2;stroke-linecap:round;animation:sketch-resolve 1s 1.6s both; }
+@keyframes car-draw { from {stroke-dashoffset:2400;}to {stroke-dashoffset:0;} }
+@keyframes sketch-resolve { from {opacity:0;transform:translateY(4px);}to {opacity:var(--sketch-opacity,1);transform:translateY(0);} }
+html[data-concept="sketch-drive"] .system-progress { display:none; }
+html[data-concept="sketch-drive"] .role-system-label,html[data-concept="sketch-drive"] .role-connector { display:none; }
+html[data-concept="sketch-drive"] .section__header { position:relative;padding-right:150px; }
+html[data-concept="sketch-drive"] .automotive-fragment { display:block;position:absolute;right:-15px;top:-35px;width:220px;pointer-events:none;opacity:.5; }
+.automotive-fragment svg,.sketch-footer svg { width:100%;fill:none;stroke:#65786d;stroke-width:1;stroke-linecap:round;stroke-linejoin:round; }
+.fragment-guide { stroke:#a8b9c4;stroke-dasharray:4 5;stroke-width:.7; }
+.sketch-visible svg > path { stroke-dasharray:900;animation:fragment-draw 1.8s ease both; }
+@keyframes fragment-draw { from {stroke-dashoffset:900;}to {stroke-dashoffset:0;} }
+html[data-concept="sketch-drive"] .section-mechanism { margin-bottom:30px;opacity:.65; }
+html[data-concept="sketch-drive"] .section-mechanism > span { display:none; }
+html[data-concept="sketch-drive"] .section-mechanism svg { height:22px;stroke:#aab9b7; }
+html[data-concept="sketch-drive"] .timeline::before { width:1px;background:#c3ccc0; }
+html[data-concept="sketch-drive"] .timeline::after { width:1px;background:#72958a; }
+html[data-concept="sketch-drive"] .timeline__node { border-width:1px;background:var(--bg-card);box-shadow:0 0 0 5px #dfe8dc; }
+html[data-concept="sketch-drive"] .exp-card { border:1px solid #c8cfc0;border-radius:4px 20px 20px 20px; }
+html[data-concept="sketch-drive"] .exp-card__header { flex-wrap:nowrap; }
+html[data-concept="sketch-drive"] .timeline__item:has(.exp-card__details.open) .exp-card { box-shadow:5px 7px 0 #dde5db; }
+html[data-concept="sketch-drive"] .exp-card__details.open .exp-card__content { animation:sketch-resolve .45s ease both; }
+html[data-concept="sketch-drive"] .delivery-pipeline { flex-wrap:wrap; }
+html[data-concept="sketch-drive"] .delivery-pipeline li { border-radius:5px;background:#f5f4ed; }
+html[data-concept="sketch-drive"] .delivery-pipeline .is-current { background:#e0e9e2; }
+html[data-concept="sketch-drive"] .project-identity { display:flex;align-items:center;justify-content:center;background:#f1f0e8;min-height:260px;padding:28px;border-bottom:1px solid var(--border);position:relative;overflow:hidden; }
+html[data-concept="sketch-drive"] .project-identity img { display:block;width:100%;height:240px;object-fit:contain;transition:transform .5s ease; }
+html[data-concept="sketch-drive"] .project-card:hover .project-identity img { transform:translateY(-3px); }
+html[data-concept="sketch-drive"] .project-card--featured { display:grid;grid-template-columns:1fr 1.1fr; }
+html[data-concept="sketch-drive"] .project-card--featured .project-card__details { grid-column:1/-1; }
+html[data-concept="sketch-drive"] .project-identity--opscribe { flex-direction:column;gap:20px;background:radial-gradient(ellipse at 25% 25%,#dde8e8 0,transparent 60%),#eeede5;min-height:350px; }
+.project-identity--opscribe svg { width:90px;fill:none;stroke:#54786c;stroke-width:1.4; }
+.project-identity--opscribe strong { font-size:38px;letter-spacing:-1.5px;font-weight:500;text-align:center; }
+.project-identity--opscribe strong span { display:block;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-top:10px; }
+.identity-caption { font-size:12px;color:var(--text-secondary); }
+html[data-concept="sketch-drive"] .project-system { margin:24px;border:1px solid var(--border);border-radius:8px;background:#f7f8f2; }
+html[data-concept="sketch-drive"] .project-diagram { max-width:700px;margin:20px auto; }
+html[data-concept="sketch-drive"] .diagram-node { background:var(--bg-card);border-radius:6px; }
+html[data-concept="sketch-drive"] .diagram-node[aria-pressed="true"] { background:#dde8de;color:#304c3b; }
+html[data-concept="sketch-drive"] .skills-category { border-top:1px solid #bbcabe;padding-top:24px;position:relative; }
+html[data-concept="sketch-drive"] .skill-item { background:#fcfbf6;border:1px solid #c9d3c5;border-radius:7px;transition:transform .22s,border-color .22s,box-shadow .22s; }
+html[data-concept="sketch-drive"] .skill-item:nth-child(3n+2) { border-color:#c2d0dc; }
+html[data-concept="sketch-drive"] .skill-item:nth-child(3n+3) { border-color:#dfc7be; }
+html[data-concept="sketch-drive"] .skill-item:hover { transform:translateY(-4px) rotate(-1deg);box-shadow:3px 4px 0 #e2ddec; }
+html[data-concept="sketch-drive"] .profile-mechanism { padding:12px 12px 0;border:1px solid #c3cdc0;background:#f8f7ee;box-shadow:7px 7px 0 #e5dfed;transform:rotate(-1deg); }
+html[data-concept="sketch-drive"] .profile-shutter { display:none; }
+html[data-concept="sketch-drive"] .about-sidebar { border-left:1px solid #c5d0c1;padding-left:24px; }
+html[data-concept="sketch-drive"] .sketch-footer { display:block;width:175px;margin:0 auto 22px;opacity:.6; }
+html[data-concept="sketch-drive"] .reveal { transform:translateY(14px) rotate(.25deg);transition:transform .65s,opacity .65s; }
+html[data-concept="sketch-drive"] .reveal.visible { transform:none; }
+html[data-concept="sketch-drive"] #motionToggle { display:none; }
+@media(max-width:1000px) { html[data-concept="sketch-drive"] .section__header { padding-right:0; } html[data-concept="sketch-drive"] .automotive-fragment { position:relative;right:auto;top:auto;width:180px;margin:12px 0 0;grid-column:1/-1; } }
+@media(max-width:768px) {
+  :root { --concept-bar-height:116px; }
+  .concept-switcher__inner { min-height:116px; }
+  html[data-concept="sketch-drive"] .hero__inner { gap:16px; }
+  html[data-concept="sketch-drive"] .mechanical-panel { padding:0; }
+  html[data-concept="sketch-drive"] .exp-card__header { flex-wrap:wrap; }
+  html[data-concept="sketch-drive"] .project-card--featured { display:flex; }
+  html[data-concept="sketch-drive"] .project-system { margin:12px;padding:12px; }
+  html[data-concept="sketch-drive"] .project-identity { min-height:220px;padding:20px; }
+  html[data-concept="sketch-drive"] .project-identity img { height:210px; }
+  html[data-concept="sketch-drive"] .section__header { display:block; }
+  html[data-concept="sketch-drive"] .about-sidebar { padding-left:14px; }
+}
+
+.sketch-washes { --sketch-opacity:.45; }
+.car-guides { --sketch-opacity:.4; }

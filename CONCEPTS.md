@@ -44,3 +44,22 @@ python3 scripts/build.py --out /tmp/personalwebsite-production
 Use a new output directory for each build. Vercel can serve the source directly because this site has no compilation dependencies.
 
 Resume returned HTTP 200 with application/pdf. Opscribe, CommuRide and the GitHub profile returned HTTP 200. Taste of Atlanta timed out during the destination check; its existing URL is retained. HTTP checks establish destination reachability, not end-to-end functionality of those separate apps.
+
+
+## Sketch Drive experiment
+
+[Preview Sketch Drive](https://manish-chakka.vercel.app/?concept=sketch-drive).
+
+- [x] Added as a separate experiment; existing concepts and default preserved.
+- [x] Assembly typography and pastel foundation with an original, unbranded SVG car sketch.
+- [x] Thin unfilled contours, construction lines, selective pastel washes and finite sketch-in animation.
+- [x] Side-profile, wheel/suspension, gearbox and interior fragments through Experience, Projects, Skills and About; small footer silhouette.
+- [x] Normal professional section and role labels; no numbered mechanical role labels in this concept.
+- [x] Project identities first. Opscribe has a clean custom project graphic; existing images restored for other projects using contain sizing.
+- [x] Architecture diagrams move into expandable project details only in Sketch Drive.
+- [x] All 37 technology logos, content depth, links and correct Atlassian pipeline preserved.
+- [x] No extra motion-mode or mystery hero control in Sketch Drive. Finite line animations, scroll response and hover motion remain enabled under normal system settings.
+- [x] Desktop and 390px mobile inspected, project image loading checked, graph keyboard interaction checked, no horizontal overflow or browser console errors.
+- [x] JavaScript syntax and static production packaging pass.
+
+Existing Kinetic CAD control is explicitly labeled Hide construction / Show construction and controls the construction-line layer.
