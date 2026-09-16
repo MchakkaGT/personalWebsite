@@ -1,5 +1,5 @@
 /**
- * Manish Chakka — Personal Portfolio Scripts
+ * Manish Chakka - Personal Portfolio Scripts
  * Handles mobile navigation, scroll reveal animations, active nav links,
  * and expandable card details.
  */
@@ -120,6 +120,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Progress follows the viewport, including when details change the timeline height.
+  const timeline = document.querySelector('.timeline');
+  if (timeline) {
+    const items = Array.from(timeline.querySelectorAll('.timeline__item'));
+    let framePending = false;
+    const paintTimeline = () => {
+      const box = timeline.getBoundingClientRect();
+      const cursor = window.innerHeight * 0.68;
+      const progress = Math.max(0, Math.min(1, (cursor - box.top - 18) / Math.max(1, box.height - 18)));
+      timeline.style.setProperty('--timeline-progress', progress);
+      items.forEach(item => item.classList.toggle('is-passed', item.getBoundingClientRect().top + 12 < cursor));
+      framePending = false;
+    };
+    const scheduleTimeline = () => {
+      if (!framePending) {
+        framePending = true;
+        requestAnimationFrame(paintTimeline);
+      }
+    };
+    window.addEventListener('scroll', scheduleTimeline, { passive: true });
+    window.addEventListener('resize', scheduleTimeline);
+    if ('ResizeObserver' in window) new ResizeObserver(scheduleTimeline).observe(timeline);
+    paintTimeline();
+  }
 
   // 5. Scroll Reveal Animations with IntersectionObserver
   const revealElements = document.querySelectorAll('.reveal');

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Manish Chakka — Personal Portfolio Design System
+   Manish Chakka - Personal Portfolio Design System
    Clean, Modern Light Theme with Rich Accents & Micro-Interactions
    ========================================================================== */
 
@@ -550,12 +550,6 @@ strong { color: var(--text-primary); font-weight: 600; }
 }
 
 /* ---------- 8. Experience Section ---------- */
-.exp-featured {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-  margin-bottom: var(--space-3xl);
-}
 
 .exp-card {
   background: var(--bg-card);
@@ -617,17 +611,6 @@ strong { color: var(--text-primary); font-weight: 600; }
   font-size: var(--text-xl);
   font-weight: 700;
   color: var(--text-primary);
-}
-.exp-card__badge {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-  background: var(--accent-blue-light);
-  color: var(--accent-blue);
-  border: 1px solid var(--accent-blue-border);
 }
 
 .exp-card__role {
@@ -758,57 +741,6 @@ strong { color: var(--text-primary); font-weight: 600; }
   color: var(--text-secondary);
 }
 
-/* Secondary experiences */
-.exp-secondary-title {
-  font-size: var(--text-xl);
-  color: var(--text-primary);
-  font-weight: 700;
-  margin-bottom: var(--space-lg);
-}
-.exp-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
-}
-.exp-card--compact {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-card);
-  transition: border-color var(--duration-normal) ease,
-              box-shadow var(--duration-normal) ease,
-              transform var(--duration-normal) var(--ease-out);
-}
-.exp-card--compact:hover {
-  border-color: var(--border-hover);
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-2px);
-}
-.exp-card--compact .exp-card__header {
-  padding: 0;
-  margin-bottom: var(--space-sm);
-  gap: var(--space-md);
-}
-.exp-card--compact .exp-card__company {
-  font-size: var(--text-base);
-  font-weight: 700;
-}
-.exp-card--compact .exp-card__role {
-  font-size: var(--text-sm);
-  font-weight: 500;
-}
-.exp-card--compact .exp-card__meta {
-  font-size: var(--text-xs);
-}
-.exp-card--compact .exp-card__summary {
-  padding: 0;
-}
-.exp-card--compact .exp-card__summary p {
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-}
-
 /* ---------- 9. Projects Section ---------- */
 .projects-grid {
   display: grid;
@@ -852,12 +784,12 @@ strong { color: var(--text-primary); font-weight: 600; }
 .project-card__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   transition: transform var(--duration-slow) var(--ease-out);
 }
 .project-card:hover .project-card__image img {
-  transform: scale(1.03);
+  transform: none;
 }
 
 .project-card__body {
@@ -1373,3 +1305,63 @@ strong { color: var(--text-primary); font-weight: 600; }
     font-size: var(--text-xs);
   }
 }
+
+/* A continuous career timeline, with a scroll-driven progress rail. */
+.career-intro { display:flex; align-items:center; gap:24px; border-top:1px solid var(--border); padding:22px 0; margin-bottom:30px; }
+.career-intro > span:first-child { font-family:var(--font-heading); font-weight:700; font-size:1.3rem; color:var(--text-primary); white-space:nowrap; }
+.career-intro > span:first-child span { color:var(--accent-blue); margin:0 10px; }
+.career-intro p { margin:0; font-size:.9rem; }
+.career-intro__hint { margin-left:auto; font-size:.75rem; color:var(--text-muted); }
+.timeline { position:relative; --rail-x:126px; --timeline-progress:0; }
+.timeline::before, .timeline::after { content:''; position:absolute; top:18px; bottom:0; left:var(--rail-x); width:2px; background:var(--border); }
+.timeline::after { background:linear-gradient(#2563eb, #7553bd, #0d9488); transform:scaleY(var(--timeline-progress)); transform-origin:top; }
+.timeline__item { position:relative; display:grid; grid-template-columns:100px minmax(0,1fr); gap:62px; padding-bottom:44px; }
+.timeline__item:last-child { padding-bottom:0; }
+.timeline__date { padding-top:0; display:flex; flex-direction:column; text-align:right; font-size:.75rem; color:var(--text-muted); }
+.timeline__year { font:700 2rem/1.2 var(--font-heading); letter-spacing:-.05em; color:var(--text-primary); margin-bottom:5px; }
+.timeline__node { position:absolute; z-index:1; left:calc(var(--rail-x) - 6px); top:12px; width:14px; height:14px; border:3px solid white; border-radius:50%; background:var(--border-hover); box-shadow:0 0 0 2px var(--border); transition:background .4s, box-shadow .4s; }
+.timeline__item.is-passed .timeline__node { background:var(--chapter-color); box-shadow:0 0 0 2px var(--chapter-color),0 0 0 7px color-mix(in srgb,var(--chapter-color) 12%,transparent); }
+.timeline__chapter { min-width:0; }
+.timeline__eyebrow { display:flex; align-items:center; gap:10px; font-size:.7rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--chapter-color); margin:7px 0 13px; }
+.timeline__eyebrow span { opacity:.65; font-variant-numeric:tabular-nums; }
+.timeline .exp-card { border-top:3px solid var(--chapter-color); }
+.timeline .exp-card:hover { border-color:var(--chapter-color); transform:translateY(-3px); }
+.timeline .exp-card__header { padding:24px 26px 16px; gap:16px; }
+.timeline .exp-card__summary { padding:0 26px 24px; }
+.timeline .exp-card__company { font-size:1.2rem; }
+.timeline .exp-card__role { font-size:.9rem; }
+.timeline .exp-card__meta { font-size:.75rem; }
+.timeline .exp-card__summary p { font-size:.9rem; }
+.timeline .exp-card__logo-box { width:54px; height:54px; }
+.timeline .exp-card__toggle { padding:8px 12px; }
+.project-card__image { height:280px; padding:20px; display:flex; align-items:center; justify-content:center; background:#eef2f6; }
+.project-card__image img { object-fit:contain; }
+.project-card__image--taste { background:#1d1c1a; padding:28px; }
+.project-card__image--commuride { background:#e5e1d2; }
+.project-card--featured { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); }
+.project-card--featured .project-card__image { height:100%; min-height:340px; border-bottom:0; padding:0; background:#0a1423; }
+.project-card--featured .project-card__image img { max-height:460px; }
+.project-card--featured .project-card__details { grid-column:1/-1; }
+button:focus-visible, a:focus-visible { outline:3px solid var(--accent-blue); outline-offset:4px; }
+@media (max-width:768px) {
+  .career-intro { flex-wrap:wrap; gap:8px 20px; }
+  .career-intro__hint { display:none; }
+  .timeline { --rail-x:7px; }
+  .timeline__item { grid-template-columns:minmax(0,1fr); gap:12px; padding-left:34px; padding-bottom:32px; }
+  .timeline__date { text-align:left; flex-direction:row; align-items:baseline; gap:12px; }
+  .timeline__year { font-size:1.5rem; margin:0; }
+  .timeline__node { top:8px; }
+  .timeline__eyebrow { margin-top:0; font-size:.65rem; letter-spacing:1px; }
+  .timeline .exp-card__header { padding:18px 18px 12px; }
+  .timeline .exp-card__summary { padding:0 18px 20px; }
+  .timeline .exp-card__logo-box { width:42px; height:42px; padding:5px; }
+  .timeline .exp-card__company { font-size:1rem; }
+  .timeline .exp-card__role { font-size:.8rem; }
+  .timeline .exp-card__content { padding:18px; }
+  .project-card--featured { display:flex; }
+  .project-card--featured .project-card__image { height:320px; min-height:0; }
+  .project-card__image { height:240px; }
+}
+
+.exp-card__details, .project-card__details { visibility: hidden; }
+.exp-card__details.open, .project-card__details.open { visibility: visible; }
