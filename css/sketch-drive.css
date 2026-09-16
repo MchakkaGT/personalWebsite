@@ -59,7 +59,8 @@ html[data-concept="sketch-drive"] .project-identity img { display:block;width:10
 html[data-concept="sketch-drive"] .project-card:hover .project-identity img { transform:translateY(-3px); }
 html[data-concept="sketch-drive"] .project-card--featured { display:grid;grid-template-columns:1fr 1.1fr; }
 html[data-concept="sketch-drive"] .project-card--featured .project-card__details { grid-column:1/-1; }
-html[data-concept="sketch-drive"] .project-identity--opscribe { flex-direction:column;gap:20px;background:radial-gradient(ellipse at 25% 25%,#dde8e8 0,transparent 60%),#eeede5;min-height:350px; }
+html[data-concept="sketch-drive"] .project-identity--opscribe { background:#0b1422;min-height:350px; }
+html[data-concept="sketch-drive"] .project-identity--opscribe img { height:300px; }
 .project-identity--opscribe svg { width:90px;fill:none;stroke:#54786c;stroke-width:1.4; }
 .project-identity--opscribe strong { font-size:38px;letter-spacing:-1.5px;font-weight:500;text-align:center; }
 .project-identity--opscribe strong span { display:block;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-top:10px; }

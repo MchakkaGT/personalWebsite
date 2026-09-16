@@ -13,8 +13,8 @@ export async function createGallardo(canvas) {
   }
   const base=new URL('../models/gallardo/',import.meta.url);
   const [meta,buffer]=await Promise.all([
-    fetch(new URL('gallardo.json',base)).then(r=>{if(!r.ok)throw Error('Gallardo metadata unavailable');return r.json();}),
-    fetch(new URL('gallardo.bin',base)).then(r=>{if(!r.ok)throw Error('Gallardo geometry unavailable');return r.arrayBuffer();})
+    fetch(new URL('gallardo.json?v=14',base)).then(r=>{if(!r.ok)throw Error('Gallardo metadata unavailable');return r.json();}),
+    fetch(new URL('gallardo.bin?v=14',base)).then(r=>{if(!r.ok)throw Error('Gallardo geometry unavailable');return r.arrayBuffer();})
   ]);
   const ink=new THREE.LineBasicMaterial({color:0x46544d,transparent:true,opacity:.85});
   ink.onBeforeCompile=shader=>{shader.vertexShader=shader.vertexShader.replace('#include <project_vertex>','#include <project_vertex>\ngl_Position.z -= 0.000015 * gl_Position.w;');};
@@ -53,7 +53,9 @@ export async function createGallardo(canvas) {
         car.add(group);attach(geometry,group,'wheel',g.material);
       }
     } else {
-      const parent=pivots[g.part];if(parent!==car)geometry.translate(-parent.position.x,-parent.position.y,-parent.position.z);
+      // Both pieces of door glass share the door hinge, including the forward pane.
+      const part=['body-9','body-55','body-59'].includes(g.name)?'door':g.part;
+      const parent=pivots[part];if(parent!==car)geometry.translate(-parent.position.x,-parent.position.y,-parent.position.z);
       attach(geometry,parent,g.part,g.material);
     }
   }

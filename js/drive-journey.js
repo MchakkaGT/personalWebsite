@@ -82,7 +82,7 @@
     active=root.dataset.concept==='sketch-drive';stage.hidden=!active;
     if(active){
       measure();
-      if(!loading){loading=true;import('./gallardo.js?v=13').then(m=>m.createGallardo(canvas)).then(m=>{model=m;stage.dataset.ready='true';schedule();}).catch(error=>{console.error('Gallardo scene:',error);stage.hidden=true;});}
+      if(!loading){loading=true;import('./gallardo.js?v=14').then(m=>m.createGallardo(canvas)).then(m=>{model=m;stage.dataset.ready='true';schedule();}).catch(error=>{console.error('Gallardo scene:',error);stage.hidden=true;});}
     }
   }
   document.addEventListener('conceptchange',activate);
