@@ -63,3 +63,13 @@ Resume returned HTTP 200 with application/pdf. Opscribe, CommuRide and the GitHu
 - [x] JavaScript syntax and static production packaging pass.
 
 Existing Kinetic CAD control is explicitly labeled Hide construction / Show construction and controls the construction-line layer.
+
+## Scroll-driven Sketch Drive journey
+
+Sketch Drive now has one continuously reprojected line-art car scene instead of repeated static illustrations. A small Canvas 2D perspective renderer controls camera yaw, elevation, scale, hinged driver door, hood and interior visibility from actual document scroll position. There is no WebGL dependency, autoplay loop, or scroll interception. Drawing occurs on requested animation frames after scroll/layout changes, with pixel density capped at 2.
+
+The six scenes move from a frontal hero to an open-door Experience view, an interior/dashboard Projects view, an open-hood Skills view, and wider About and rear-quarter Contact views. Five transition intervals provide room for camera movement. The scene occupies a separate desktop margin beside content, expands during transitions, and simplifies on mobile. Normal section links still work.
+
+The rectangular Assembly job-card treatment and left date/rail layout are restored in Sketch Drive, without mechanical role labels. All seven existing selector options remain. Project identities still precede expandable diagrams, and all 37 technology logos remain.
+
+Validation: static production packaging and JavaScript syntax pass; desktop and 390px mobile checked for horizontal overflow; scroll state inspected for door and hood progression; existing concept switching, project disclosure and console checked. This is an illustrative car model, not a mechanical simulation.
