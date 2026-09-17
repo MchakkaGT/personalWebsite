@@ -44,3 +44,11 @@ html[data-concept="sketch-drive"] .hero__content { opacity:calc(1 - var(--drive-
  html[data-concept="sketch-drive"] .timeline__item { padding-left:0; }
  html[data-concept="sketch-drive"] .drive-stage canvas { max-width:none;max-height:none; }
 }
+
+/* Give company wordmarks enough room to stay legible. */
+html[data-concept="sketch-drive"] .timeline .exp-card__logo-box { width:120px;height:84px;padding:10px;border-radius:10px; }
+html[data-concept="sketch-drive"] .timeline .exp-card__logo { width:100%;height:100%;object-fit:contain; }
+@media (max-width:600px) {
+  html[data-concept="sketch-drive"] .timeline .exp-card__logo-box { width:112px;height:78px;padding:8px; }
+  html[data-concept="sketch-drive"] .timeline .exp-card__info { flex-basis:100%; }
+}

@@ -23,7 +23,7 @@
     const identity=document.createElement('div');identity.className='project-identity';
     if(id==='opscribe') {
       identity.classList.add('project-identity--opscribe');
-      const image=document.createElement('img');image.src='images/opscribe.png';image.alt='Opscribe: AI for Infrastructure Intelligence';image.loading='lazy';identity.append(image);
+      const image=document.createElement('img');image.src='images/opscribe.png?v=16';image.alt='Opscribe: AI for Infrastructure Intelligence';image.loading='lazy';identity.append(image);
     } else {
       const image=document.createElement('img');image.src='images/'+files[id];image.alt=card.querySelector('h3').textContent.trim()+' project image';image.loading='lazy';identity.append(image);
     }
